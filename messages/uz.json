@@ -1,0 +1,1045 @@
+{
+  "HomePage": {
+    "title": "UZ version",
+    "about": "UZ version"
+  },
+  "Facts": {
+    "factbase": {
+      "title": "Emissiya haqida ma'lumot",
+      "organization_name": "To'liq nomi",
+      "organization_short_name_text": "Qisqa nomi",
+      "org_ticket_number": "Birja tikeri nomi",
+      "contact_details": "Aloqa ma'lumotlari",
+      "org_address": "Joylashuv manzili",
+      "org_location": "Pochta manzili",
+      "org_email": "Elektron pochta",
+      "org_website": "Rasmiy veb-sayt",
+      "organization_leadership": "Tashkilot rahbariyati",
+      "head_person_name": "Rahbarning F.I.O.",
+      "accountant_person_name": "Bosh buxgalterning F.I.O.",
+      "responsible_person_name": "Saytda ma'lumot joylashtirgan shaxs"
+    },
+    "fact1": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "fullNameBeforeChangeTitle": "O‘zgarishdan oldingi to‘liq nom",
+      "bodyDecidedTitle": "Qaror qabul qilgan emitent organi",
+      "decisionDateTitle": "Qaror qabul qilingan sana",
+      "dateOfChangesRegistrationTitle": "Ta’sis hujjatlaridagi tegishli o‘zgarishlar ro‘yxatdan o‘tkazilgan sana"
+    },
+    "fact2": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "locationBeforeChangeTitle": "O‘zgarishdan oldingi joylashuv (pochta manzili)",
+      "bodyDecidedTitle": "Qaror qabul qilgan emitent organi",
+      "decisionDateTitle": "Qaror qabul qilingan sana",
+      "dateOfChangesRegistrationTitle": "Ta’sis hujjatlaridagi tegishli o‘zgarishlar ro‘yxatdan o‘tkazilgan sana"
+    },
+    "fact4": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "bodyDecidedTitle": "Qaror qabul qilgan emitent organi",
+      "decisionDateTitle": "Qaror qabul qilingan sana",
+      "drawingDateTitle": "Bayonnoma tuzilgan sana",
+      "suspensionDateTitle": "Chiqindilar chiqarish to‘xtatilgan sana",
+      "decidedSuspendTitle": "Faoliyatni to‘xtatish to‘g‘risida qaror kim tomonidan qabul qilingan",
+      "dateOfReorganizationTitle": "Qayta tashkil etish qarori qabul qilingan sana",
+      "term_of_requst": "Kreditorlar va boshqa shaxslarning talablarini qabul qilish muddati va tartibi"
+    },
+    "fact5": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "bodyDecidedTitle": "Qaror qabul qilgan emitent organi",
+      "decisionDateTitle": "Qaror qabul qilingan sana",
+      "drawingDateTitle": "Bayonnoma tuzilgan sana",
+      "dateTerminationTitle": "Chiqindilar chiqarish to‘xtatilgan sana",
+      "decidedTerminationTitle": "Faoliyatni to‘xtatish to‘g‘risida qaror kim tomonidan qabul qilingan",
+      "dateOfReorganizationTitle": "Emitent faoliyatini to‘xtatish to‘g‘risidagi qaror olingan sana",
+      "termOfRequestTitle": "Kreditorlar va boshqa shaxslardan talablarni qabul qilish muddati"
+    },
+    "fact6": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "meetingTypeTitle": "Yig‘ilish turi",
+      "dateTransactionTitle": "Yig‘ilish o‘tkazilgan sana",
+      "dateMinutesTitle": "Bayonnoma sanasi",
+      "venueMeetingTitle": "Yig‘ilish o‘tkazilgan joy",
+      "quorumGeneralTitle": "Yig‘ilish kvorumi",
+      "fullDecisionsWordingTitle": "Umumiy yig‘ilish tomonidan qabul qilingan qarorlarning to‘liq matni",
+      "executiveCompensationsTitle": "Ijro etuvchi organ, kuzatuv kengashi va auditorlik komissiyasi a’zolariga hisoblangan va to‘langan mukofot va (yoki) kompensatsiyalar",
+      "personNameTitle": "Shaxsning F.I.O.",
+      "issuerBodyTitle": "Emitent organining nomi",
+      "paymentTypeTitle": "To‘lov turi (mukofot va (yoki) kompensatsiya)",
+      "accruedAmountTitle": "Hisoblangan summa (so‘m)",
+      "periodTitle": "Hisoblangan mablag‘lar muddati",
+      "documentTitle": "To‘lov nazarda tutilgan hujjat",
+      "electionTitle": "Kuzatuv kengashi a’zolarining saylanishi",
+      "candidateInfoTitle": "Nomzod haqida ma’lumot",
+      "workplacePositionTitle": "Ish joyi, lavozimi",
+      "workplaceTitle": "Ish joyi",
+      "positionTitle": "Lavozim",
+      "ownedSharesTitle": "Nomzodga tegishli aksiyalar",
+      "quantityTitle": "Soni",
+      "typeTitle": "Turi",
+      "votesCountTitle": "Ovozlar soni"
+    },
+    "fact7": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "bodyDecidedTitle": "Ko‘rsatilgan o‘zgarishlar bo‘yicha qaror qabul qilgan emitent organi",
+      "decisionDateTitle": "Qaror qabul qilingan sana",
+      "descriptionChangesTitle": "O‘zgarishlar tavsifi",
+      "dateRegistrationTitle": "Ta’sis hujjatlaridagi tegishli o‘zgarishlar ro‘yxatdan o‘tkazilgan sana"
+    },
+    "fact8": {
+      "terminationPowersTitle": "Vakolatlar tugatilganda",
+      "caseElectionTitle": "Mansabdor shaxs saylanganda (tayinlanganda)"
+    },
+    "fact9": {
+      "factsInformationChangesTitle": "Filiallar ro'yxatidagi o'zgarishlar haqida ma'lumot",
+      "factsListBranchTitle": "O'zgarishlarni hisobga olgan holda filiallar ro'yxati"
+    },
+    "fact10": {
+      "factsInformationChangesTitle": "Vakolatxonalar ro'yxatidagi o'zgarishlar haqida ma'lumot",
+      "factsListBranchTitle": "O'zgarishlarni hisobga olgan holda vakolatxonalar ro'yxati"
+    },
+    "fact11": {
+      "factsInformationAboutTitle": "DXO ro'yxatidagi o'zgarishlar haqida ma'lumot"
+    },
+    "fact12": {
+      "factsInformationAboutTitle": "ZXO ro'yxatidagi o'zgarishlar haqida ma'lumot",
+      "factsListSubsidiarieTitle": "O'zgarishlarni hisobga olgan holda qaram xo'jalik jamiyatlari ro'yxati"
+    },
+    "fact15": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitle": "Muhim fakt nomi",
+      "bodyOfIssuerTitle": "Kredit olish to‘g‘risida qaror qabul qilgan emitent organi",
+      "purposeLoanTitle": "Kredit olish maqsadi",
+      "dateReceiptTitle": "Kredit olingan sana",
+      "loanAmountTitle": "Kredit summasi (so‘m)",
+      "loanCapitalTitle": "Ustav kapitaliga nisbatan kredit miqdori (% da)",
+      "nameOfBankTitle": "Bank yoki boshqa kredit tashkiloti nomi",
+      "maturityLoanTitle": "Kredit qaytarish muddati",
+      "descriptionCollateralTitle": "Garov mulki yoki kafillik tavsifi"
+    },
+    "fact16": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "bodyOfIssuerTitle": "Kredit olish to‘g‘risida qaror qabul qilgan emitent organi",
+      "purposeLoanTitle": "Kredit olish maqsadi",
+      "dateReceiptTitle": "Kredit olingan sana",
+      "loanAmountTitle": "Kredit summasi (so‘m)",
+      "loanCapitalTitle": "Ustav kapitaliga nisbatan kredit miqdori (% da)",
+      "nameOfBankTitle": "Bank yoki boshqa kredit tashkiloti nomi",
+      "maturityLoanTitle": "Kredit qaytarish muddati",
+      "descriptionCollateralTitle": "Garov mulki yoki kafillik tavsifi"
+    },
+    "fact17": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "valueOfAssetsTitle": "Tegishli fakt (faktlar) yuzaga kelgan chorakka qadar bo'lgan chorakning oxiridagi emitent aktivlari qiymati (ming so‘m)"
+    },
+    "fact18": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "valueOfAssetsTitle": "Tegishli fakt (faktlar) yuzaga kelgan chorakka qadar bo'lgan chorakning oxiridagi emitent aktivlari qiymati (ming so‘m)"
+    },
+    "fact19": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "nameCounterpartyTitle": "Kontragentning F.I.O. yoki to‘liq nomi",
+      "locationCounterpartyTitle": "Kontragentning joylashuvi (pochta manzili)",
+      "decisionTransactionTitle": "Bitim bo‘yicha qaror qabul qilgan emitent organi",
+      "dateDecisionTitle": "Qaror qabul qilingan sana",
+      "carryingValueTitle": "Bitim tuzilgunga qadar bo'lgan chorak oxiridagi emitent aktivlarining balans qiymati (ming so‘m)",
+      "dateTransactionTitle": "Bitim tuzilgan sana",
+      "transactionAmountTitle": "Bitim summasi (so‘m)",
+      "typeTransactionTitle": "Bitim turi",
+      "subjectMatterTitle": "Bitim predmeti",
+      "issuerTransactionTitle": "Emitent bitimda qanday ishtirok etadi"
+    },
+    "fact20": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "nameCounterpartyTitle": "Kontragentning F.I.O. yoki to‘liq nomi",
+      "locationCounterpartyTitle": "Kontragentning joylashuvi (pochta manzili)",
+      "decisionTransactionTitle": "Bitim bo‘yicha qaror qabul qilgan emitent organi",
+      "dateDecisionTitle": "Qaror qabul qilingan sana",
+      "carryingValueTitle": "Bitim tuzilgunga qadar bo'lgan chorak oxiridagi emitent sof aktivlarining qiymati (ming so‘m)",
+      "dateTransactionTitle": "Bitim tuzilgan sana",
+      "transactionAmountTitle": "Bitim summasi (so‘m)",
+      "assetsIssuerTitle": "Bitim hajmi emitent sof aktivlariga nisbatan (foizda)",
+      "typeTransactionTitle": "Bitim turi",
+      "subjectMatterTitle": "Bitim predmeti",
+      "issuerTransactionTitle": "Emitent bitimda qanday ishtirok etadi"
+    },
+    "fact40": {
+      "titleFactNumber": "Порядок материального факта:",
+      "fact_number": "Номер существенного факта:"
+    },
+    "fact21": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "fact_number": "Muhim fakt raqami",
+      "fact_title": "Muhim fakt nomi",
+      "name_counterparty": "Kontragentning F.I.O yoki to'liq nomi",
+      "location_counterparty": "Kontragentning manzili (pochta manzili)",
+      "share_affiliated_entity": "Emitentning affillangan shaxsdagi ulushi (ustav kapitalidan %)",
+      "name_affiliated_entity": "Affillangan shaxsning F.I.O yoki to'liq nomi",
+      "location_affiliated_entity": "Affillangan shaxsning manzili (pochta manzili)",
+      "share_emitent": "Affillangan shaxsning emitentdagi ulushi (ustav kapitalidan %)",
+      "decision_transaction": "Emitent organi tomonidan qabul qilingan qaror",
+      "date_decision": "Qaror qabul qilingan sana",
+      "transaction_amount": "Bitim summasi (so'm)",
+      "date_transaction": "Bitim tuzilgan sana",
+      "type_transaction": "Bitim turi",
+      "subject_matter": "Bitim predmeti",
+      "issuer_transaction": "Emitentning bitimdagi roli"
+    },
+    "fact22": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "fact_number": "Muhim fakt raqami",
+      "fact_title": "Muhim fakt nomi",
+      "type_activity": "Faoliyat turi",
+      "name_of_organ": "Litsenziyalovchi organ nomi",
+      "date_decision": "Litsenziya berish to'g'risidagi qaror qabul qilingan sana",
+      "date_licensing": "Litsenziya berilgan sana",
+      "number_licensing": "Litsenziya raqami",
+      "date_receipt": "Litsenziya olingan sana",
+      "validity_license": "Litsenziya amal qilish muddati"
+    },
+    "fact23": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "fact_number": "Muhim fakt raqami",
+      "fact_title": "Muhim fakt nomi",
+      "type_activity": "Faoliyat turi",
+      "date_issue": "Litsenziya berilgan sana",
+      "license_number": "Litsenziya raqami",
+      "name_of_organ": "Litsenziyalovchi organ nomi",
+      "revocation_reason": "Litsenziyaning bekor qilinish sabablari yoki amal qilishining to'xtatilishi",
+      "revocation_organ": "Litsenziyaning bekor qilinishiga yoki to'xtatilishiga kim qaror qabul qilgan",
+      "date_decision_cancellation": "Litsenziyaning bekor qilinishi yoki to'xtatilishi to'g'risidagi qaror sanasi",
+      "date_receipt_annul": "Emitent litsenziyaning bekor qilingani yoki to'xtatilgani to'g'risidagi qarorni olgan sana"
+    },
+    "fact24": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "fact_number": "Muhim fakt raqami",
+      "fact_title": "Muhim fakt nomi",
+      "type_activity": "Faoliyat turi",
+      "date_issue": "Litsenziya berilgan sana",
+      "license_number": "Litsenziya raqami",
+      "name_of_organ": "Litsenziyalovchi organ nomi",
+      "revocation_reason": "Litsenziyaning bekor qilinish sabablari yoki amal qilishining to'xtatilishi",
+      "revocation_organ": "Litsenziyaning bekor qilinishiga yoki to'xtatilishiga kim qaror qabul qilgan",
+      "date_decision_cancellation": "Bekor qilish to'g'risidagi qaror qabul qilingan sana",
+      "date_receipt_annul": "Emitent bekor qilish to'g'risidagi qarorni olgan sana",
+      "for_period": "Litsenziya amal qilishining to'xtatilgan muddati"
+    },
+    "fact25": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "fact_number": "Muhim fakt raqami",
+      "fact_title": "Muhim fakt nomi",
+      "organ": "Qaror qabul qilgan emitent organi",
+      "paper_type": "Qimmatli qog'oz turi",
+      "date_decision": "Qaror qabul qilingan sana",
+      "paper_num": "Qimmatli qog'ozlar soni",
+      "nominal_paper_cost": "Bitta qimmatli qog'ozning nominal qiymati",
+      "total_amount": "Chiqarilgan umumiy summa",
+      "date_registration": "Davlat ro'yxatidan o'tkazilgan sana",
+      "num_registration": "Davlat ro'yxatidan o'tkazilgan raqam",
+      "placement_method": "Qimmatli qog'ozlarni joylashtirish usuli"
+    },
+    "fact26": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "fact_number": "Muhim fakt raqami",
+      "fact_title": "Muhim fakt nomi",
+      "paper_type": "Qimmatli qog'oz turi",
+      "paper_num": "Qimmatli qog'ozlar soni",
+      "nominal_paper_cost": "Bitta qimmatli qog'ozning nominal qiymati",
+      "total_amount": "Chiqarilgan umumiy summa",
+      "organ": "Qaror qabul qilgan emitent organi",
+      "date_decision": "Qaror qabul qilingan sana",
+      "date_registration": "Davlat ro'yxatidan o'tkazilgan sana",
+      "num_registration": "Davlat ro'yxatidan o'tkazilgan raqam",
+      "placement_method": "Qimmatli qog'ozlarni joylashtirish usuli"
+    },
+    "fact27": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "fact_number": "Muhim fakt raqami",
+      "fact_title": "Muhim fakt nomi",
+      "paper_type": "Qimmatli qog'oz turi",
+      "paper_num": "Qimmatli qog'ozlar soni",
+      "nominal_paper_cost": "Bitta qimmatli qog'ozning nominal qiymati",
+      "total_amount": "Chiqarilgan umumiy summa",
+      "organ": "Qaror qabul qilgan emitent organi",
+      "date_decision": "Qaror qabul qilingan sana",
+      "date_registration": "Davlat ro'yxatidan o'tkazilgan sana",
+      "num_registration": "Davlat ro'yxatidan o'tkazilgan raqam",
+      "placement_method": "Qimmatli qog'ozlarni joylashtirish usuli"
+    },
+    "fact28": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "fact_number": "Muhim fakt raqami",
+      "fact_title": "Muhim fakt nomi",
+      "paper_type": "Qimmatli qog'oz turi",
+      "paper_num": "Qimmatli qog'ozlar soni",
+      "nominal_paper_cost": "Bitta qimmatli qog'ozning nominal qiymati",
+      "total_amount": "Chiqarilgan umumiy summa",
+      "date_registration": "Davlat ro'yxatidan o'tkazilgan sana",
+      "num_registration": "Davlat ro'yxatidan o'tkazilgan raqam",
+      "suspension_reason": "Qimmatli qog'ozlar chiqarilishini haqiqiy emas deb topish sabablari",
+      "date_recognition_of_fail": "Qimmatli qog'ozlar chiqarilishini haqiqiy emas deb topish sanasi",
+      "date_solutions": "Emitent tomonidan qaror qabul qilingan sana",
+      "procedure_repayment": "Qimmatli qog'ozlar bo'yicha mablag'larni qaytarish tartibi"
+    },
+    "fact29": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "fact_number": "Muhim fakt raqami",
+      "fact_title": "Muhim fakt nomi",
+      "paper_type": "Qimmatli qog'oz turi",
+      "paper_num": "Qimmatli qog'ozlar soni",
+      "nominal_paper_cost": "Bitta qimmatli qog'ozning nominal qiymati",
+      "date_registration": "Davlat ro'yxatidan o'tkazilgan sana",
+      "num_registration": "Davlat ro'yxatidan o'tkazilgan raqam",
+      "who_declared_invalid": "Qimmatli qog'ozlar chiqarilishini haqiqiy emas deb kim e'lon qildi",
+      "suspension_reason": "Qimmatli qog'ozlar chiqarilishini haqiqiy emas deb topish sabablari",
+      "date_recognition": "Qimmatli qog'ozlar chiqarilishini haqiqiy emas deb topish sanasi"
+    },
+    "fact30": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "fact_number": "Muhim fakt raqami",
+      "fact_title": "Muhim fakt nomi",
+      "meeting_emittent": "Qaror qabul qilgan emitent organi",
+      "date_apply": "Qaror qabul qilingan sana",
+      "date_protocol": "Bayonnoma tuzilgan sana",
+      "legal_entities_title": "Emitent 10% yoki undan ko‘p aksiyalarga ega bo‘lgan yuridik shaxslar ro‘yxati",
+      "changes_in_ownership_title": "Emitent 10% yoki undan ko‘p aksiyalarga ega bo‘lgan yuridik shaxslar ro‘yxatidagi o‘zgarishlar"
+    },
+    "fact31": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "fact_number": "Muhim fakt raqami",
+      "fact_title": "Muhim fakt nomi",
+      "organ": "Qaror qabul qilgan emitent organi",
+      "description_issuers_obligations": "Emitentning o‘z qimmatli qog‘ozlari egalari oldidagi majburiyatlari tavsifi",
+      "date_solution": "Qaror qabul qilingan sana",
+      "dateSolution": "Qaror qabul qilingan sana",
+      "date_begin": "Majburiyatlar bajarilishining boshlanish sanasi",
+      "date_end": "Majburiyatlar bajarilishining tugash sanasi"
+    },
+    "fact32": {
+      "title": "Fakt 32 Sarlavha",
+      "fact_number": "Fakt raqami",
+      "fact_title": "Fakt nomi",
+      "person_emitet": "Emitent organi",
+      "date_solution": "Qabul qilingan qaror sanasi",
+      "date_parsect": "Bayonnoma sanasi",
+      "dividends_common": "Oddiy aksiyalar bo‘yicha dividendlar",
+      "sum_aksiya": "Bitta aksiya uchun summa",
+      "one_procent": "Nominal qiymatning foizda ifodasi",
+      "dividends_preferred": "Imtiyozli aksiyalar bo‘yicha dividendlar",
+      "sum_aksiya2": "Bitta aksiya uchun summa",
+      "one_procent2": "Nominal qiymatning foizda ifodasi",
+      "corporate_bonds": "Korporativ obligatsiyalar",
+      "sum_per": "Obligatsiya uchun summa",
+      "percentage_nominal": "Nominal qiymatning foizda ifodasi",
+      "infrastructure_bonds": "Infratuzilma obligatsiyalari",
+      "sum_per2": "Obligatsiya uchun summa",
+      "percentage_nominal2": "Nominal qiymatning foizda ifodasi",
+      "payment_dates": "To‘lov sanalari",
+      "security_type": "Qimmatli qog‘oz turi",
+      "start_date": "Boshlanish sanasi",
+      "end_date": "Tugash sanasi",
+      "common_shares": "Oddiy aksiyalar",
+      "preferred_shares": "Imtiyozli aksiyalar",
+      "form_of_payment": "To‘lov shakli"
+    },
+    "fact33": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "dateSolutionTitle": "Bankrotlik jarayonini boshlash to‘g‘risida qaror qabul qilingan sana",
+      "organTitle": "Kim tomonidan emissiya haqiqiy emas deb topilgan",
+      "procedureTitle": "Bankrotlik jarayoni",
+      "dateBeginTitle": "Qaror qabul qilingan sana"
+    },
+    "fact34": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "meetingEmintetTitle": "Emitent yig‘ilishi nomi",
+      "docEmintetTitle": "Ko‘rsatilgan o‘zgarishlarga asos bo‘luvchi hujjat"
+    },
+    "fact35": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "meetingEmintetTitle": "Emitent yig‘ilishi nomi",
+      "docEmintetTitle": "Ko‘rsatilgan o‘zgarishlarga asos bo‘luvchi hujjat"
+    },
+    "fact36": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "dateVnesnTitle": "Emitent tomonidan tegishli o'zgartirishning affillangan shaxslar ro‘yxatiga kiritilgan sana"
+    },
+    "fact37": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "stockKindTitle": "Qaytarib olish huquqiga ega bo'lgan qimmatli qog'ozlar turi",
+      "stockTypeTitle": "Qaytarib olish huquqiga ega bo'lgan qimmatli qog'ozlar sinfi",
+      "stocksNominalCostTitle": "Qaytarib olish huquqiga ega bo'lgan qimmatli qog'ozlarning nominal qiymati (so‘m/1 dona)",
+      "buyoutReasonTitle": "Qimmatli qog'ozlar egalarining qaytarib olish talab qilish huquqining sababi",
+      "decisionDateTitle": "Qaytarib olish huquqining paydo bo‘lishiga olib kelgan qaror qabul qilingan sana",
+      "buyoutPriceTitle": "Qaytarib olish narxi (so‘m/1 dona)",
+      "buyoutStartDateTitle": "Qaytarib olishning boshlanish sanasi"
+    },
+    "fact38": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "decisionDateTitle": "Qaror qabul qilingan sana",
+      "dateRegistrationTitle": "Ro‘yxatdan o‘tgan sana",
+      "foreignCapMarketsTitle": "Ro‘yxatdan o‘tgan xorijiy fond birjalari"
+    },
+    "fact39": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "decisionDateTitle": "Qaror qabul qilingan sana",
+      "dateRegistrationTitle": "Ro‘yxatdan o‘tgan sana",
+      "foreignCapMarketsTitle": "Ro‘yxatdan o‘tgan xorijiy fond birjalari"
+    },
+    "fact41": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi"
+    },
+    "fact42": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi"
+    },
+    "fact43": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi"
+    },
+    "fact44": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi"
+    },
+    "fact45": {
+      "title": "Muhim fakt haqida ma'lumot",
+      "factNumberTitle": "Muhim fakt raqami",
+      "factTitleTitle": "Muhim fakt nomi",
+      "shareholderFullnameTitle": "Aktsiyadorning F.I.O. yoki yuridik shaxsning to‘liq nomi",
+      "shareholderEmailTitle": "Aktsiyadorning pochta manzili",
+      "securitiesTypeTitle": "Qaytarib olish talab qilish huquqini beruvchi qimmatli qog‘ozlar turi",
+      "securitiesNominalPriceTitle": "Qaytarib olish talab qilish huquqini beruvchi qimmatli qog‘ozlarning nominal qiymati (so‘m/1 dona)",
+      "reasonsForBuyTitle": "Qaytarib olish talab qilish huquqining asoslari",
+      "solutionApprovalDateTitle": "Qaytarib olish talab qilish huquqini keltirib chiqargan qaror qabul qilingan sana",
+      "redemptionPriceTitle": "Qaytarib olish narxi (so‘m/1 dona)",
+      "redemptionStartDateTitle": "Qaytarib olish boshlanish sanasi"
+    }
+  },
+  "Navigation": {
+    "main": "Asosiy",
+    "market_filter": "Bozor filtri",
+    "license_certification": "Litsenziya & Attestatsiya",
+    "investment_brokers": "Investitsion vositachilar",
+    "legislation": "Qonunchilik",
+    "issuer_profile": "Emitent idorasi",
+    "investor_account": " Investor hisobi",
+    "menu": "Menu",
+    "organizations": "Emitentlar profili",
+    "login": "Login",
+    "sitemap": "Sayt xaritasi",
+    "portfolio": "Portfolio"
+  },
+  "Footer": {
+    "portal_description": "O'zbekiston Respublikasi Milliy istiqbolli loyihalar agentligining yagona korporativ axborot portali",
+    "address": "Toshkent shahri, Mirabod tumani, Navoiy ko'chasi, 22, 100015",
+    "moderator_phone": "Moderator telefoni:",
+    "moderator_email": "Moderator elektron pochtasi:",
+    "agency_description": "O'zbekiston Respublikasi Milliy istiqbolli loyihalar agentligi",
+    "resource_center": "Fond bozorining axborot-resurs markazi",
+    "copyright": "Barcha huquqlar himoyalangan © 2015 - 2025",
+    "usage_notice": "Ushbu saytda chop etilgan materiallardan foydalanishda openinfo.uz havolasi shart.",
+    "technical_support": "Veb-saytni ishlab chiqish va texnik yordam:"
+  },
+  "TableHeaders": {
+    "issuer": "Emitent",
+    "fact_number": "Fakt ",
+    "disclosure_date": "Oshkor etish sanasi",
+    "all": "Barchasi",
+    "report_types": "Hisobot turlari",
+    "an_type": "E'lon turi"
+  },
+  "Status": {
+    "loading": "Yuklanmoqda..."
+  },
+  "Errors": {
+    "fetch_failed": "Ma'lumotlarni olish muvaffaqiyatsiz tugadi"
+  },
+  "main": {
+    "informationdisclosuretabs": {
+      "facts": "Muhim faktlar",
+      "devidends": "Dividendlar",
+      "finance": "Moliyaviy hisobot",
+      "announcements": "E'lonlar",
+      "securities": "Qimmatli qog'ozlar chiqarish",
+      "dedline_calendar": "Hodisalar kalendar"
+    }
+  },
+  "Reports": {
+    "name_of_the_issuer": "Emitentning nomi",
+    "full_name_text": "To'liq nomi",
+    "short_name_text": "Qisqa nomi",
+    "exchange_ticket_name": "Fond birjasi tikeri nomi",
+    "contact_details": "Aloqa ma'lumotlari",
+    "location": "Joylashuv",
+    "address": "Pochta manzili",
+    "email": "Elektron pochta manzili",
+    "web_site": "Rasmiy veb-sayt",
+    "responsible_persons": "Mas'ul shaxslar",
+    "bank_requisites": "Bank ma'lumotlari",
+    "serving_bank": "Xizmat ko'rsatuvchi bank",
+    "account_number": "Hisob raqami",
+    "mfo": "MFO",
+    "registration_numbers": "Ro'yxatga olish va identifikatsiya raqamlari",
+    "gov_reg_number": "Ro‘yxatga olish organi tomonidan berilgan davlat ro‘yxatidan o‘tkazish raqami",
+    "inn": "Davlat soliq xizmati organi (INN) tomonidan tayinlangan",
+    "kfs": "KFS",
+    "okpo": "OKPO",
+    "okonx": "OKONKH",
+    "soato": "SOATO",
+    "position": "Lavozim nomi",
+    "indicator_name": "Ko'rsatkich nomi",
+    "row_code": "Qator kodi",
+    "start_period": "Hisobot davri boshida ",
+    "end_period": "Hisobot davri oxirida ",
+    "previous_period": "O‘tgan yilning mos davri uchun",
+    "income_previous": "Daromadlar (foyda)",
+    "expense_previous": "Xarajatlar (zarar)",
+    "reporting_period": "Hisobot davri uchun",
+    "income_current": "Daromadlar (foyda)",
+    "expense_current": "Xarajatlar (zarar)",
+    "balance_sheet": "Balans",
+    "financial_results": "Moliyaviy natijalar",
+    "report_approval": "Hisobotni tasdiqlash",
+    "emitent_body": "Hisobotni tasdiqlagan emitentning organi",
+    "approval_date": "Hisobotni tasdiqlash sanasi",
+    "annual_activity_report": "Emitentning moliyaviy-iqtisodiy holati ko'rsatkichlari",
+    "accrued_income_report": "Hisobot yilida qimmatli qog'ozlar bo'yicha hisoblangan daromadlar hajmi",
+    "existing_debt_report": "Qimmatli qog'ozlar bo'yicha daromadlarni to'lash bo'yicha mavjud qarz",
+    "personnel_change_report": "Kuzatuv kengashi, taftish komissiyasi yoki ijroiya organi tarkibidagi o'zgarishlar",
+    "additional_stock_submission": "Basic information on additionally issued securities (filled in if securities were issued during the reporting period)",
+    "facts_report": "Emitentning hisobot yilidagi faoliyatidagi muhim faktlar",
+    "audition_result_report": "Audit natijalari to'g'risida ma'lumot",
+    "affiliates_list_report": "Filiallangan shaxslar ro‘yxati (hisobot yili yakuni bo‘yicha)"
+  },
+  "PersonnelChangeReport": {
+    "decision_date": "Qaror qabul qilingan sana",
+    "start_duty_date": "Majburiyat boshlanish sanasi",
+    "full_name": "F.I.Sh.",
+    "position": "Lavozim",
+    "authority": "Qaror qabul qilgan organ",
+    "result": "Saylangan (tayinlangan) / tarkibdan chiqarilgan (iste’foga chiqqan, vakolat muddati tugagan)"
+  },
+  "AffiliatesListReport": {
+    "full_name": "F.I.Sh. yoki to‘liq nomi",
+    "location": "Joylashuvi (yashash joyi) (davlat, viloyat, shahar, tuman)",
+    "legal_basis": "Ularning affillangan shaxs sifatida tan olinishi uchun asos",
+    "legal_basis_date": "Sana (asos yuzaga kelgan sana)"
+  },
+  "AuditionResultReport": {
+    "org_name": "Auditorlik tashkiloti nomi",
+    "license_date": "Litsenziya berilgan sana",
+    "license_number": "Litsenziya raqami",
+    "conclusion_type": "Xulosa turi",
+    "conclusion_date": "Auditorlik xulosasi berilgan sana",
+    "conclusion_number": "Auditorlik xulosasi raqami",
+    "auditor_name": "Tekshiruv o'tkazgan auditor(lar)ning F.I.Sh.",
+    "conclusion_file": "Auditorlik xulosasi nusxasi",
+    "download_pdf": "PDF yuklab olish"
+  },
+  "FactsReport": {
+    "fact_name": "Muhim fakt nomi",
+    "fact_number": "Muhim fakt raqami",
+    "fact_date": "Muhim fakt sodir bo‘lgan sana",
+    "publication_date": "Muhim fakt e’lon qilingan sana"
+  },
+  "Tables": {
+    "securities": "Qimmatli qog'ozlar"
+  },
+  "SecuritiesTable": {
+    "organization_name": "Tashkilot nomi",
+    "publication_date": "E'lon qilingan sana",
+    "approved_date": "Tasdiqlangan sana",
+    "select_type": "Tur bo‘yicha filtrlash",
+    "fetch_failed": "Maʼlumotlarni yuklab boʻlmadi",
+    "options": {
+      "jsc": "AJ",
+      "bank": "Bank",
+      "pc": "PK",
+      "llc": "MCHJ"
+    }
+  },
+  "DividendTable": {
+    "issuer_name": "Emitent nomi",
+    "decision_date": "Qaror sanasi",
+    "amount": "Summasi (UZS)",
+    "percent": "Foiz (%)",
+    "start_date": "Boshlanish sanasi",
+    "end_date": "Tugash sanasi",
+    "ordinary": "Oddiy",
+    "preferred": "Imtiyozli",
+    "bond": "Obligatsiya",
+    "download": " Yuklab olish",
+    "search_placeholder": "Qidirish",
+    "annual_interest": "Yillik kupon stavkasi %"
+  },
+  "AnnouncementTable": {
+    "organization": " Tashkilot",
+    "title": " E'lon nomi",
+    "pub_date": " E'lon qilingan sana",
+    "meeting_date": " Yig'ilish sanasi",
+    "search_placeholder": " Qidirish"
+  },
+  "TradeAnalytics": {
+    "top_by_deals": "Bitimlar bo‘yicha top 5 emitent",
+    "top_by_volume": "Hajm bo‘yicha top 5 emitent (ming so‘m)",
+    "issuer": "Emitent",
+    "deals": "Bitimlar",
+    "volume": "Hajm",
+    "last_30_days": "oxirgi 30 kun ichida"
+  },
+  "Home": {
+    "disclosure_of_information": "Ma’lumotlarni oshkor qilish",
+    "calendars": "Kalendarlar",
+    "analytics_and_opinions": "Eng ko'p ko'rilgan muhim faktlar",
+    "statistics": "Statistika"
+  },
+  "Sidebar": {
+    "quotes": "Narxlar",
+    "watchlist": "Kuzatuv ro'yxati",
+    "notifications": "Bildirishnomalar",
+    "fees": "To'lovlar va tariflar"
+  },
+  "SecuritiesTableSidebar": {
+    "ticker": "Tiker",
+    "price": "Narx",
+    "change": "O'zgarish",
+    "change_percent": "%"
+  },
+  "StockTabs": {
+    "1D": "1 Kun",
+    "1W": "1 Hafta",
+    "1M": "1 Oy",
+    "6M": "6 Oy"
+  },
+  "QuotesTabs": {
+    "obligations": "Obligatsiyalar",
+    "stock": "Aksiyalar",
+    "exchange_rates": "Valyuta kurslari"
+  },
+  "AttestationTabs": {
+    "attestation": "Attestatsiya",
+    "license": "Litsenziya",
+    "certification": " Sertifikatlash",
+    "testProcess": "Test jarayoni",
+    "questions_list": "Test savollari ro'yxati",
+    "download": "Yuklab olish",
+    "investment_intermediary": "Investitsion vositachilar",
+    "investment_manager": " Investitsion boshqaruvchi",
+    "investment_consultant": "Investitsion maslahatchi",
+    "organization_column": "Tashkilot",
+    "service_name": "Xizmat nomi",
+    "license_number": "Litsenziya raqami",
+    "date_issue": "Litsenziya berilgan sana",
+    "full_name_owner_certificate": "Sertifikat egasining F.I.O.",
+    "category": "Kategoriya",
+    "date_issue_certificate": " Sertifikat berilgan sana",
+    "date_expiration_certificate": "Sertifikat amal qilish muddati",
+    "as_of_date": "Amaldagi sana",
+    "get_license": " Litsenziya olish"
+  },
+  "ExchangeRatesTable": {
+    "currency": "Valyuta",
+    "rate": "Valyuta kursi",
+    "diff": "Farq",
+    "change_percent": "O'zgarish (%)"
+  },
+  "UCIChart": {
+    "title": "📈 Oʻzbekiston Kompozit Indeksi (UCI)",
+    "description": "Oʻzbekiston Kompozit Indeksi (UCI) - bu O‘zbekiston Respublikasi Fond Birjasi 'Toshkent' (UZSE) birja indeksidir, u ro‘yxatga olingan aksiyadorlik jamiyatlari va ularning bozor kapitallashuvining umumiy natijalarini aks ettiradi.",
+    "last_updated": "Oxirgi yangilanish",
+    "current_index": "Joriy indeks",
+    "fetch_error": "Narx indekslarini olishda xatolik yuz berdi",
+    "uci-today": "Bugungi UCI indeksi"
+  },
+  "Pagination": {
+    "previous": "Oldingi",
+    "next": "Keyingi",
+    "showing": "Ko'rsatilmoqda",
+    "to": "chi",
+    "of": "dan",
+    "results": "natijalar"
+  },
+  "Legislation": {
+    "legislation_title": "Qimmatli qog'ozlar bozori qonunchiligi:",
+    "legislation_law_on_licesing": "Закон Республики Узбекистан, от 14.07.2021 г. № ЗРУ-701",
+    "legislation_law_on_sec": "Закон Республики Узбекистан, от 03.06.2015 г. № ЗРУ-387",
+    "legislation_law_on_exchange": "Закон Республики Узбекистан 'О Биржах И Биржевой Деятельности'",
+    "legislation_on_investment": "Закон Республики Узбекистан, от 25.08.2015 г. № ЗРУ-392",
+    "legislation_resolution_of_the_cabinet": "Постановление Кабинета Министров Республики Узбекистан, от 21.02.2022 г. № 80",
+    "legislation_cabinet_of_ministers": "Постановление Кабинета Министров Республики Узбекистан, от 25.02.2022 г. № 88",
+    "legislation_cabine_of_ministers_no_304": "Постановление Кабинета Министров Республики Узбекистан, от 07.06.2022 г. № 304",
+    "legislation_resolution__of_the_no_189": "Постановление Кабинета Министров Республики Узбекистан, от 19.04.2003 г. № 189",
+    "legislation_regulation_of_the_cabinet": "Приказ генерального директора Центра по координации и контролю за функционированием рынка ценных бумаг при Госкомимуществе Республики Узбекистан, зарегистрировано 13.03.2002 г., рег. номер 1108",
+    "legislation_on_amendments_and_addition": "Приказ директора Агентства по развитию рынка капитала Республики Узбекистан, зарегистрировано 23.10.2019 г., рег. номер 1899-8",
+    "legislation_on_amending_clause_1": "Приказ директора Агенства по развитию рынка капитала Республики Узбекистан, зарегистрировано 11.03.2019 г., рег. номер 1495-7",
+    "law1": "'Лицензиялаш, рухсат бериш ва хабардор қилиш тартиб-таомиллари тўғрисида'ги Қонун; ",
+    "law2": "'Қимматли қоғозлар бозори тўғрисида'ги Қонун;  ",
+    "law3": "'Биржалар ва биржа фаолияти тўғрисида' Қонун;    ",
+    "law4": "'Инвестиция ва пай фондлари тўғрисида' Қонун;  ",
+    "law5": "Вазирлар Маҳкамасининг 2022 йил 21 февралдаги 80-сонли “Махсус електрон тизим орқали айрим фаолият турларини лицензиялаш тартиби тўғрисидаги ягона низомни тасдиқлаш ҳақида”ги қарор;",
+    "law6": "Вазирлар Маҳкамасининг 2022 йил 25 февралдаги 88-сонли “Фаолиятни бошлаш ёки тугатиш учун ваколатли органни хабардор қилиш тартиби тўғрисидаги ягона низомни тасдиқлаш ҳақида'ги қарори;",
+    "law7": "Вазирлар Маҳкамасининг 2022 йил 7 июндаги 304-сонли “Қимматли қоғозлар билан операцияларни амалга ошириш ҳуқуқини олиш учун жисмоний шахсларни аттестациядан (қайта аттестациядан) ўтказиш бўйича давлат хизматларини кўрсатишнинг маъмурий регламентини тасдиқлаш тўғрисида'ги қарор;",
+    "law8": "Вазирлар Маҳкамасининг 2003 йил 19 апредаги 189-сонли “Хусусийлаштирилган корхоналарни корпоратив бошқаришни такомиллаштириш чора-тадбирлари тўғрисида” қарори;",
+    "law9": "'Қимматли қоғозлар бозорида инвестиция воситачисининг фаолияти тўғрисидаги низом' (1108-сон, 13.03.2002);",
+    "law10": "'Қимматли қоғозлар бозори профессионал иштирокчисининг ички назорати тўғрисида'ги низомга (рўйхат рақами 1899-сон, 06.02.2009й.);  ",
+    "law11": "'Қимматли қоғозлар бозорида инвестиция консультанти фаолияти тўғрисидаги Низом' (1495-сонли 15.07.2005);"
+  },
+  "AnnouncementTypes": {
+    "tender": "Tender",
+    "meetings": "Yig‘ilishlar",
+    "jobs": "Ish o‘rinlari",
+    "investments": "Investitsiyalar",
+    "corporal_management": "Korporativ boshqaruv",
+    "others": "Boshqalar"
+  },
+  "Report": {
+    "entity": {
+      "jsc": "Aksiyadorlik jamiyati",
+      "bank": "Bank",
+      "insurance": "Sug'urta kompaniyasi",
+      "llc": "Mas'uliyati cheklangan jamiyat",
+      "micro": "Mikromoliya tashkiloti"
+    },
+    "annual": "Yillik hisobot",
+    "quarter": "Hisobot",
+    "quarter_fallback": "Choraklik hisobot"
+  },
+  "message": {
+    "factAll": "Barchasi",
+    "fact1NameChange": "1. Nomini o‘zgartirish",
+    "fact2AddressChange": "2. Manzil/elektron pochta/veb-saytni o‘zgartirish",
+    "fact3Reorganization": "3. Reorganizatsiya",
+    "fact4ActivitySuspension": "4. Faoliyatni to‘xtatish",
+    "fact5ActivityTermination": "5. Faoliyatni tugatish",
+    "fact6ManagementDecisions": "6. Boshqaruv organi qarorlari",
+    "fact7SecuritiesRightsChange": "7. Qimmatli qog‘ozlarga bo‘lgan huquqlarni o‘zgartirish",
+    "fact8ManagementChanges": "8. Boshqaruv tuzilmasidagi o‘zgarishlar",
+    "fact9BranchListChanges": "9. Filiallar ro‘yxatini o‘zgartirish",
+    "fact10RepresentativeListChanges": "10. Vakolatxonalar ro‘yxatini o‘zgartirish",
+    "fact11SubsidiaryListChanges": "11. Qo‘shma korxonalar ro‘yxatini o‘zgartirish",
+    "fact12DependentCompanyListChanges": "12. Bog‘liq korxonalar ro‘yxatini o‘zgartirish",
+    "fact13PropertyOrBankAccountArrest": "13. Mulk/bank hisobini muzlatish",
+    "fact14ClaimAgainstIssuerOver10PercentAssets": "14. Emitentga 10% dan ortiq aktivlar uchun da’vo",
+    "fact15LoanOver50PercentCapital": "15. 50% dan ortiq kapital uchun qarz olish",
+    "fact16LoanOver50PercentAssets": "16. 50% dan ortiq aktivlar uchun qarz olish",
+    "fact17IncreaseInAssetValueOver10Percent": "17. Aktivlar qiymatining 10% dan oshishi",
+    "fact18DecreaseInAssetValueOver10Percent": "18. Aktivlar qiymatining 10% dan kamayishi",
+    "fact19DealOver10PercentAssets": "19. Aktivlarning 10% dan ortiq qismini o‘z ichiga olgan bitim",
+    "fact20LargeTransaction": "20. Katta hajmdagi bitim",
+    "fact21TransactionWithAffiliate": "21. Affillangan shaxs bilan bitim",
+    "fact22LicenseAcquisition": "22. Litsenziya olish",
+    "fact23LicenseAnnulmentOrTermination": "23. Litsenziyani bekor qilish/tugatish",
+    "fact24LicenseSuspension": "24. Litsenziyani to‘xtatib turish",
+    "fact25SecuritiesIssuance": "25. Qimmatli qog‘ozlarni chiqarish",
+    "fact26SecuritiesIssuanceSuspension": "26. Qimmatli qog‘ozlarni chiqarishni to‘xtatish",
+    "fact27SecuritiesIssuanceResumption": "27. Qimmatli qog‘ozlarni chiqarishni tiklash",
+    "fact28SecuritiesIssuanceRecognitionAsFailed": "28. Qimmatli qog‘ozlar chiqarilishi muvaffaqiyatsiz deb topilishi",
+    "fact29SecuritiesIssuanceRecognitionAsInvalid": "29. Qimmatli qog‘ozlar chiqarilishi haqiqiy emas deb topilishi",
+    "fact30OwnershipChangeOver10PercentShares": "30. 10% dan ortiq aksiyalar egaligining o‘zgarishi",
+    "fact31SecuritiesExecutionTerms": "31. Qimmatli qog‘ozlarni amalga oshirish muddati",
+    "fact32SecuritiesIncomeAccrual": "32. Qimmatli qog‘ozlar bo‘yicha daromad yig‘ilishi",
+    "fact33BankruptcyProcedure": "33. Bankrotlik jarayoni",
+    "fact34ManagementShareOwnershipChange": "34. Boshqaruv aksiyalar egaligining o‘zgarishi",
+    "fact35OwnershipChangeInExecutiveOrgShares": "35. Boshqaruv organi aksiyalaridagi egalik o‘zgarishi",
+    "fact36AffiliateListChanges": "36. Affillangan shaxslar ro‘yxatini o‘zgartirish",
+    "fact37RightToRedeemSecuritiesByIssuer": "37. Emitent tomonidan qimmatli qog‘ozlarni qayta sotib olish huquqi",
+    "fact38SecuritiesListingOnMarkets": "38. Qimmatli qog‘ozlarni bozorlar ro‘yxatiga kiritish",
+    "fact39SecuritiesDelistingFromMarkets": "39. Bozorlardan qimmatli qog‘ozlarni chiqarib tashlash",
+    "fact40ChangesInSecuritiesIssuanceResolution": "40. Qimmatli qog‘ozlar chiqarish qaroriga o‘zgartirish kiritish",
+    "fact41ManagementRecommendationOnDividendPayments": "41. Dividend to‘lovlari bo‘yicha boshqaruv tavsiyasi",
+    "fact42DividendPayments": "42. Dividend to‘lovlari",
+    "fact43OwnershipOf35PercentShares": "43. 35% aksiyalarning egasi",
+    "fact44AcquisitionOfSharesOver20PercentCapital": "44. 20% dan ortiq kapitalga teng aksiyalarni sotib olish",
+    "fact45OfferToBuySharesByShareholderOver50Percent": "45. 50% dan ortiq aksiyalarni sotib olish bo‘yicha taklif",
+    "fact46LongName": "Ustav fondida (ustav kapitalida) davlat ulushi 50 foiz va undan ortiq bo‘lgan hamda ular tarkibiga kiruvchi xo‘jalik jamiyatlarining kuzatuv kengashi qarorlari, davlat xaridlarining yillik va choraklik reja-jadvallarini tasdiqlash to‘g‘risida",
+    "fact46ShortName": "46. Davlat xaridlari bo‘yicha oliy boshqaruv organi qarorlari"
+  },
+  "status_activity": {
+    "active": "Faol korxona",
+    "inactive": "Faoliyatsiz korxona",
+    "liquidated": "Yopilgan korxona",
+    "not_available": "Mavjud emas"
+  },
+  "Actions": {
+    "show_more": "Ko'proq ko'rsatish",
+    "show_less": "Kamroq ko'rsatish"
+  },
+  "Login": {
+    "username": "Foydalanuvchi nomi",
+    "password": "Parol",
+    "login": "Kirish",
+    "register": "Ro‘yxatdan o‘tish",
+    "forgot_password": "Parolni unutdingizmi?",
+    "login_with_google": "Google orqali kirish",
+    "login_success": "Kirish muvaffaqiyatli bajarildi!",
+    "login_failed": "Kirish amalga oshmadi. Qayta urinib ko‘ring.",
+    "invalid_credentials": "Foydalanuvchi nomi yoki parol noto‘g‘ri. Qayta urinib ko‘ring.",
+    "loading": "Kirish...",
+    "logout": "Chiqish",
+    "title": "Hisobingizga kiring",
+    "subtitle": " Iltimos, hisobingizga kirish uchun ma'lumotlaringizni kiriting.",
+    "session_expired_title": "Sessiya muddati tugadi",
+    "session_expired_subtitle": "Iltimos, davom etish uchun qayta kiring."
+  },
+  "UnlistedNotice": {
+    "title": "Listingda emas",
+    "description": "Ushbu tashkilot hozirda fond birjasida listingda emas. Ayni paytda ochiq savdo ma'lumotlari mavjud emas.",
+    "footer": "Tez orada ma’lumotlar taqdim etiladi. Yangiliklarni kuzatib boring!"
+  },
+  "MarketScreener": {
+    "ticker": "Tiker",
+    "short_name_text": "Nomi",
+    "market_cap": "Kapitalizatsiya",
+    "ttm_earnings": "Foyda (TTM)",
+    "price_to_earnings": "P/E",
+    "price_to_book": "P/B",
+    "ttm_cutoff": "TTM kesimi",
+    "found": "{count} ta kompaniya topildi",
+    "return_on_equity": "ROE",
+    "return_on_assets": "ROA",
+    "net_margin": "Net Margin",
+    "debt_to_equity_ratio": "D/E Ratio",
+    "total_equity": "Total Equity"
+  },
+  "issuer_profile": {
+    "title": "Emitent profili",
+    "website": "Veb-sayt",
+    "status_activity": "Faoliyat holati",
+    "rfb_status": "RFB holati",
+    "director": "Direktor",
+    "bank_details": {
+      "bank_name": "Название банка",
+      "account_number": "Номер счета",
+      "mfo": "МФО"
+    },
+    "registration_numbers": {
+      "inn": "STIR",
+      "kfs": "KFS",
+      "okpo": "OKPO"
+    },
+    "disclosure_date": "Oshkor qilingan sana",
+    "report_type": "Hisobot turi",
+    "common": "Oddiy aksiya",
+    "privileged": "Imtiyozli aksiya",
+    "bond": "Obligatsiya"
+  },
+  "filters": {
+    "search_placeholder": "Kompaniya nomi yoki STIR ni kiriting...",
+    "rfb_status": "RFB holati",
+    "jsc_status": "AJ holati",
+    "organization_type": "Tashkilot turi",
+    "search": "Qidirish",
+    "clear": "Tozalash",
+    "active": "Faol korxona",
+    "inactive": "Faoliyatsiz korxona",
+    "liquidated": "Yopilgan korxona",
+    "not_available": "Mavjud emas",
+    "listed": "Listing",
+    "unlisted": "Listingdan tashqari",
+    "all": "Barchasi",
+    "jsc": "AJ",
+    "banks": "Bank",
+    "insurance_companies": "Sug'urta kompaniyasi",
+    "llc": "MCHJ",
+    "placeholder_search": "Бу ерда қидиринг... ",
+    "start_date": "Boshlanish sanasi",
+    "end_date": "Tugash sanasi",
+    "fact_type": "Muhim faktlar turlari",
+    "pick_year": "Yilni tanlang",
+    "select_report_type": "Hisobot turini tanlang",
+    "select_type": " Turini tanlang"
+  },
+  "Organizations": {
+    "exchange_status": "Birja holati",
+    "listing": "Ro'yxatga olingan",
+    "delisting": "Ro'yxatga olinmagan"
+  },
+  "TestMode": {
+    "message": "Veb-sayt test rejimida ishlamoqda"
+  },
+  "investment_brokers_menu": {
+    "sort_by_year": "Yilga qarab saralash",
+    "sort_by_amount": "Summaga qarab saralash",
+    "sort_by_quantity": "Miqdorga qarab saralash",
+    "quantity": "Miqdori:",
+    "amount": "Summasi:"
+  },
+  "profile_emitents": {
+    "general_tab": "Umumiy",
+    "earnings": "Daromadlar",
+    "balance_sheet": " Balans varaqasi",
+    "performance_indicators": "Ko'rsatkichlar Samaradorligi",
+    "trading_statistics": "Savdo statistikasi",
+    "financial_reports": "Moliyaviy hisobotlar",
+    "essential_facts": "Muhim faktlar",
+    "dividends": "Dividendlar",
+    "market_cap": "Bozor kapitalizatsiyasi",
+    "common_stock": "Oddiy aksiyalar",
+    "preferred_stock": "Imtiyozli aksiyalar",
+    "date": "Sana",
+    "amount": "Summasi",
+    "profitability": "Daromadliligi",
+    "closing_price": "Yakuniy narx",
+    "opening_price": "Boshlang'ich narx",
+    "volume_pcs": "Miqdori (dona)",
+    "volume_sum": "Hajmi (so'm)",
+    "period": {
+      "1m": "1 oy",
+      "3m": "3 oy",
+      "6m": "6 oy",
+      "1y": "1 yil",
+      "3y": "3 yil"
+    }
+  },
+  "finindicator_table": {
+    "indicator": "Ko‘rsatkich",
+    "total_equity": "Jami kapital",
+    "return_on_assets": "RAA",
+    "return_on_equity": "ROE",
+    "cost_of_risk": "Xarajatlar",
+    "net_profit_margin": "Sof foyda marjasi",
+    "debt_to_equity_ratio": "Qarz va kapital nisbati",
+    "net_profit": "Sof foyda",
+    "net_revenue": "Sof daromad",
+    "total_assets": "Jami aktivlar",
+    "total_liabilites": "Jami majburiyatlar",
+    "insurance_reserves": "Sug'urta zaxiralari",
+    "insurance_level": "Sug'urta zaxiralari darajasi",
+    "equity_level": "Kapital darajasi",
+    "return_to_capital_employed": "RCE",
+    "gross_profit_margin": "Umumiy foyda marjasi",
+    "ebit_margin": "EBIT marjasi",
+    "total_asset_turnover": "Jami aktivlar aylanishi",
+    "quick_ratio": "Shoshilinch nisbat",
+    "current_ratio": "Joriy nisbat",
+    "debt_ratio": "Qarz nisbati",
+    "price_to_earnings": "Narx va foyda nisbati",
+    "price_to_book": "Narx va kitob nisbati",
+    "earnings_per_share": "Har bir aksiya uchun foyda",
+    "book_per_share": "Har bir aksiya uchun kitob",
+    "dividends_per_share": "Har bir aksiya uchun dividendlar",
+    "sums": "Million so‘mda",
+    "ratios": "Nisbatlar %",
+    "prices": "Ming so‘mda"
+  },
+  "essential_factsTab": {
+    "fact_number": "Fakt №",
+    "disclosure_date": " Oshkor qilingan sana",
+    "essential_fact_title": "Muhim faktlar nomi",
+    "essential_facts": " Muhim faktlar"
+  },
+  "financial_reports_tab": {
+    "report_type": "Hisobot turi",
+    "report_date": "Hisobot sanasi",
+    "download_report": "Hisobotni yuklab olish"
+  },
+  "corporate_portal": {
+    "side_title": "Aksiyadorlik jamiyatida korporativ boshqaruvning ahamiyati",
+    "show_button": "Portal haqida ma'lumot"
+  },
+  "emission": {
+    "title_object_detection": "Дополнительная информация организации"
+  },
+
+  "portfolio": {
+    "header": {
+      "title": "Portfel",
+      "subtitle": "Sarmoyalar ko‘rinishi"
+    },
+    "actions": {
+      "add": "Qo‘shish",
+      "export": "Eksport"
+    },
+    "table": {
+      "ticker": "Tikker",
+      "shares": "Miqdor",
+      "initialPrice": "Boshlang‘ich narx",
+      "currentPrice": "Joriy narx",
+      "change": "O‘zgarish",
+      "value": "Qiymat",
+      "changeInSoums": "So‘mlarda o‘zgarish"
+    },
+    "summary": {
+      "title": "Umumiy portfel",
+      "from": "dan",
+      "pnl": " Foyda yoki zarar"
+    },
+    "addModal": {
+      "title": "Pozitsiya qo‘shish"
+    },
+    "editModal": {
+      "title": "Pozitsiyani tahrirlash"
+    },
+    "fields": {
+      "security": "Qimmatli qog‘oz",
+      "quantity": "Miqdor",
+      "initialPriceUZS": "Boshlang‘ich narx (UZS)"
+    },
+    "placeholders": {
+      "example100": "Masalan: 100",
+      "example12500": "Masalan: 12500"
+    },
+    "selected": {
+      "youChose": "Siz tanladingiz:",
+      "status": "Holat"
+    },
+    "common": {
+      "cancel": "Bekor qilish",
+      "save": "Saqlash",
+      "saving": "Saqlanmoqda…"
+    },
+    "errors": {
+      "selectSecurity": "Qimmatli qog‘ozni tanlang.",
+      "invalidShares": "To‘g‘ri miqdor kiriting (> 0).",
+      "invalidInitialPrice": "To‘g‘ri boshlang‘ich narx kiriting (> 0).",
+      "addFailed": "Pozitsiyani qo‘shib bo‘lmadi. Ma’lumotlarni tekshirib, qayta urinib ko‘ring.",
+      "updateFailed": "Pozitsiyani yangilab bo‘lmadi. Qayta urinib ko‘ring."
+    },
+    "search": {
+      "placeholder": "Tikker yoki nom bo‘yicha qidiring…",
+      "loading": "Yuklanmoqda…",
+      "selectSecurity": "Qimmatli qog‘ozni tanlang",
+      "nothingFound": "Hech narsa topilmadi"
+    }
+  }
+}

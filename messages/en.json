@@ -1,0 +1,1049 @@
+{
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "Hero": {
+  "title1": "Unified Corporate Information Portal",
+  "title2": "National Agency for Advanced Projects of the Republic of Uzbekistan"
+},
+  "Facts": {
+    "factbase": {
+      "title": "Issuer Information",
+      "organization_name": "Full Name",
+      "organization_short_name_text": "Short Name",
+      "org_ticket_number": "Stock Ticker Name",
+      "contact_details": "Contact Details",
+      "org_address": "Location",
+      "org_location": "Postal Address",
+      "org_email": "Email Address",
+      "org_website": "Official Website",
+      "organization_leadership": "Organization Leadership",
+      "head_person_name": "Executive Head's Full Name",
+      "accountant_person_name": "Chief Accountant's Full Name",
+      "responsible_person_name": "Person Responsible for Website Info"
+    },
+    "fact1": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "fullNameBeforeChangeTitle": "Full name before change",
+      "bodyDecidedTitle": "Issuer body that made the decision",
+      "decisionDateTitle": "Decision date",
+      "dateOfChangesRegistrationTitle": "Date of registration of relevant changes in founding documents"
+    },
+    "fact2": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "locationBeforeChangeTitle": "Location (postal address) before change",
+      "bodyDecidedTitle": "Issuer body that made the decision",
+      "decisionDateTitle": "Decision date",
+      "dateOfChangesRegistrationTitle": "Date of registration of relevant changes in founding documents"
+    },
+    "fact4": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "bodyDecidedTitle": "Issuer body that made the decision",
+      "decisionDateTitle": "Decision date",
+      "drawingDateTitle": "Protocol drafting date",
+      "suspensionDateTitle": "Date of issue suspension",
+      "decidedSuspendTitle": "Who made the decision to suspend activities",
+      "dateOfReorganizationTitle": "Date of reorganization decision",
+      "term_of_requst": "The term and procedure for accepting claims from creditors and other persons"
+    },
+    "fact5": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "bodyDecidedTitle": "Issuer body that made the decision",
+      "decisionDateTitle": "Decision date",
+      "drawingDateTitle": "Protocol drafting date",
+      "dateTerminationTitle": "Date of issue termination",
+      "decidedTerminationTitle": "Who made the decision to suspend activities",
+      "dateOfReorganizationTitle": "Date issuer received decision on termination",
+      "termOfRequestTitle": "Deadline for accepting claims from creditors and others"
+    },
+    "fact6": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "meetingTypeTitle": "Type of meeting",
+      "dateTransactionTitle": "Meeting date",
+      "dateMinutesTitle": "Minutes date",
+      "venueMeetingTitle": "Meeting venue",
+      "quorumGeneralTitle": "Meeting quorum",
+      "fullDecisionsWordingTitle": "Full wording of the decisions made by the general meeting",
+      "executiveCompensationsTitle": "Accrued and paid remuneration and/or compensations for members of the executive body, supervisory board, and audit commission of the issuer",
+      "personNameTitle": "Full name",
+      "issuerBodyTitle": "Name of the issuer body",
+      "paymentTypeTitle": "Type of payment (remuneration and/or compensation)",
+      "accruedAmountTitle": "Accrued amount (UZS)",
+      "periodTitle": "Period for which funds were accrued",
+      "documentTitle": "Document providing for the payment",
+      "electionTitle": "Election of members of the supervisory board",
+      "candidateInfoTitle": "Candidate information",
+      "workplacePositionTitle": "Workplace, position",
+      "workplaceTitle": "Workplace",
+      "positionTitle": "Position",
+      "ownedSharesTitle": "Owned shares",
+      "quantityTitle": "Quantity",
+      "typeTitle": "Type",
+      "votesCountTitle": "Number of votes"
+    },
+    "fact7": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "bodyDecidedTitle": "Issuer body that made decisions on the specified changes",
+      "decisionDateTitle": "Decision date",
+      "descriptionChangesTitle": "Description of changes",
+      "dateRegistrationTitle": "Date of registration of relevant changes in founding documents"
+    },
+    "fact8": {
+      "terminationPowersTitle": "In Case of Termination of Authority",
+      "caseElectionTitle": "In Case of Election (Appointment) of an Official"
+    },
+    "fact9": {
+      "factsInformationChangesTitle": "Information on Changes in the Branch List",
+      "factsListBranchTitle": "List of Branches with Changes"
+    },
+    "fact10": {
+      "factsInformationChangesTitle": "Information on changes in the list of representative offices",
+      "factsListBranchTitle": "List of representative offices, taking into account changes"
+    },
+    "fact11": {
+      "factsInformationAboutTitle": "Information on changes in the list of DRLs"
+    },
+    "fact12": {
+      "factsInformationAboutTitle": "Information on changes in the list of hazardous waste",
+      "factsListSubsidiarieTitle": "List of dependent business entities, taking into account changes"
+    },
+    "fact15": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitle": "Material fact name",
+      "bodyOfIssuerTitle": "Issuer body that decided to obtain a loan",
+      "purposeLoanTitle": "Purpose of obtaining a loan",
+      "dateReceiptTitle": "Date of loan receipt",
+      "loanAmountTitle": "Loan amount (UZS)",
+      "loanCapitalTitle": "Loan amount as a percentage of charter capital",
+      "nameOfBankTitle": "Name of the bank or other credit institution",
+      "maturityLoanTitle": "Loan repayment term",
+      "descriptionCollateralTitle": "Description of collateral or guarantee"
+    },
+    "fact16": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "bodyOfIssuerTitle": "Issuer body that decided to obtain a loan",
+      "purposeLoanTitle": "Purpose of obtaining a loan",
+      "dateReceiptTitle": "Date of loan receipt",
+      "loanAmountTitle": "Loan amount (UZS)",
+      "loanCapitalTitle": "Loan amount as a percentage of charter capital",
+      "nameOfBankTitle": "Name of the bank or other credit institution",
+      "maturityLoanTitle": "Loan repayment term",
+      "descriptionCollateralTitle": "Description of collateral or guarantee"
+    },
+    "fact17": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "valueOfAssetsTitle": "Issuer’s asset value at the end of the quarter preceding the quarter in which the relevant fact(s) occurred (thousand UZS)"
+    },
+    "fact18": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "valueOfAssetsTitle": "Issuer’s asset value at the end of the quarter preceding the quarter in which the relevant fact(s) occurred (thousand UZS)"
+    },
+    "fact19": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "nameCounterpartyTitle": "Full name or name of the counterparty",
+      "locationCounterpartyTitle": "Location (postal address) of the counterparty",
+      "decisionTransactionTitle": "Issuer body that made the decision on the transaction",
+      "dateDecisionTitle": "Decision date",
+      "carryingValueTitle": "Issuer’s asset carrying value at the end of the quarter preceding the transaction (thousand UZS)",
+      "dateTransactionTitle": "Transaction date",
+      "transactionAmountTitle": "Transaction amount (UZS)",
+      "typeTransactionTitle": "Type of transaction",
+      "subjectMatterTitle": "Subject matter of the transaction",
+      "issuerTransactionTitle": "Issuer's role in the transaction"
+    },
+    "fact20": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "nameCounterpartyTitle": "Full name or name of the counterparty",
+      "locationCounterpartyTitle": "Location (postal address) of the counterparty",
+      "decisionTransactionTitle": "Issuer body that made the decision on the transaction",
+      "dateDecisionTitle": "Decision date",
+      "carryingValueTitle": "Issuer’s net asset value at the end of the quarter preceding the transaction (thousand UZS)",
+      "dateTransactionTitle": "Transaction date",
+      "transactionAmountTitle": "Transaction amount (UZS)",
+      "assetsIssuerTitle": "Transaction size as a percentage of the issuer's net assets",
+      "typeTransactionTitle": "Type of transaction",
+      "subjectMatterTitle": "Subject matter of the transaction",
+      "issuerTransactionTitle": "Issuer's role in the transaction"
+    },
+    "fact21": {
+      "title": "Information on Material Fact",
+      "fact_number": "Material Fact Number",
+      "fact_title": "Material Fact Name",
+      "name_counterparty": "Full Name or Name of Counterparty",
+      "location_counterparty": "Location (postal address) of Counterparty",
+      "share_affiliated_entity": "Share of the Issuer in the Affiliated Entity (in % of charter capital)",
+      "name_affiliated_entity": "Full Name or Name of Affiliated Entity",
+      "location_affiliated_entity": "Location (postal address) of Affiliated Entity",
+      "share_emitent": "Share of the Affiliated Entity in the Issuer (in % of charter capital)",
+      "decision_transaction": "Issuer's Decision-Making Body on Transaction",
+      "date_decision": "Decision Date",
+      "transaction_amount": "Transaction Amount (UZS)",
+      "date_transaction": "Transaction Date",
+      "type_transaction": "Type of Transaction",
+      "subject_matter": "Transaction Subject Matter",
+      "issuer_transaction": "Issuer's Role in Transaction"
+    },
+    "fact22": {
+      "title": "Material Fact Information",
+      "fact_number": "Material Fact Number",
+      "fact_title": "Material Fact Name",
+      "type_activity": "Type of Activity",
+      "name_of_organ": "Licensing Authority Name",
+      "date_decision": "Decision Date of Licensing Authority",
+      "date_licensing": "License Issuance Date",
+      "number_licensing": "License Number",
+      "date_receipt": "License Receipt Date",
+      "validity_license": "License Validity Period"
+    },
+    "fact23": {
+      "title": "Material Fact Information",
+      "fact_number": "Material Fact Number",
+      "fact_title": "Material Fact Name",
+      "type_activity": "Type of Activity",
+      "date_issue": "License Issuance Date",
+      "license_number": "License Number",
+      "name_of_organ": "Licensing Authority Name",
+      "revocation_reason": "Reasons for License Revocation or Termination",
+      "revocation_organ": "Authority That Revoked or Terminated the License",
+      "date_decision_cancellation": "Decision Date on License Revocation or Termination",
+      "date_receipt_annul": "Date the Issuer Received the Revocation or Termination Decision"
+    },
+    "fact24": {
+      "title": "Material Fact Information",
+      "fact_number": "Material Fact Number",
+      "fact_title": "Material Fact Name",
+      "type_activity": "Type of Activity",
+      "date_issue": "License Issuance Date",
+      "license_number": "License Number",
+      "name_of_organ": "Licensing Authority Name",
+      "revocation_reason": "Reasons for License Revocation or Termination",
+      "revocation_organ": "Authority That Revoked or Terminated the License",
+      "date_decision_cancellation": "Decision Date on License Revocation or Termination",
+      "date_receipt_annul": "Date the Issuer Received the Revocation or Termination Decision",
+      "for_period": "Period for Which the License Was Suspended"
+    },
+    "fact25": {
+      "title": "Material Fact Information",
+      "fact_number": "Material Fact Number",
+      "fact_title": "Material Fact Name",
+      "organ": "Issuing Authority That Made the Decision",
+      "paper_type": "Type of Security",
+      "date_decision": "Decision Date",
+      "paper_num": "Number of Securities",
+      "nominal_paper_cost": "Nominal Value of One Security",
+      "total_amount": "Total Issuance Amount",
+      "date_registration": "Date of State Registration of Issuance",
+      "num_registration": "State Registration Number",
+      "placement_method": "Securities Placement Method"
+    },
+    "fact26": {
+      "title": "Material Fact Information",
+      "fact_number": "Material Fact Number",
+      "fact_title": "Material Fact Name",
+      "paper_type": "Type of Security",
+      "paper_num": "Number of Securities",
+      "nominal_paper_cost": "Nominal Value of One Security",
+      "total_amount": "Total Issuance Amount",
+      "organ": "Issuing Authority That Made the Decision",
+      "date_decision": "Decision Date",
+      "date_registration": "Date of State Registration of Issuance",
+      "num_registration": "State Registration Number",
+      "placement_method": "Securities Placement Method"
+    },
+    "fact27": {
+      "title": "Material Fact Information",
+      "fact_number": "Material Fact Number",
+      "fact_title": "Material Fact Name",
+      "paper_type": "Type of Security",
+      "paper_num": "Number of Securities",
+      "nominal_paper_cost": "Nominal Value of One Security",
+      "total_amount": "Total Issuance Amount",
+      "organ": "Issuing Authority That Made the Decision",
+      "date_decision": "Decision Date",
+      "date_registration": "Date of State Registration of Issuance",
+      "num_registration": "State Registration Number",
+      "placement_method": "Securities Placement Method"
+    },
+    "fact28": {
+      "title": "Material Fact Information",
+      "fact_number": "Material Fact Number",
+      "fact_title": "Material Fact Name",
+      "paper_type": "Type of Security",
+      "paper_num": "Number of Securities",
+      "nominal_paper_cost": "Nominal Value of One Security",
+      "total_amount": "Total Issuance Amount",
+      "date_registration": "Date of State Registration of Issuance",
+      "num_registration": "State Registration Number",
+      "suspension_reason": "Reasons for Declaring the Securities Issuance Invalid",
+      "date_recognition_of_fail": "Date of Declaring the Securities Issuance Invalid",
+      "date_solutions": "Decision Date by the Issuer",
+      "procedure_repayment": "Procedure for Refund of Funds for Placed Securities"
+    },
+    "fact29": {
+      "title": "Material Fact Information",
+      "fact_number": "Material Fact Number",
+      "fact_title": "Material Fact Name",
+      "paper_type": "Type of Security",
+      "paper_num": "Number of Securities",
+      "nominal_paper_cost": "Nominal Value of One Security",
+      "date_registration": "Date of State Registration of Issuance",
+      "num_registration": "State Registration Number",
+      "who_declared_invalid": "Who Declared the Issuance Invalid",
+      "suspension_reason": "Reasons for Declaring the Securities Issuance Invalid",
+      "date_recognition": "Date of Declaring the Securities Issuance Invalid"
+    },
+    "fact30": {
+      "title": "Material Fact Information",
+      "fact_number": "Material Fact Number",
+      "fact_title": "Material Fact Name",
+      "meeting_emittent": "Issuer Authority that Made the Decision",
+      "date_apply": "Decision Date",
+      "date_protocol": "Protocol Creation Date",
+      "legal_entities_title": "List of Legal Entities where the Issuer Owns 10% or More Shares",
+      "changes_in_ownership_title": "Changes in the List of Legal Entities where the Issuer Owns 10% or More Shares"
+    },
+    "fact31": {
+      "title": "Material Fact Information",
+      "fact_number": "Material Fact Number",
+      "fact_title": "Material Fact Name",
+      "organ": "Issuer Authority that Made the Decision",
+      "description_issuers_obligations": "Description of the Issuer's Obligations to Its Securities Holders",
+      "date_solution": "Decision Date",
+      "dateSolution": "Decision Date",
+      "date_begin": "Start Date of Obligation Fulfillment",
+      "date_end": "End Date of Obligation Fulfillment"
+    },
+    "fact32": {
+      "title": "Fact 32 Title",
+      "fact_number": "Fact number",
+      "fact_title": "Fact title",
+      "person_emitet": "Issuer authority",
+      "date_solution": "Decision date",
+      "date_parsect": "Protocol date",
+      "dividends_common": "Dividends on common shares",
+      "sum_aksiya": "Sum per share",
+      "one_procent": "Percentage of nominal value",
+      "dividends_preferred": "Dividends on preferred shares",
+      "sum_aksiya2": "Sum per share",
+      "one_procent2": "Percentage of nominal value",
+      "corporate_bonds": "Corporate bonds",
+      "sum_per": "Sum per bond",
+      "percentage_nominal": "Percentage of nominal value",
+      "infrastructure_bonds": "Infrastructure bonds",
+      "sum_per2": "Sum per bond",
+      "percentage_nominal2": "Percentage of nominal value",
+      "payment_dates": "Payment dates",
+      "security_type": "Security type",
+      "start_date": "Start date",
+      "end_date": "End date",
+      "common_shares": "Common shares",
+      "preferred_shares": "Preferred shares",
+      "form_of_payment": "Form of payment"
+    },
+    "fact33": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "dateSolutionTitle": "Date of the decision to initiate bankruptcy proceedings",
+      "organTitle": "Who declared the issuance invalid",
+      "procedureTitle": "Bankruptcy procedure",
+      "dateBeginTitle": "Decision date"
+    },
+    "fact34": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "meetingEmintetTitle": "Issuer meeting name",
+      "docEmintetTitle": "Document serving as the basis for the stated changes"
+    },
+    "fact35": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "meetingEmintetTitle": "Issuer meeting name",
+      "docEmintetTitle": "Document serving as the basis for the stated changes"
+    },
+    "fact36": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "dateVnesnTitle": "Date the issuer made the corresponding change to the list of affiliated persons"
+    },
+    "fact37": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "stockKindTitle": "Type of securities whose owners have a buyout claim right",
+      "stockTypeTitle": "Class of securities whose owners have a buyout claim right",
+      "stocksNominalCostTitle": "Nominal value of a security whose owner has a buyout claim right (UZS/1 unit)",
+      "buyoutReasonTitle": "Reason for security holders' right to demand a buyout",
+      "decisionDateTitle": "Decision date leading to the emergence of the buyout claim right",
+      "buyoutPriceTitle": "Price at which the buyout is carried out (UZS/1 unit)",
+      "buyoutStartDateTitle": "Buyout start date"
+    },
+    "fact38": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "decisionDateTitle": "Decision date",
+      "dateRegistrationTitle": "Registration date",
+      "foreignCapMarketsTitle": "Registered foreign stock exchanges"
+    },
+    "fact39": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "decisionDateTitle": "Decision date",
+      "dateRegistrationTitle": "Registration date",
+      "foreignCapMarketsTitle": "Registered foreign stock exchanges"
+    },
+    "fact40": {
+      "titleFactNumber": "Order of material fact:",
+      "fact_number": "Номер существенного факта:"
+    },
+    "fact41": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name"
+    },
+    "fact42": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name"
+    },
+    "fact43": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name"
+    },
+    "fact44": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name"
+    },
+    "fact45": {
+      "title": "Information on a Material Fact",
+      "factNumberTitle": "Material fact number",
+      "factTitleTitle": "Material fact name",
+      "shareholderFullnameTitle": "Shareholder’s full name or legal entity name",
+      "shareholderEmailTitle": "Shareholder’s postal address",
+      "securitiesTypeTitle": "Type of securities that grant the right to a buyout claim",
+      "securitiesNominalPriceTitle": "Nominal value of the security that grants the right to demand a buyout (UZS/1 unit)",
+      "reasonsForBuyTitle": "Reasons for the right to demand a buyout",
+      "solutionApprovalDateTitle": "Decision date that grants the right to demand a buyout",
+      "redemptionPriceTitle": "Redemption price (UZS/1 unit)",
+      "redemptionStartDateTitle": "Redemption start date"
+    }
+  },
+  "Navigation": {
+    "main": "Home",
+    "market_filter": "Market Filter",
+    "license_certification": "License & Certification",
+    "investment_brokers": "Investment Brokers",
+    "legislation": "Legislation",
+    "issuer_profile": "Issuer's office",
+    "investor_account": "Investor's account",
+    "organizations": "Issuer’s profile",
+    "menu": "Menu",
+    "sitemap": "Site Map",
+    "login": "Login",
+    "portfolio": "Portfolio"
+  },
+  "Footer": {
+    "portal_description": "The Unified Corporate Information Portal of the National Agency for Perspective Projects of the Republic of Uzbekistan",
+    "address": "Tashkent, Mirabad district, Navoiy street, 22, 100015",
+    "moderator_phone": "Moderator phone:",
+    "moderator_email": "Moderator email:",
+    "agency_description": "National Agency for Perspective Projects of the Republic of Uzbekistan",
+    "resource_center": "Information Resource Center of the Stock Market",
+    "copyright": "All rights reserved © 2015 - 2025",
+    "usage_notice": "When using materials published on this site, a link to openinfo.uz is required.",
+    "technical_support": "Website development and technical support:"
+  },
+  "TableHeaders": {
+    "issuer": "Issuer",
+    "fact_number": "Fact ",
+    "disclosure_date": "Disclosure Date",
+    "all": "All",
+    "report_types": "Report Types",
+    "an_type": " Announcement Type"
+  },
+  "Status": {
+    "loading": "Loading..."
+  },
+  "Errors": {
+    "fetch_failed": "Failed to fetch data"
+  },
+  "main": {
+    "informationdisclosuretabs": {
+      "facts": "Essential Facts",
+      "devidends": "Dividends",
+      "finance": "Financial Reports",
+      "announcements": "Announcements",
+      "securities": "Securities Issuance",
+      "dedline_calendar": "Events Calendar"
+    }
+  },
+  "Reports": {
+    "name_of_the_issuer": "Name of the Issuer",
+    "full_name_text": "Full Name",
+    "short_name_text": "Short Name",
+    "exchange_ticket_name": "Stock Ticker Name",
+    "contact_details": "Contact Details",
+    "location": "Location",
+    "address": "Postal Address",
+    "email": "Email Address",
+    "web_site": "Official Website",
+    "responsible_persons": "Responsible Persons",
+    "bank_requisites": "Bank Requisites",
+    "serving_bank": "Name of the servicing bank",
+    "account_number": "Account Number",
+    "mfo": "MFO",
+    "registration_numbers": "Registration and identification numbers",
+    "gov_reg_number": "State registration number assigned by the registration authority",
+    "inn": "Assigned by the state tax service authority (INN)",
+    "kfs": "KFS",
+    "okpo": "OKPO",
+    "okonx": "OKONH",
+    "soato": "SOATO",
+    "position": "Position name",
+    "indicator_name": "Indicator Name",
+    "row_code": "Row Code",
+    "start_period": "At the Beginning of the Reporting Period ",
+    "end_period": "At the End of the Reporting Period",
+    "previous_period": "For the Corresponding Period of the Previous Year",
+    "income_previous": "Income (Profit)",
+    "expense_previous": "Expenses (Losses)",
+    "reporting_period": "For the Reporting Period",
+    "income_current": "Income (Profit)",
+    "expense_current": "Expenses (Losses)",
+    "balance_sheet": "Balance Sheet",
+    "financial_results": "Financial Results",
+    "report_approval": "Report Approval",
+    "emitent_body": "Issuer's Decision-Making Body",
+    "approval_date": "Approval Date",
+    "annual_activity_report": "Annual Activity Report",
+    "accrued_income_report": "The volume of accrued income on securities in the reporting year",
+    "existing_debt_report": "Existing debt on payment of income on securities",
+    "personnel_change_report": "Changes in the composition of the supervisory board, audit commission or executive body",
+    "additional_stock_submission": "Basic information on additionally issued securities (filled in if securities were issued during the reporting period)",
+    "facts_report": "Material facts in the issuer's activities for the reporting year",
+    "audition_result_report": "Information on the results of the audit",
+    "affiliates_list_report": "List of affiliated persons (as of the end of the reporting year)"
+  },
+  "PersonnelChangeReport": {
+    "decision_date": "Decision Date",
+    "start_duty_date": "Start of Duty Date",
+    "full_name": "Full Name",
+    "position": "Position",
+    "authority": "Authority Making Decision",
+    "result": "Elected (appointed) / removed (dismissed, term expired)"
+  },
+  "AffiliatesListReport": {
+    "full_name": "Full Name or Legal Entity Name",
+    "location": "Location (Country, Region, City, District)",
+    "legal_basis": "Legal Basis for Recognition as an Affiliate",
+    "legal_basis_date": "Date (of Basis Occurrence)"
+  },
+  "AuditionResultReport": {
+    "org_name": "Name of the Auditing Organization",
+    "license_date": "License Issue Date",
+    "license_number": "License Number",
+    "conclusion_type": "Type of Conclusion",
+    "conclusion_date": "Audit Conclusion Issue Date",
+    "conclusion_number": "Audit Conclusion Number",
+    "auditor_name": "Full Name of the Auditor(s) Conducting the Audit",
+    "conclusion_file": "Copy of the Audit Conclusion",
+    "download_pdf": "Download PDF"
+  },
+  "FactsReport": {
+    "fact_name": "Name of the Significant Fact",
+    "fact_number": "Significant Fact Number",
+    "fact_date": "Date of Occurrence of the Significant Fact",
+    "publication_date": "Publication Date of the Significant Fact"
+  },
+  "Tables": {
+    "securities": "Securities"
+  },
+  "SecuritiesTable": {
+    "organization_name": "Organization Name",
+    "publication_date": "Publication Date",
+    "approved_date": "Approved Date",
+    "select_type": "Filter by type",
+    "fetch_failed": "Failed to fetch data",
+    "options": {
+      "all": "",
+      "jsc": "JSC",
+      "bank": "Bank",
+      "pc": "PC",
+      "llc": "LLC"
+    }
+  },
+  "DividendTable": {
+    "issuer_name": "Issuer Name",
+    "decision_date": "Decision Date",
+    "amount": "Amount (UZS)",
+    "percent": "Percent (%)",
+    "start_date": "Start Date",
+    "end_date": "End Date",
+    "ordinary": "Ordinary",
+    "preferred": "Preferred",
+    "bond": "Bond",
+    "download": "Download",
+    "search_placeholder": "Search by issuer name",
+    "annual_interest": "Annual Interest %"
+  },
+  "AnnouncementTable": {
+    "organization": "Organization",
+    "title": "Title",
+    "pub_date": "Publication Date",
+    "meeting_date": "Meeting Date",
+    "search_placeholder": "Search announcements..."
+  },
+  "TradeAnalytics": {
+    "top_by_deals": "Top 5 issuers by deals",
+    "top_by_volume": "Top 5 issuers by volume (thousand soums)",
+    "issuer": "Issuer",
+    "deals": "Deals",
+    "volume": "Volume",
+    "last_30_days": "in the last 30 days"
+  },
+  "Home": {
+    "disclosure_of_information": "Disclosure of information",
+    "calendars": "Calendars",
+    "analytics_and_opinions": "Essential Facts with Highest Views",
+    "statistics": "Statistics"
+  },
+  "Sidebar": {
+    "quotes": "Quotes",
+    "watchlist": "Watchlist",
+    "notifications": "Notifications",
+    "fees": "Fees"
+  },
+  "SecuritiesTableSidebar": {
+    "ticker": "Ticker",
+    "price": "Price",
+    "change": "Change",
+    "change_percent": "%"
+  },
+  "StockTabs": {
+    "1D": "1 Day",
+    "1W": "1 Week",
+    "1M": "1 Month",
+    "6M": "6 Months"
+  },
+  "AttestationTabs": {
+    "attestation": "Attestation",
+    "license": "License",
+    "testProcess": "Take the test",
+    "certification": "Certification",
+    "questions_list": "List of test questions",
+    "download": "Download",
+    "investment_intermediary": "The activity of an investment intermediary",
+    "investment_manager": "Activities of a trustee of investment assets",
+    "investment_consultant": "Investment consultant",
+    "organization_column": "Organization",
+    "service_name": "Service Name",
+    "license_number": "License Number",
+    "date_issue": "Date of issue",
+    "full_name_owner_certificate": "Full name of the certificate holder",
+    "category": "Category",
+    "date_issue_certificate": "Date of issue of the certificate",
+    "date_expiration_certificate": "Date of certificate expiration",
+    "as_of_date": "As of ",
+    "get_license": "Get License"
+  },
+  "QuotesTabs": {
+    "obligations": "Obligations",
+    "stock": "Stock",
+    "exchange_rates": "Exchange Rates"
+  },
+  "ExchangeRatesTable": {
+    "currency": "Currency",
+    "rate": "Exchange Rate",
+    "diff": "Difference",
+    "change_percent": "Change (%)"
+  },
+  "UCIChart": {
+    "title": "📈 Uzbekistan Composite Index (UCI)",
+    "description": "The Uzbekistan Composite Index (UCI) is a stock exchange index of the Republican Stock Exchange 'Tashkent' (UZSE), reflecting the overall performance of listed joint-stock companies and their market capitalization.",
+    "last_updated": "Last updated",
+    "current_index": "Current index",
+    "fetch_error": "Failed to fetch price indices data",
+    "uci-today": "UCI Index Today"
+  },
+  "Pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "showing": "Showing",
+    "to": "to",
+    "of": "of",
+    "results": "results"
+  },
+  "Legislation": {
+    "legislation_title": "Legislation of Capital Market",
+    "legislation_law_on_licesing": "Law of the Republic of Uzbekistan, от 14.07.2021 г. № LRU-701",
+    "legislation_law_on_sec": "Law of the Republic of Uzbekistan, от 03.06.2015 г. № LRU-387",
+    "legislation_law_on_exchange": " LAW OF THE REPUBLIC OF UZBEKISTAN REGARDING STOCK EXCHANGE AND STOCK EXCHANGE ACTIVITY",
+    "legislation_on_investment": "Law of the Republic of Uzbekistan, от 25.08.2015 г. № LRU-392",
+    "legislation_resolution_of_the_cabinet": " Resolution of the Cabinet of Ministers of the Republic of Uzbekistan, от 21.02.2022 г. № 80",
+    "legislation_cabinet_of_ministers": " Resolution of the Cabinet of Ministers of the Republic of Uzbekistan, от 25.02.2022 г. № 88",
+    "legislation_cabine_of_ministers_no_304": " Resolution of the Cabinet of Ministers of the Republic of Uzbekistan, от 07.06.2022 г. № 304",
+    "legislation_resolution__of_the_no_189": " Resolution of the Cabinet of Ministers of the Republic of Uzbekistan, от 19.04.2003 г. № 189",
+    "legislation_regulation_of_the_cabinet": " Order of the General Director of the Centre for Coordination and Control of Securities Market Functioning under the State Property Committee of the Republic of Uzbekistan, registered on 13.03.2002, reg. number 1108.",
+    "legislation_on_amendments_and_addition": " Order of the Director of the Capital Market Development Agency of the Republic of Uzbekistan, registered on 23.10.2019, reg. number 1899-8",
+    "legislation_on_amending_clause_1": " Order of the Director of the Capital Market Development Agency of the Republic of Uzbekistan, registered on 11.03.2019, reg. number 1495-7",
+    "law1": "Law on Licensing, Permitting, and Notification Procedure;",
+    "law2": "Law 'On the Securities Market'",
+    "law3": "Law on Exchanges and exchange activities;",
+    "law4": "On investment and mutual funds;",
+    "law5": "Resolution of the Cabinet of Ministers No. 80 of February 21, 2022 'On Approval of the Unified Regulation on the Procedure for Licensing of Certain Types of Activities through a Special Electronic System'",
+    "law6": "Cabinet of Ministers Resolution No. 88 of February 25, 2022, 'On approval of the unified regulation on the procedure for notifying the authorized body of the commencement or termination of activities",
+    "law7": "Cabinet of Ministers Resolution No. 304 of June 7, 2022, 'On Approval of Administrative Regulations for the Provision of State Services for Certification (Re-Certification) by Individuals to Grant the Right to Conduct Securities Transactions'",
+    "law8": "Resolution of the Cabinet of Ministers No. 189 of 19.04.2003 'On Measures to Improve Corporate Governance of Privatized Enterprises'Generally Privatized Enterprises: Decision on measures to improve management;",
+    "law9": "Regulation on the Activities of an Investment Intermediary in the Securities Market (No. 1108 of March 13, 2002);",
+    "law10": "On Amendments and Additions to the Regulation on Internal Control of a Professional Securities Market Participant' To the Regulation on Internal Control of a Professional Securities Market Participant (No. List 1899 dated 06.02.2009)",
+    "law11": "On Amending Clause 1 of the Regulation on the Activities of Investment Consultants on the Securities Market' To the Regulation on the Activities of Investment Consultants on the Securities Market (No. 1495 dated 15.07.2005)"
+  },
+  "AnnouncementTypes": {
+    "tender": "Tender",
+    "meetings": "Meetings",
+    "jobs": "Jobs",
+    "investments": "Investments",
+    "corporal_management": "Corporal Management",
+    "others": "Others"
+  },
+  "Report": {
+    "entity": {
+      "jsc": "Joint Stock Company",
+      "bank": "Bank",
+      "insurance": "Insurance Company",
+      "llc": "Limited Liability Company",
+      "micro": "Microfinance Organization"
+    },
+    "annual": "Annual Report",
+    "quarter": "Report",
+    "quarter_fallback": "Quarterly Report"
+  },
+  "message": {
+    "fact1NameChange": "1. Name change",
+    "fact2AddressChange": "2. Change of address/email/website",
+    "fact3Reorganization": "3. Reorganization",
+    "fact4ActivitySuspension": "4. Activity suspension",
+    "fact5ActivityTermination": "5. Activity termination",
+    "fact6ManagementDecisions": "6. Management body decisions",
+    "fact7SecuritiesRightsChange": "7. Securities rights change",
+    "fact8ManagementChanges": "8. Management body changes",
+    "fact9BranchListChanges": "9. Branch list changes",
+    "fact10RepresentativeListChanges": "10. Representative list changes",
+    "fact11SubsidiaryListChanges": "11. Subsidiary list changes",
+    "fact12DependentCompanyListChanges": "12. Dependent company list changes",
+    "fact13PropertyOrBankAccountArrest": "13. Property/bank account arrest",
+    "fact14ClaimAgainstIssuerOver10PercentAssets": "14. Claim against issuer for >10% of assets",
+    "fact15LoanOver50PercentCapital": "15. Loan >50% of capital",
+    "fact16LoanOver50PercentAssets": "16. Loan >50% of assets",
+    "fact17IncreaseInAssetValueOver10Percent": "17. Increase in asset value >10%",
+    "fact18DecreaseInAssetValueOver10Percent": "18. Decrease in asset value >10%",
+    "fact19DealOver10PercentAssets": "19. Deal >10% of assets",
+    "fact20LargeTransaction": "20. Large transaction",
+    "fact21TransactionWithAffiliate": "21. Transaction with affiliate",
+    "fact22LicenseAcquisition": "22. License acquisition",
+    "fact23LicenseAnnulmentOrTermination": "23. License annulment/termination",
+    "fact24LicenseSuspension": "24. License suspension",
+    "fact25SecuritiesIssuance": "25. Securities issuance",
+    "fact26SecuritiesIssuanceSuspension": "26. Securities issuance suspension",
+    "fact27SecuritiesIssuanceResumption": "27. Securities issuance resumption",
+    "fact28SecuritiesIssuanceRecognitionAsFailed": "28. Securities issuance recognized as failed",
+    "fact29SecuritiesIssuanceRecognitionAsInvalid": "29. Securities issuance recognized as invalid",
+    "fact30OwnershipChangeOver10PercentShares": "30. Ownership change over 10% of shares",
+    "fact31SecuritiesExecutionTerms": "31. Securities execution terms",
+    "fact32SecuritiesIncomeAccrual": "32. Securities income accrual",
+    "fact33BankruptcyProcedure": "33. Bankruptcy procedure",
+    "fact34ManagementShareOwnershipChange": "34. Management share ownership change",
+    "fact35OwnershipChangeInExecutiveOrgShares": "35. Ownership change in executive org shares",
+    "fact36AffiliateListChanges": "36. Affiliate list changes",
+    "fact37RightToRedeemSecuritiesByIssuer": "37. Right to redeem securities by issuer",
+    "fact38SecuritiesListingOnMarkets": "38. Securities listing on markets",
+    "fact39SecuritiesDelistingFromMarkets": "39. Securities delisting from markets",
+    "fact40ChangesInSecuritiesIssuanceResolution": "40. Changes in securities issuance resolution",
+    "fact41ManagementRecommendationOnDividendPayments": "41. Management recommendation on dividend payments",
+    "fact42DividendPayments": "42. Dividend payments",
+    "fact43OwnershipOf35PercentShares": "43. Ownership of 35% of shares",
+    "fact44AcquisitionOfSharesOver20PercentCapital": "44. Acquisition of shares >20% of capital",
+    "fact45OfferToBuySharesByShareholderOver50Percent": "45. Offer to buy shares by shareholder >50%",
+    "fact46LongName": "Decisions of the supervisory boards of business entities in which the state share in the authorized fund (charter capital) is 50 percent or more, as well as business entities that are part of them, on the approval of annual and quarterly schedules of state procurement",
+    "fact46ShortName": "46. Decisions of the supreme governing body on state procurement",
+    "factAll": "All"
+  },
+  "status_activity": {
+    "active": "Active enterprise",
+    "inactive": "Inactive enterprise",
+    "liquidated": "Liquidated enterprise",
+    "not_available": "Not available"
+  },
+  "Actions": {
+    "show_more": "Show more",
+    "show_less": "Show less"
+  },
+  "Login": {
+    "username": "Username",
+    "password": "Password",
+    "login": "Login",
+    "register": "Register",
+    "forgot_password": "Forgot password?",
+    "login_with_google": "Login with Google",
+    "login_success": "Login successful!",
+    "login_failed": "Login failed. Please try again.",
+    "invalid_credentials": "Invalid username or password. Please try again.",
+    "loading": "Logging in...",
+    "logout": "Logout",
+    "title": "Login to your account",
+    "subtitle": "Access your personalized data and tools.",
+    "session_expired_title": "Session expired",
+    "session_expired_subtitle": "Please sign in again to continue."
+  },
+  "UnlistedNotice": {
+    "title": "It's Unlisted",
+    "description": "This organization is currently not listed on the stock exchange. We do not have public trading data at the moment.",
+    "footer": "More information will be available soon. Stay tuned!"
+  },
+  "MarketScreener": {
+    "ticker": "Ticker",
+    "short_name_text": "Name",
+    "market_cap": "Market Cap",
+    "ttm_earnings": "Earnings (TTM)",
+    "price_to_earnings": "P/E",
+    "price_to_book": "P/B",
+    "ttm_cutoff": "TTM Cutoff",
+    "found": "Found {count} companies",
+    "return_on_equity": "ROE",
+    "return_on_assets": "ROA",
+    "net_margin": "Net Margin",
+    "debt_to_equity_ratio": "D/E Ratio",
+    "total_equity": "Total Equity"
+  },
+  "issuer_profile": {
+    "title": " Issuer Profile",
+    "status_activity": "Activity status",
+    "director": "Director",
+    "website": "Website",
+    "rfb_status": "RFB Status",
+    "bank_details": {
+      "bank_name": "Название банка",
+      "account_number": "Номер счета",
+      "mfo": "МФО"
+    },
+    "registration_numbers": {
+      "inn": "Tin",
+      "kfs": "KFC",
+      "okpo": "OKPO"
+    },
+    "disclosure_date": "Disclosure Date",
+    "report_type": "Report Type",
+    "common": "Ordinary shares",
+    "privileged": "Preferred shares",
+    "bond": "Bond"
+  },
+  "filters": {
+    "search_placeholder": "Enter company name or TIN...",
+    "rfb_status": "RFB Status",
+    "jsc_status": "JSC Status",
+    "organization_type": "Organization Type",
+    "search": "Search",
+    "clear": "Clear",
+    "active": "Active enterprise",
+    "inactive": "Inactive enterprise",
+    "liquidated": "Liquidated enterprise",
+    "not_available": "Not available",
+    "listed": "Listed",
+    "unlisted": "Unlisted",
+    "all": "All",
+    "jsc": "JSC",
+    "banks": "Banks",
+    "insurance_companies": "Insurance Companies",
+    "llc": "LLC",
+    "placeholder_search": "Search here... ",
+    "start_date": "Start Date",
+    "end_date": "End Date",
+    "fact_type": "Types of essential facts",
+    "pick_year": "Pick a year",
+    "select_type": "Select report type"
+  },
+  "TestMode": {
+    "message": " Website is working in test mode"
+  },
+  "investment_brokers_menu": {
+    "sort_by_year": "Sort by year",
+    "sort_by_amount": "Sort by amount",
+    "sort_by_quantity": "Sort By quantity",
+    "quantity": "Quantity:",
+    "amount": "Amount:"
+  },
+  "Organizations": {
+    "exchange_status": "Exchange status",
+    "listing": "Listed",
+    "delisting": "Unlisted"
+  },
+  "profile_emitents": {
+    "general_tab": "General",
+    "earnings": "Earnings",
+    "balance_sheet": "Balance Sheet",
+    "performance_indicators": "Performance Indicators",
+    "trading_statistics": "Trading Stats",
+    "financial_reports": "Financial Reports",
+    "essential_facts": "Essential Facts",
+    "dividends": "Dividends",
+    "market_cap": "Market Cap",
+    "common_stock": "Common Stock",
+    "preferred_stock": "Preferred Stock",
+    "date": "Date",
+    "amount": "Amount",
+    "profitability": "Profitability",
+    "closing_price": "Closing Price",
+    "opening_price": "Opening Price",
+    "volume_pcs": "Volume (pcs)",
+    "volume_sum": "Volume (sum)",
+    "period": {
+      "1m": "1M",
+      "3m": "3M",
+      "6m": "6M",
+      "1y": "1Y",
+      "3y": "3Y"
+    }
+  },
+  "essential_factsTab": {
+    "fact_number": "Fact №",
+    "disclosure_date": "Date of disclosure",
+    "essential_fact_title": "The name of the essential fact",
+    "essential_facts": " Essential Facts"
+  },
+  "financial_reports_tab": {
+    "report_type": "Report Type",
+    "report_date": "Report Date",
+    "download_report": "Download Report"
+  },
+  "finindicator_table": {
+    "indicator": "Indicator",
+    "total_equity": "Total equity",
+    "return_on_assets": "ROA",
+    "return_on_equity": "ROE",
+    "cost_of_risk": "COR",
+    "net_profit_margin": "Net profit margin",
+    "debt_to_equity_ratio": "Debt to Equity ratio",
+    "net_profit": "Net profit",
+    "net_revenue": "Net revenue",
+    "total_assets": "Total assets",
+    "total_liabilites": "Total liabilities",
+    "insurance_reserves": "Insurance reserves",
+    "insurance_level": "Insurance reserves level",
+    "equity_level": "Equity level",
+    "return_to_capital_employed": "ROCE ",
+    "gross_profit_margin": "Gross profit margin",
+    "ebit_margin": "Ebit margin",
+    "total_asset_turnover": "Total assets turnover",
+    "quick_ratio": "Quick ratio",
+    "current_ratio": "Current ratio",
+    "debt_ratio": "Debt ratio",
+    "price_to_earnings": "Price to earnings",
+    "price_to_book": "Price to book",
+    "earnings_per_share": "Earnings per share",
+    "book_per_share": "Book per share",
+    "dividends_per_share": "Dividends per share",
+    "sums": "In thousands of sums",
+    "ratios": "Ratios %",
+    "prices": "In soums"
+  },
+  "corporate_portal": {
+    "side_title": "The Importance of Corporate Governance in a Joint-Stock Company",
+    "show_button": "Portal Info"
+  },
+  "emission": {
+    "title_object_detection": "Дополнительная информация организации"
+  },
+
+  "portfolio": {
+    "header": {
+      "title": "Portfolio",
+      "subtitle": "Overview of your investments"
+    },
+    "actions": {
+      "add": "Add",
+      "export": "Export"
+    },
+    "table": {
+      "ticker": "Ticker",
+      "shares": "Qty",
+      "initialPrice": "Initial price",
+      "currentPrice": "Current price",
+      "change": "Change",
+      "value": "Value",
+      "changeInSoums": "Change (UZS)"
+    },
+    "summary": {
+      "title": "Total portfolio",
+      "from": "from",
+      "pnl": "Net profit / loss"
+    },
+    "addModal": {
+      "title": "Add position"
+    },
+    "editModal": {
+      "title": "Edit position"
+    },
+    "fields": {
+      "security": "Security",
+      "quantity": "Quantity",
+      "initialPriceUZS": "Initial price (UZS)"
+    },
+    "placeholders": {
+      "example100": "e.g., 100",
+      "example12500": "e.g., 12500"
+    },
+    "selected": {
+      "youChose": "You selected:",
+      "status": "Status"
+    },
+    "common": {
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving…"
+    },
+    "errors": {
+      "selectSecurity": "Select a security.",
+      "invalidShares": "Enter a valid quantity (> 0).",
+      "invalidInitialPrice": "Enter a valid initial price (> 0).",
+      "addFailed": "Could not add the position. Check the data and try again.",
+      "updateFailed": "Could not update the position. Please try again."
+    },
+    "search": {
+      "placeholder": "Search by ticker or name…",
+      "loading": "Loading…",
+      "selectSecurity": "Select a security",
+      "nothingFound": "Nothing found"
+    }
+  }
+}

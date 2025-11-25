@@ -1,0 +1,183 @@
+import { FetchService } from "@/app/shared/lib/api/fetch.service";
+import { TableColumn } from "@/app/shared/ui/components/Table/types";
+import { useEffect, useState } from "react";
+import { convertData } from "../IncomeTable/convertData";
+import { nestedTnums } from "./nestedTnums";
+import { allowedReportTitleTnums } from "./allowedReportTitleTnums";
+import { Table } from "@/app/shared/ui/components/Table";
+import { Switch } from "@/app/shared/ui/components/Switch";
+import { Text } from "@/app/shared/ui/components/Typography/Text";
+import Select from "@/app/shared/ui/components/Select/Select";
+import Box from "@/app/shared/ui/components/Box";
+import { getKeyFilterReport } from "../IncomeTable/getKeyFilterReport";
+import { nestedTitleIds } from "./nestedTitleIds";
+import { allowedTitleIds } from "./allowedTitleIds";
+import DownloadCSV from "../IncomeTable/DownloadCSV";
+import { convertReportsToReportArr } from "../IncomeTable/convertReportsToReportArr";
+
+type BalanceSheetTableType = Array<{
+  id: number;
+  reporting_year: number;
+  accounting_report: Array<{
+    id: number;
+    main_report: number;
+    title_id: number;
+    title: string;
+    tnum?: string;
+    value1: number;
+    value2: number;
+    value3: number;
+    value4: number;
+    is_title: boolean;
+    is_highlight: boolean;
+    is_automated: boolean;
+    value: number;
+  }>;
+  period: string;
+}>;
+
+export const BalanceSheetTable = ({ organizationId }: { organizationId: number }) => {
+  const [incomeList, setIncomeList] = useState<BalanceSheetTableType>([]);
+  const [columns, setColumns] = useState<TableColumn<{ tnum?: string; title: string; title_id: number } & any>[]>([]);
+  const [hideNested, setHideNested] = useState(true);
+  const [reportType, setReportType] = useState<{
+    label: string;
+    value: "annual" | "quarter";
+  }>({ label: "Год", value: "annual" });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await FetchService.fetch<BalanceSheetTableType>(
+          `/api/v2/reports/accounting-report/${organizationId}/?accounting_type=form1&report_type=${reportType.value}`
+        );
+        let d = convertData(response);
+
+        const other_cols: TableColumn<{ tnum?: string; title: string; title_id: number } & any>[] = response.map(
+          (item, index) => {
+            return {
+              title: item.period,
+              dataIndex: `value_${item.reporting_year}_${index}`,
+              align: "right",
+            };
+          }
+        );
+        const key = getKeyFilterReport(d);
+        if (key === "title_id") {
+          d = allowedTitleIds.map(item => d.find(r => r.title_id === item));
+        }
+        setColumns([
+          {
+            title: "Код стр.",
+            dataIndex: key,
+            render: (_, r: any) => {
+              if (key === "title_id") {
+                if (nestedTitleIds.includes(r.title_id)) {
+                  return (
+                    <div className="flex items-center">
+                      <div className="w-4"></div>
+                      <span>{r.title_id}</span>
+                    </div>
+                  );
+                }
+                return r.title_id;
+              }
+              if (nestedTnums.includes(r.tnum)) {
+                return (
+                  <div className="flex items-center">
+                    <div className="w-4"></div>
+                    <span>{r.tnum}</span>
+                  </div>
+                );
+              }
+              return r.tnum;
+            },
+          },
+          {
+            title: "Наименование показателя",
+            dataIndex: "title",
+            render: (_, r: any) => {
+              if (key === "title_id") {
+                if (nestedTitleIds.includes(r.title_id)) {
+                  return (
+                    <div className="flex items-center">
+                      <div className="w-4"></div>
+                      <span>{r.title}</span>
+                    </div>
+                  );
+                }
+                return r.title;
+              }
+              if (nestedTnums.includes(r.tnum)) {
+                return (
+                  <div className="flex items-center">
+                    <div className="w-4"></div>
+                    <span>{r.title}</span>
+                  </div>
+                );
+              }
+              return r.title;
+            },
+          },
+          ...other_cols,
+        ]);
+
+        setIncomeList(
+          d.filter(i => {
+            if (key === "title_id") return allowedTitleIds.includes(i.title_id);
+            return allowedReportTitleTnums.includes(i.tnum);
+          })
+        );
+      } catch (err) {
+        console.error("Error fetching financial data:", err);
+      }
+    };
+
+    fetchData();
+  }, [organizationId, reportType]);
+
+  return (
+    <Box>
+      <div className="mb-3 flex flex-wrap items-center  gap-2 justify-between">
+        <Text>Группировать данные по</Text>
+        <Select
+          onChange={option => setReportType(option as any)}
+          options={[
+            { label: "Год", value: "annual" },
+            { label: "Квартал", value: "quarter" },
+          ]}
+          placeholder="Выберите опцию..."
+          value={reportType}
+        />
+        <Switch label="Показать детали" onChange={c => setHideNested(!c)} checked={!hideNested} />
+        <Text>все цифры в тыс. сум</Text>
+        <DownloadCSV
+          reports={convertReportsToReportArr(
+            columns as any[],
+            hideNested
+              ? incomeList.filter((i: any) => {
+                  const key = getKeyFilterReport(incomeList as any[]);
+                  if (key === "title_id") return !nestedTitleIds.includes(i.title_id);
+                  return !nestedTnums.includes(i.tnum);
+                })
+              : incomeList
+          )}
+        />
+      </div>
+
+      <Table
+        bordered={false}
+        columns={columns}
+        data={
+          hideNested
+            ? incomeList.filter((i: any) => {
+                const key = getKeyFilterReport(incomeList as any[]);
+                if (key === "title_id") return !nestedTitleIds.includes(i.title_id);
+                return !nestedTnums.includes(i.tnum);
+              })
+            : incomeList
+        }
+      />
+    </Box>
+  );
+};

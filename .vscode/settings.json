@@ -1,0 +1,31 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "prettier.singleQuote": false,
+  "prettier.printWidth": 120,
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "es5",
+  "prettier.arrowParens": "avoid",
+  "cSpell.words": [
+    "aksiya",
+    "counterparty",
+    "emintet",
+    "factscaseelection",
+    "factsinformationabout",
+    "Factsinformationchange",
+    "factsinformationchanges",
+    "Factsinformationlist",
+    "factsinformationofabout",
+    "factslistbranch",
+    "factslistsubsiadiaries",
+    "factslistsubsidiarie",
+    "Factsmembershipexecutive",
+    "Factsterminationpower",
+    "factsterminationpowers"
+  ],
+  "i18n-ally.localesPaths": ["messages"],
+  "i18n-ally.keystyle": "nested"
+}

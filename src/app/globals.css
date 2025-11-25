@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  body {
+    @apply font-body antialiased bg-primary text-primary;
+  }
+}
+
+
+:root {
+  --color-primary: 59 130 246;
+  --color-secondary: 37 99 235;
+  --color-accent: 29 78 216;
+
+  --bg-primary: 255 255 255;
+  --bg-secondary: 241 245 249;
+  --bg-accent: 248 250 252;
+
+  --text-primary: 0 0 0;
+  --text-secondary: 0 0 0 / 0.9;
+  --text-tertiary: 0 0 0 / 0.6;
+  --text-inverse: 255 255 255;
+  --text-accent: 3 105 161;
+  --text-success: 21 128 61;
+
+  --border-default: 241 241 241;
+}
+
+.dark {
+  --color-primary: 37 99 235;
+  --color-secondary: 29 78 216;
+  --color-accent: 30 64 175;
+
+  --bg-primary: 239 246 255;
+  --bg-secondary: 219 234 254;
+  --bg-accent: 191 219 254;
+
+  --text-primary: 255 255 255;
+  --text-secondary: 255 255 255 / 0.9;
+  --text-tertiary: 255 255 255 / 0.6;
+  --text-inverse: 0 0 0;
+  --text-accent: 125 211 252;
+  --text-success: 134 239 172;
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-primary text-primary;
+  }
+}
+
+.custom-popover .ant-popover-inner {
+  max-width: 50vw !important;
+  max-height: 50vh !important;
+  overflow-y: auto;
+  width: 50vw;
+}
