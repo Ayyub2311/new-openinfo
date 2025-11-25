@@ -28,7 +28,7 @@ export class FetchService {
 
   static async fetch<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
     const isServer = typeof window === "undefined";
-    const baseURL = this.getBaseUrl(isServer);
+    const baseURL = this.getBaseUrl();
 
     const method = (options.method || "GET") as AxiosRequestConfig["method"];
     const data = options.body ? JSON.parse(options.body.toString()) : undefined;

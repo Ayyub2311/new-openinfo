@@ -6,6 +6,7 @@ import type { MenuProps } from "antd";
 import { useAuthStore } from "@/app/shared/store/useAuthstore";
 import { authModal } from "@/app/shared/store/authModalStore";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function HeaderUserSection() {
   const t = useTranslations();
@@ -27,7 +28,7 @@ export default function HeaderUserSection() {
         onClick={() => authModal.open("manual")} // 👉 just open the modal
         className="flex items-center text-white hover:text-blue-200"
       >
-        <img src="/assets/header-icons/profile-icon.svg" width={20} height={20} alt="" />
+        <Image src="/assets/header-icons/profile-icon.svg" width={20} height={20} alt="" />
         <span className="ml-1 text-sm">{t("Login.login")}</span>
       </button>
     );
