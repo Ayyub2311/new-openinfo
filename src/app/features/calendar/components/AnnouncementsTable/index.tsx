@@ -204,14 +204,9 @@ export default function AnnouncementsTable() {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="p-4 space-y-4">
+    <div className="py-4 space-y-4">
       <div className="flex flex-wrap gap-2 mb-3 items-center">
-        <AutocompleteSelect
-          value={selectedOrg}
-          onChange={setSelectedOrg}
-          placeholder={t("filters.search_placeholder")}
-          className="flex-1 min-w-[200px] max-w-[200px]"
-        />
+        
         <Select
           options={[
             { value: "", label: t("TableHeaders.all") },
@@ -236,8 +231,17 @@ export default function AnnouncementsTable() {
           className="flex-1"
         />
         <DatePicker selected={endDate} onSelect={setEndDate} placeholder={t("filters.end_date")} className="flex-1" />
+        <div className="flex items-center gap-2 w-full">
+         <AutocompleteSelect
+          value={selectedOrg}
+          onChange={setSelectedOrg}
+          placeholder={t("filters.search_placeholder")}
+          className="flex-1 min-w-[400px] w-full"
+        />
         <SearchButton onClick={handleSearch} />
-        <ClearButton onClick={clearFilters} />
+        <ClearButton onClick={clearFilters} /> 
+        </div>
+        
       </div>
 
       <Table columns={columns} data={announcementsData} bordered={false} loading={loading} />

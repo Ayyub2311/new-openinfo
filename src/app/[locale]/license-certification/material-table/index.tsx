@@ -58,7 +58,7 @@ const MaterialFiles = () => {
   ];
 
   return (
-    <Container>
+    <Container style={{ padding: "0" }}>
       <Table
         data={data}
         columns={columns}

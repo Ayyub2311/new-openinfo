@@ -1,16 +1,25 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Pattern from "public/pattern.svg"
 
 const Footer = () => {
   const t = useTranslations();
 
   return (
-    <footer className="relative w-full h-full object-cover aspect-[4/1] bg-cover bg-no-repeat bg-[url(/stockmarket.svg)] ">
+    <footer className="relative w-full h-full bg-[#182c3a] overflow-hidden">
       {/* <div className="absolute inset-0 bg-black/20" /> */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#182c3a]/70 to-[#2a3f54]/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#182c3a]/70 to-[#2a3f54]/70 " />
+
+      <Image src={Pattern} alt="Top Left" className="absolute -top-[65px] -left-[65px] w-[200px] h-[200px] opacity-15"/>
+      <Image src={Pattern} alt="Top Right" className="absolute -top-[55px] right-[135px] w-[150px] h-[150px] opacity-15"/>
+      <Image src={Pattern} alt="Bottom Left" className="absolute -bottom-[55px] left-[245px] w-[135px] h-[135px] opacity-10"/>
+      <Image src={Pattern} alt="Bottom Right" className="absolute -bottom-[55px] -right-[15px] w-[180px] h-[180px] opacity-5"/>
+      <Image src={Pattern} alt="Random Pattern" className="absolute -top-[80px] left-1/2 w-[160px] h-[160px] opacity-5"/>
+      <Image src={Pattern} alt="Random Pattern" className="absolute bottom-[100px] right-1/4 w-[120px] h-[120px] opacity-5"/>
+      <Image src={Pattern} alt="Random Pattern" className="absolute bottom-[160px] left-1/4 w-[140px] h-[140px] opacity-5"/>
       <div className="flex relative z-10 h-full">
-        <div className="container m-auto px-4">
+        <div className="container mx-auto mt-8 md:mt-12 lg:mt-16 xl:mt-24 2xl:mt-32 mb-8 px-4 xl:px-0">
           <div className="flex flex-col lg:flex-row justify-between gap-8">
             <div className="space-y-6">
               <h2 className="text-white font-semibold text-sm md:text-base max-w-lg">

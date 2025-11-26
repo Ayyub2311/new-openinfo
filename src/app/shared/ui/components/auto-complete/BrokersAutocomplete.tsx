@@ -76,7 +76,7 @@ export const BrokersAutoComplete: React.FC<Props> = ({
   return (
     <div ref={searchRef} className={`relative ${className}`}>
       {/* Input Box */}
-      <div className="flex items-center justify-between px-4 py-2 rounded-full bg-blue-50 text-sm text-gray-700 cursor-text select-none">
+      <div className="flex items-center justify-between px-4 py-2 rounded-full bg-blue-50 text-sm text-gray-700 border border-gray-300 cursor-text select-none">
         <input
           type="text"
           placeholder={placeholder}

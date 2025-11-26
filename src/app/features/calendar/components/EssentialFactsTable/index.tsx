@@ -235,15 +235,10 @@ export default function EssentialFactsTable() {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="p-4 space-y-4">
+    <div className="py-4 space-y-4">
       <div className="mb-4">
         <div className="flex flex-wrap gap-2 mb-3 items-center">
-          <AutocompleteSelect
-            value={selectedOrg}
-            onChange={setSelectedOrg}
-            placeholder={t("filters.search_placeholder")}
-            className="flex-1 min-w-[200px] "
-          />
+       
           <Select
             options={factOptions}
             value={selectedFactType}
@@ -258,7 +253,13 @@ export default function EssentialFactsTable() {
             className="flex-1"
           />
           <DatePicker selected={endDate} onSelect={setEndDate} placeholder={t("filters.end_date")} className="flex-1" />
-          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 w-full">
+             <AutocompleteSelect
+            value={selectedOrg}
+            onChange={setSelectedOrg}
+            placeholder={t("filters.search_placeholder")}
+            className="flex-1 w-full"
+          />
             <SearchButton onClick={handleSearch} />
             <ClearButton onClick={clearFilters} />
           </div>
@@ -274,7 +275,7 @@ export default function EssentialFactsTable() {
           totalItems={pagination.totalItems}
           pageSize={pagination.pageSize}
           onPageChange={handlePageChange}
-          className="my-4 px-4"
+          className="my-4 px-0"
           maxVisiblePages={5}
         />
       )}

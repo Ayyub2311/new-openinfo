@@ -125,13 +125,14 @@ const LicenseTable = () => {
   ];
 
   return (
-    <Container>
+    <Container style={{ padding: "0" }}>
       {/* Filters */}
       <div className="flex flex-wrap gap-4 items-center mb-4">
+       <div className="flex gap-4 items-center w-full">
         <a
           href="https://license.gov.uz/auth"
           target="_blank"
-          className="px-4 py-2 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-200 text-sm"
+          className="px-4 py-2 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-200 text-sm border border-gray-300 whitespace-nowrap"
         >
           → {t("AttestationTabs.get_license")}
         </a>
@@ -147,17 +148,23 @@ const LicenseTable = () => {
           placeholder={t("AttestationTabs.organization_column")}
           value={organization}
           onChange={e => setOrganization(e.target.value)}
-          className="rounded-full bg-blue-50 max-w-sm"
+          className="rounded-full bg-blue-50  w-full"
         />
-        <Input
+        </div>
+        
+
+        <div className="flex items-center gap-2 w-full">
+ <Input
           placeholder={t("AttestationTabs.license_number")}
           value={licenseNumber}
           onChange={e => setLicenseNumber(e.target.value)}
-          className="rounded-full bg-blue-50 max-w-sm"
+          className="rounded-full bg-blue-50 w-full"
         />
 
         <SearchButton onClick={handleSearch} />
         <ClearButton onClick={handleClear} />
+        </div>
+       
       </div>
 
       {/* Table */}

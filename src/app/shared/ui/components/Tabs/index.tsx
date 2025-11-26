@@ -146,7 +146,7 @@ export const Tabs: React.FC<TabsProps> = ({
   };
 
   return (
-    <div className={`relative box-border ${className}`} style={{ width: "100%" }}>
+    <div className={`relative box-border ${className}`} style={{ width: "100%", overflow: "hidden" }}>
       <div className="relative w-full border-b border-zinc-100 dark:border-zinc-700">
         {showLeftScroll && (
           <button
@@ -175,7 +175,7 @@ export const Tabs: React.FC<TabsProps> = ({
         >
           <nav
             ref={navRef}
-            className={`flex whitespace-nowrap w-full select-none  ${
+            className={`flex select-none gap-3 overflow-x-auto ${
               variant === "bordered" ? "justify-between py-1 border-b border-l border-r border-gray-200" : ""
             }`}
             onMouseDown={handleMouseDown}
@@ -185,7 +185,7 @@ export const Tabs: React.FC<TabsProps> = ({
           >
             {tabs.map((tab, index) => {
               const isActive = activeTab === tab.id;
-              const baseClasses = `px-3 py-2 text-sm font-medium transition-colors relative flex-shrink-0 y `;
+              const baseClasses = `px-0 py-2 text-sm font-medium transition-colors relative flex-shrink-0 y `;
 
               const underlineStyles = isActive
                 ? "text-sky-700 dark:text-sky-400"

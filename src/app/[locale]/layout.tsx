@@ -11,17 +11,17 @@ import { NextIntlClientProvider } from "next-intl";
 import AuthUIMount from "../providers/AuthUIMount";
 import { Mulish, Poppins } from "next/font/google";
 
-const mulish = Mulish({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
-});
+// const mulish = Mulish({
+//   subsets: ["latin"],
+//   weight: ["400", "500", "600", "700"],
+//   variable: "--font-body",
+// });
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-heading",
-});
+// const poppins = Poppins({
+//   subsets: ["latin"],
+//   weight: ["400", "500", "600", "700"],
+//   variable: "--font-heading",
+// });
 
 // const DarkModeScript = () => (
 //   <script
@@ -66,7 +66,7 @@ export default async function RootLayout({
     <html
     lang={locale}
     suppressHydrationWarning
-    className={`${mulish.variable} ${poppins.variable}`}
+    // className={`${mulish.variable} ${poppins.variable}`}
   >
     
       {/* I commented DarkMode */}

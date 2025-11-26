@@ -71,7 +71,10 @@ const TradeAnalyticsTables = () => {
   }, []);
 
   return (
-    <Container className="flex flex-col md:flex-row gap-6">
+    <Container className="flex flex-col md:flex-row gap-6"
+    style={{
+      padding: "0"
+    }}>
       <div className="w-full md:w-1/2">
         <div className="d-flex flex-column mb-2">
           <h2 className="text-lg font-semibold  text-900 ">{t("TradeAnalytics.top_by_deals")}</h2>

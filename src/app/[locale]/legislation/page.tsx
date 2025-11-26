@@ -61,7 +61,7 @@ export default function LegislationList() {
   ];
 
   return (
-    <Container className="mt-10 mb-14 px-4 sm:px-6">
+    <Container className="mt-10 mb-14 px-4 xl:px-0">
       <h2 className="text-xl sm:text-2xl font-semibold text-[#124483] mb-5">{t("Legislation.legislation_title")}</h2>
       <div className="flex flex-col gap-4">
         {laws.map((law, idx) => (
@@ -75,7 +75,7 @@ export default function LegislationList() {
               <Link className="text-[#124483] min-w-[20px] mr-2 mt-0.5" />
               <span className="leading-snug">{law.title}</span>
             </a>
-            <span className="text-sm sm:text-base text-[#124483] ml-[26px]">{law.subtitle}</span>
+            <span className="text-xs sm:text-sm text-[#124483] ml-[26px]">{law.subtitle}</span>
           </div>
         ))}
       </div>

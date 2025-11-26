@@ -26,7 +26,7 @@ export default function SiteMapPage() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-10 text-[#124483]">
+    <div className="container mx-auto px-4 xl:px-0 py-10 text-[#124483]">
       <ul className="space-y-6 text-[1.1rem] font-medium">
         {navLinks.map((link, idx) => (
           <li key={idx} className="relative pl-6">

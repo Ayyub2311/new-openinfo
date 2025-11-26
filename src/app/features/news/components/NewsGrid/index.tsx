@@ -87,7 +87,9 @@ export const NewsGrid = () => {
   if (error) return <ErrorMessage error={error} />;
 
   return (
-    <Container className="w-full">
+    <Container className="w-full"style={{
+      padding: "0"
+    }}>
       <CardGrid items={items} className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6" />
     </Container>
   );

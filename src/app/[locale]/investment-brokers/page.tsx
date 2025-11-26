@@ -128,7 +128,7 @@ const PageInvestmentBrokers = () => {
               value={searchValue}
               onChange={setSearchValue}
               placeholder={t("filters.search_placeholder")}
-              className="min-w-[180px] sm:min-w-[200px] flex-1"
+              className="min-w-[380px] sm:min-w-[400px] flex-1"
             />
             <SearchButton onClick={handleSearch} />
             <ClearButton onClick={handleClear} />

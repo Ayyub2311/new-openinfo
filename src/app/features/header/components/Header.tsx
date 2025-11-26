@@ -207,7 +207,7 @@ export default function HeaderClient() {
       )}
 
       {/* Desktop Top Navigation */}
-      <div className="hidden lg:flex items-center justify-between h-16 border-b border-gray-500  container mx-auto px-4">
+      <div className="hidden lg:flex items-center justify-between h-16 border-b border-gray-500  container mx-auto px-4 xl:px-0">
         <Link href="/" locale={locale} className="flex items-center hover:opacity-80 transition-opacity">
           <Image src="/assets/logo.svg" alt="Logo" className="h-6 w-6" width={20} height={20} />
           <span className="text-white font-bold ml-2">OPENINFO.UZ</span>
@@ -234,7 +234,7 @@ export default function HeaderClient() {
       </div>
 
       {/* Desktop Navigation Links */}
-      <div className="hidden lg:flex items-center h-12 border-b border-blue-500/50 dark:border-black container px-4 justify-between">
+      <div className="hidden lg:flex items-center h-12 border-b border-blue-500/50 dark:border-black container px-4 xl:px-0 justify-between overflow-x-hidden lg:overflow-x-auto gap-1">
         {navLinks.map((link, index) => {
           const isHome = link.href === "/" && (currentPath === `/${locale}` || currentPath === `/${locale}/`);
           const isActive = isHome || (link.href !== "/" && currentPath?.startsWith(`/${locale}${link.href}`));
@@ -243,12 +243,11 @@ export default function HeaderClient() {
               key={index}
               href={link.href}
               locale={locale}
-              className={`flex items-center mr-6 last:mr-0 whitespace-nowrap cursor-pointer hover:text-blue-200 ${
-                isActive ? "text-white font-bold" : "text-white"
-              }`}
+              className={`relative flex h-full items-center mr-6 last:mr-0 whitespace-nowrap cursor-pointer hover:text-blue-200 text-white`}
             >
               {link.icon && <Image src={link.icon} alt={link.text} className="mr-2" width={20} height={20} />}
               <span>{link.text}</span>
+              {isActive && (<span className="absolute bottom-0 left-0 w-full h-1 bg-white"></span>)}
             </Link>
           );
         })}

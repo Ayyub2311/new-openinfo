@@ -47,7 +47,7 @@ export const TableData: React.FC<TableDataProps> = ({ bordered, align, className
   return (
     <td
       className={cn(
-        "p-2 border-b text-secondary",
+        "p-200 border-b text-secondary",
         {
           border: bordered,
           "text-left": align === "left" || !align,

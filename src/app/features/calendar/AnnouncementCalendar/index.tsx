@@ -110,7 +110,7 @@ export default function AnnouncementCalendarTable() {
   );
 
   return (
-    <div className="p-4 space-y-4">
+    <div className="py-4 space-y-4">
       <Table columns={columns} data={data} loading={loading} bordered={false} />
 
       <Pagination

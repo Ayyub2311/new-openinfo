@@ -16,7 +16,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({ bordered, align, class
   return (
     <th
       className={cn(
-        "sticky top-0 z-30 p-2 font-semibold text-primary border-b",
+        "sticky top-0 z-30 py-2 font-bold text-primary text-sm border-b",
         {
           border: bordered,
           "text-left": align === "left" || !align,
@@ -46,7 +46,7 @@ export const TableData: React.FC<TableDataProps> = ({ bordered, align, className
   return (
     <td
       className={cn(
-        "p-2 border-b text-secondary",
+        "py-2 border-b text-secondary",
         {
           border: bordered,
           "text-left": align === "left" || !align,
@@ -185,7 +185,7 @@ export const Table = <T extends Record<string, any>>({
   const finalColumns = getFinalColumns(columns);
 
   return (
-    <div className={cn("overflow-x-auto", className)}>
+    <div className={cn("overflow-x-auto xl:overflow-x-hidden", className)}>
       {loading ? (
         <div className="flex items-center justify-center py-12">
           <Loader />

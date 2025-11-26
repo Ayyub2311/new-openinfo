@@ -145,13 +145,7 @@ const PageOrganizations = () => {
     <Container>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         <div className="lg:col-span-2 flex flex-col gap-4 mt-[30px] mb-[30px]">
-          <div className="px-4 sm:px-6 flex flex-wrap gap-2 mt-3 mb-3 items-center">
-            <AutocompleteSelect
-              value={selectedOrg}
-              onChange={setSelectedOrg}
-              placeholder={t("search_placeholder")}
-              className="flex-1  w-full min-w-[200px]"
-            />
+          <div className="px-0 flex flex-wrap gap-2 mt-3 mb-3 items-center">
             <Select
               value={listedOptions.find(opt => opt.value === statusRFB) || null}
               onChange={opt => setStatusRFB(opt?.value ?? "")}
@@ -172,6 +166,13 @@ const PageOrganizations = () => {
               options={orgTypes}
               placeholder={t("organization_type")}
               className="flex-1 w-full"
+            />
+
+<AutocompleteSelect
+              value={selectedOrg}
+              onChange={setSelectedOrg}
+              placeholder={t("search_placeholder")}
+              className="flex-1  w-full min-w-[400px]"
             />
 
             <SearchButton

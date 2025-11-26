@@ -39,7 +39,7 @@ const Select = ({ options, value, onChange, placeholder = "Выберите...",
   return (
     <div ref={containerRef} className={`relative ${className}`}>
       <div
-        className="flex items-center justify-between px-4 py-2 rounded-full bg-blue-50 text-sm text-gray-700 cursor-pointer select-none w-full min-w-[200px]"
+        className="flex items-center justify-between px-4 py-2 rounded-full bg-blue-50 text-sm text-gray-700 border border-gray-300 cursor-pointer select-none w-full min-w-[200px]"
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex-1 truncate text-left">{value ? value.label : placeholder}</div>

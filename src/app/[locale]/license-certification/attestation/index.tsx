@@ -85,13 +85,14 @@ const AttestationTable = () => {
   ];
 
   return (
-    <Container>
+    <Container style={{ padding: "0" }}>
       {/* Filters */}
-      <div className="flex flex-wrap gap-4 items-center mb-4">
+      <div className="flex gap-4 items-center mb-4">
+
         <a
           href="https://license.gov.uz/auth"
           target="_blank"
-          className="px-4 py-2 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-200 text-sm"
+          className="px-4 py-2 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-200 text-sm whitespace-nowrap"
         >
           → Получить лицензию
         </a>
@@ -100,13 +101,13 @@ const AttestationTable = () => {
           placeholder={t("AttestationTabs.full_name_owner_certificate")}
           value={searchName}
           onChange={e => setSearchName(e.target.value)}
-          className="rounded-full  bg-blue-50 max-w-sm"
+          className="rounded-full  bg-blue-50 w-full"
         />
 
         <SearchButton onClick={handleSearch} />
         <ClearButton onClick={handleClear} />
 
-        <span>{t("AttestationTabs.as_of_date")} 07.06.2024</span>
+        <span className="whitespace-nowrap">{t("AttestationTabs.as_of_date")} 07.06.2024</span>
       </div>
 
       <Table

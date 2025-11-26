@@ -187,7 +187,7 @@ export default function DividendCalendarTable() {
   );
 
   return (
-    <div className="p-4 space-y-4">
+    <div className="py-4 space-y-4">
       <div className="flex items-center justify-between flex-wrap gap-4">
         <div className="flex gap-2 overflow-auto">
           {typeOptions.map(option => (
