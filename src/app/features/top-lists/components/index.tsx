@@ -72,37 +72,39 @@ const TradeAnalyticsTables = () => {
 
   return (
     <Container className="flex flex-col md:flex-row gap-6"
-    style={{
-      padding: "0"
-    }}>
+      style={{
+        padding: "0"
+      }}>
       <div className="w-full md:w-1/2">
         <div className="d-flex flex-column mb-2">
           <h2 className="text-lg font-semibold  text-900 ">{t("TradeAnalytics.top_by_deals")} <br /> <span className="text-base font-normal">({t("TradeAnalytics.last_30_days")})</span></h2>
-          
+
         </div>
 
         <Table
           columns={[
-            { title: t("TradeAnalytics.issuer"), dataIndex: "name", className: "w-full" },
-            { title: t("TradeAnalytics.deals"), dataIndex: "price", className: "text-right whitespace-nowrap" },
+            { title: t("TradeAnalytics.issuer"), dataIndex: "name", width: "80%" },
+            { title: t("TradeAnalytics.deals"), dataIndex: "price", width: "20%", className: "text-right whitespace-nowrap" },
           ]}
           data={byDeals}
           bordered={false}
+          style={{ tableLayout: "fixed" }}
         />
       </div>
-      <div className="w-full md:w-1/2">
-        <div className="d-flex flex-column mb-2">
-          <h2 className="text-lg font-semibold text-900 ">{t("TradeAnalytics.top_by_volume")}  <span className="text-base font-normal">({t("TradeAnalytics.last_30_days")})</span></h2>
-          
+      <div className="w-full md:w-1/2 ">
+        <div className="d-flex flex-column mb-2 ">
+          <h2 className="text-lg font-semibold text-900 ">{t("TradeAnalytics.top_by_volume")} <br /> <span className="text-base font-normal">({t("TradeAnalytics.last_30_days")})</span></h2>
+
         </div>
 
         <Table
           columns={[
-            { title: t("TradeAnalytics.issuer"), dataIndex: "name", className: "w-full" },
+            { title: t("TradeAnalytics.issuer"), dataIndex: "name", width: "70%" },
             {
               title: t("TradeAnalytics.volume"),
               dataIndex: "price",
-              className: "text-right whitespace-nowrap",
+              width: "30%",
+              className: "text-right whitespace-nowrap font-numbers",
               render: value => {
                 if (typeof value === "string") {
                   const cleaned = value
@@ -128,7 +130,10 @@ const TradeAnalyticsTables = () => {
           ]}
           data={byVolume}
           bordered={false}
+          style={{ tableLayout: "fixed" }}
         />
+
+
       </div>
     </Container>
   );

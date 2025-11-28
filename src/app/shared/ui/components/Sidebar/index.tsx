@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import { Text } from "../Typography/Text";
-import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { useEffect, useRef, useState } from "react";
 
 interface SidebarProps {
   items: { id: string; label: string; icon: string; component: React.ReactNode }[];
@@ -10,22 +10,25 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ items }) => {
   const [current, setCurrent] = useState(items[0]?.id);
-
   const t = useTranslations();
+
   return (
-    <div className="w-full box-border items-stretch flex border-2 border-default mb-6">
+    <div className="w-full flex box-border items-stretch border-2 border-default mb-[30px]">
+
       <div className="flex-1 min-w-0 ">
-        <div className=" p-6 box-border overflow-hidden w-full">{items.find(item => item.id === current)?.component}</div>
+        <div className=" p-6 box-border overflow-hidden w-full">
+          {items.find(item => item.id === current)?.component}
+        </div>
       </div>
 
-      <div
-        className="bg-secondary sticky top-20  w-[75px] pl-[3px] pr-[3px] box-border pt-6 pb-6 border-l-2 border-default"
-        style={{ height: "calc(100vh - 10px)" }}
-      >
+
+      <div className="bg-secondary w-[75px] pl-[3px] pr-[3px] box-border pt-6 pb-6 border-l-2 border-default">
+
         <div className="flex flex-col gap-8">
           {items.map(item => (
             <div
-              className={`flex flex-col gap-1 items-center cursor-pointer p-2 rounded-xl transition-colors ${item.id === current ? "bg-[#1256A0]/10 text-[#1256A0]" : "hover:bg-gray-100 text-gray-600"
+              className={`flex flex-col gap-1 items-center cursor-pointer p-2 rounded-xl transition-colors 
+                ${item.id === current ? "bg-[#1256A0]/10 text-[#1256A0]" : "hover:bg-gray-100 text-gray-600"
                 }`}
               key={item.id}
               onClick={() => setCurrent(item.id)}

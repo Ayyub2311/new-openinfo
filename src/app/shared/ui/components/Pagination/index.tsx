@@ -2,6 +2,7 @@
 
 import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslations } from 'next-intl';
 
 interface PaginationProps {
   currentPage: number;
@@ -13,6 +14,11 @@ interface PaginationProps {
   pageSize?: number;
 }
 
+interface PageMessages {
+  itemRange: string;
+  previousPage: string;
+  nextPage: string;
+}
 export const Pagination: React.FC<PaginationProps> = ({
   currentPage,
   totalPages,
@@ -45,11 +51,13 @@ export const Pagination: React.FC<PaginationProps> = ({
     return pages;
   };
 
+  const t = useTranslations('page');
+
   return (
     <div className={`flex flex-col sm:flex-row items-center justify-between gap-4 ${className}`}>
       {/* Minimal item count display */}
       <div className="text-sm text-gray-500 whitespace-nowrap">
-        {startItem}-{endItem} of {totalItems}
+        {t('itemRange', { start: startItem, end: endItem, total: totalItems } as any)}
       </div>
 
       {/* Page navigation */}

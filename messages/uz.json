@@ -4,12 +4,12 @@
     "about": "UZ version"
   },
   "Hero": {
-  "title1": "O'zbekiston Respublikasi Milliy istiqbolli loyihalar agentligining ",
-  "title2": "Yagona Korporativ Axborot Portali"
-},
-"Pagination": {
-  "range": "{start}-{end} dan {total} ta"
-},
+    "title1": "O'zbekiston Respublikasi Milliy istiqbolli loyihalar agentligining ",
+    "title2": "Yagona Korporativ Axborot Portali"
+  },
+  "page": {
+    "itemRange": "{start}-{end} dan {total} ta"
+  },
   "Facts": {
     "factbase": {
       "title": "Emissiya haqida ma'lumot",
@@ -987,7 +987,6 @@
   "emission": {
     "title_object_detection": "Дополнительная информация организации"
   },
-
   "portfolio": {
     "header": {
       "title": "Portfel",

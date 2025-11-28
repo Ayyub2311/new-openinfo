@@ -10,9 +10,10 @@ export interface TableHeaderProps {
   colSpan?: number;
   rowSpan?: number;
   children: React.ReactNode;
+  width?: string | number;
 }
 
-export const TableHeader: React.FC<TableHeaderProps> = ({ bordered, align, className, colSpan, rowSpan, children }) => {
+export const TableHeader: React.FC<TableHeaderProps> = ({ bordered, align, className, colSpan, rowSpan, children, width, }) => {
   return (
     <th
       className={cn(
@@ -27,6 +28,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({ bordered, align, class
       )}
       colSpan={colSpan}
       rowSpan={rowSpan}
+      style={{ width }}
     >
       {children}
     </th>
@@ -94,6 +96,7 @@ export const Table = <T extends Record<string, any>>({
             className={column.className}
             colSpan={column.colSpan || 1}
             rowSpan={column.children ? 1 : column.rowSpan || depth - row}
+            width={column.width}
           >
             {column.title}
           </TableHeader>
@@ -139,6 +142,7 @@ export const Table = <T extends Record<string, any>>({
         bordered={bordered}
         align={column.align}
         className={cn(column.className, cellProps.props?.className)}
+        style={{ width: column.width }}
         {...cellProps.props}
       >
         {content}
@@ -185,13 +189,13 @@ export const Table = <T extends Record<string, any>>({
   const finalColumns = getFinalColumns(columns);
 
   return (
-    <div className={cn("overflow-x-auto", className)}>
+    <div className={cn("w-full", className)}>
       {loading ? (
         <div className="flex items-center justify-center py-12">
           <Loader />
         </div>
       ) : (
-        <table className="w-full border-collapse">
+        <table className="w-full table-fixed border-collapse">
           <thead className=" sticky top-0 z-10 bg-white">
             {headerRows.map((row, index) => {
               return <tr key={`header-row-${index}`}>{row}</tr>;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import Container from "@/app/shared/ui/components/Container";
 import CompanyCard from "./CompanyCard";
@@ -85,9 +85,11 @@ const PageInvestmentBrokers = () => {
     setPage(newPage);
   };
 
+  const gridRef = useRef<HTMLDivElement>(null);
+
   return (
     <Container>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-3 gap-5 relative min-h-screen">
         <div className="lg:col-span-2 flex flex-col gap-4 mt-[30px] mb-[30px]">
           <div className="flex flex-wrap w-full  gap-2 items-center mb-4">
             {/* <span className="px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm flex items-center">
@@ -164,9 +166,11 @@ const PageInvestmentBrokers = () => {
           </div>
         </div>
 
-        <div className="hidden lg:block">
-          <Sidebar items={sidebarItems} />
-        </div>
+        <aside className="hidden md:block lg:block shrink-0 grow-0 basis-[clamp(280px,26vw,360px)]">
+          <div className="sticky top-10 max-h-[calc(100vh-5rem] overflow-auto">
+            <Sidebar items={sidebarItems} />
+          </div>
+        </aside>
       </div>
     </Container>
   );

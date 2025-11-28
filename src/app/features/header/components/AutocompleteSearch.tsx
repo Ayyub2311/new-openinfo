@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Search } from "lucide-react";
 import { useRouter } from "@/i18n/routing";
+import { useTranslations } from 'next-intl';
 
 const AutocompleteSearch = () => {
   const router = useRouter();
@@ -9,6 +10,8 @@ const AutocompleteSearch = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const searchRef = useRef(null);
+
+  const t = useTranslations('filters');
 
   useEffect(() => {
     // Function to handle clicks outside the search component
@@ -74,7 +77,7 @@ const AutocompleteSearch = () => {
 
         <input
           type="text"
-          placeholder="Search"
+          placeholder={t('search')}
           className="w-full h-8 pl-4 pr-10 py-0
              rounded-full
              border border-white/20

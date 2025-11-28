@@ -3,12 +3,12 @@
     "title": "Привет, мир!",
     "about": "Go to the about page [RU]"
   },
-  "Hero":{
+  "Hero": {
     "title1": "Единый Портал Корпоративной Информации",
     "title2": "Национального агентства перспективных проектов Республики Узбекистан"
   },
-  "Pagination": {
-    "range": "{start}-{end} из {total}"
+  "page": {
+    "itemRange": "{start}-{end} из {total}"
   },
   "Facts": {
     "factbase": {
@@ -1039,7 +1039,6 @@
   "emission": {
     "title_object_detection": "Дополнительная информация организации"
   },
-
   "portfolio": {
     "header": {
       "title": "Портфель",

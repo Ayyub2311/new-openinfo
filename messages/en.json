@@ -7,8 +7,8 @@
     "title1": "Unified Corporate Information Portal of the",
     "title2": "National Agency for Advanced Projects of the Republic of Uzbekistan"
   },
-  "Pagination": {
-    "range": "{start}-{end} of {total}"
+  "page": {
+    "itemRange": "{start}-{end} of {total}"
   },
   "Facts": {
     "factbase": {

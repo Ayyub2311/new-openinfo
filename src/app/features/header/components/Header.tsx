@@ -11,65 +11,6 @@ import HeaderUserSection from "./HeaderClient";
 import AutocompleteSearch from "./AutocompleteSearch";
 import { Divider } from "antd/lib";
 
-// import type { Session } from "@/app/auth/session";
-// import UserMenu from "../UserMenu";
-
-// function DiamondDots() {
-//   const rows = 5;
-//   const cols = 65;
-
-//   const dotSize = 10;
-//   const gapX = 28;
-// const gapY = 16;
-
-//   const cx = dotSize + gapX;
-//   const cy = dotSize + gapY;
-//   const offset = cx / 2;
-//   const rowMarginTop = (cy - dotSize); 
-
-//   return (
-//     <div className="absolute inset-0 pointer-events-none z-0 flex flex-col">
-//   {[...Array(rows)].map((_, rowIndex) => (
-//     <div 
-//     key={rowIndex} 
-//     className="flex w-full"
-//     style={{ 
-//       marginLeft: rowIndex % 2 === 0 ? 0 : offset,
-//       marginTop: rowIndex === 0 ? 0 : rowMarginTop,
-//       alignItems: "center",
-//       minHeight: dotSize,
-//       }}
-//       >
-//     {[...Array(cols)].map((_, colIndex) => {
-//     const topOpacity = 0.07;
-//     const bottomOpacity = 0.02;
-//     const opacity = 
-//     Math.max(
-//       bottomOpacity, 
-//       topOpacity - (rowIndex / (rows - 1)) * (topOpacity - bottomOpacity)
-//     );
-
-//     return (
-//       <div
-//       key={colIndex}
-//       className="rounded-full"
-//       style={{ 
-//         width: dotSize,
-//         height: dotSize,
-//         background: "white",
-//         opacity,
-//       marginRight: gapX,
-//       flex: "0 0 auto",
-//       }}
-//       />
-//     );
-// })}
-// </div>
-// ))}
-// </div>
-//   )
-// }
-
 export default function HeaderClient() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -121,10 +62,41 @@ export default function HeaderClient() {
     { icon: "/assets/header-icons/portfolios-icon.svg", text: t("Navigation.portfolio"), href: `/portfolio` },
   ];
 
-  return (
-    <nav className="sticky top-0 left-0 w-full z-50  bg-gradient-to-r from-[#182c3a] to-[#2a3f54] min-h-[64px] ">
+  const [hideTopDesktop, setHideTopDesktop] = useState(false);
 
-      {/* <DiamondDots /> */}
+  useEffect(() => {
+    if (window.innerWidth < 1024) return;
+
+    let lastY = window.scrollY;
+    let hide = hideTopDesktop;
+
+    const SCROLL_THRESHOLD = 20;
+
+    const handleScroll = () => {
+      const y = window.scrollY;
+      const delta = y - lastY;
+
+      requestAnimationFrame(() => {
+        if (delta > SCROLL_THRESHOLD && !hide) {
+          hide = true;
+          setHideTopDesktop(true);
+        } else if (delta < -SCROLL_THRESHOLD && hide) {
+          hide = false;
+          setHideTopDesktop(false);
+        }
+      });
+
+      lastY = y;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
+  return (
+    <nav className="sticky top-0 left-0 w-full z-50  bg-gradient-to-r from-[#182c3a] to-[#2a3f54] ">
+
       {/* Mobile Top Navigation */}
       <div className="lg:hidden relative flex items-center justify-between h-16 border-b border-default dark:border-black container mx-auto px-4">
         <Link href="/" locale={locale} className="flex items-center hover:opacity-80 transition-opacity">
@@ -207,7 +179,13 @@ export default function HeaderClient() {
       )}
 
       {/* Desktop Top Navigation */}
-      <div className="hidden lg:flex items-center justify-between h-16 border-b border-default container mx-auto px-4 lg:px-8 xl:px-0">
+      <div className="hidden lg:flex h-16 items-center justify-between border-b border-default container mx-auto px-4 lg:px-8 xl:px-0 transition-all duration-300"
+        style={{
+          transform: hideTopDesktop ? "translateY(-100%)" : "translateY(0)",
+          opacity: hideTopDesktop ? 0 : 1,
+          maxHeight: hideTopDesktop ? 0 : "64px",
+        }}
+      >
         <Link href="/" locale={locale} className="flex items-center hover:opacity-80 transition-opacity">
           <Image src="/assets/logo.svg" alt="Logo" className="h-6 w-6" width={20} height={20} />
           <span className="text-white font-bold ml-2">OPENINFO.UZ</span>

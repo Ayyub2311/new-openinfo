@@ -1,7 +1,7 @@
 // PageOrganizations.tsx
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import Container from "@/app/shared/ui/components/Container";
@@ -141,9 +141,11 @@ const PageOrganizations = () => {
     router.push(`${window.location.pathname}?${params.toString()}`);
   };
 
+  const gridRef = useRef<HTMLDivElement>(null);
+
   return (
     <Container>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         <div className="lg:col-span-2 flex flex-col gap-4 mt-[30px] mb-[30px]">
           <div className="px-0 flex flex-wrap gap-2 mt-3 mb-3 items-center">
             <Select
@@ -168,7 +170,7 @@ const PageOrganizations = () => {
               className="flex-1 w-full"
             />
 
-<AutocompleteSelect
+            <AutocompleteSelect
               value={selectedOrg}
               onChange={setSelectedOrg}
               placeholder={t("search_placeholder")}
@@ -223,9 +225,11 @@ const PageOrganizations = () => {
             </>
           )}
         </div>
-        <div className="hidden lg:block">
-          <Sidebar items={sidebarItems} />
-        </div>
+        <aside className="hidden md:block lg:block shrink-0 grow-0 basis-[clamp(280px,26vw,360px)]">
+          <div className="sticky top-10 max-h-[calc(100vh-5rem] overflow-auto">
+            <Sidebar items={sidebarItems} />
+          </div>
+        </aside>
       </div>
     </Container>
   );

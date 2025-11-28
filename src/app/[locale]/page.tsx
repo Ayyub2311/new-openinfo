@@ -13,16 +13,20 @@ import { Link } from "@/i18n/routing";
 import TradeAnalyticsTables from "../features/top-lists/components";
 import { useTranslations } from "next-intl";
 import { HomeInfoDisclosureTabs } from "../features/disclosure-information/components/HomeInfoDisclosureTabs";
+import { useRef } from "react";
 
 export default function Home() {
   const t = useTranslations();
+
+  const gridRef = useRef<HTMLDivElement>(null);
 
   return (
     <Container>
       <div className="mt-4">
         <CorporatePortal />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-4 mt-[30px]">
+      <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-3 gap-x-4 mt-[30px] relative">
+        { /* Main Content */}
         <div className="col-span-1 lg:col-span-2">
           <div>
             <Section
@@ -38,7 +42,7 @@ export default function Home() {
               <HomeInfoDisclosureTabs />
             </Section>
           </div>
-          <div className="mt-[50px]">
+          <div className="mt-[30px]">
             <Section
               title={
                 <div className="flex gap-1 items-center">
@@ -50,7 +54,7 @@ export default function Home() {
               <CalendarTabs />
             </Section>
           </div>
-          <div className="mt-[50px] mb-[50px]">
+          <div className="mt-[30px] mb-[30px]">
             <Section
               title={
                 <div className="flex gap-1 items-center">
@@ -71,15 +75,10 @@ export default function Home() {
             <PieBarGrid />
           </Section> */}
         </div>
-        <aside
-          className="
-      hidden md:block lg:block
-      shrink-0 grow-0
-      basis-[clamp(280px,26vw,360px)]  /* 👈 main trick */
-      overflow-visible
-    "
-        >
-          <Sidebar items={sidebarItems} />
+        <aside className="hidden md:block lg:block shrink-0 grow-0 basis-[clamp(280px,26vw,360px)]">
+          <div className="sticky top-10 max-h-[calc(100vh-5rem] overflow-auto">
+            <Sidebar items={sidebarItems} />
+          </div>
         </aside>
       </div>
     </Container>
