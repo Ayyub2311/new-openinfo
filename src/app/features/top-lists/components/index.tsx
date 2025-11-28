@@ -88,7 +88,6 @@ const TradeAnalyticsTables = () => {
           ]}
           data={byDeals}
           bordered={false}
-          style={{ tableLayout: "fixed" }}
         />
       </div>
       <div className="w-full md:w-1/2 ">
@@ -130,7 +129,6 @@ const TradeAnalyticsTables = () => {
           ]}
           data={byVolume}
           bordered={false}
-          style={{ tableLayout: "fixed" }}
         />
 
 
