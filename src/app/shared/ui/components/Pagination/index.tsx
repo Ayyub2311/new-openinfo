@@ -14,11 +14,6 @@ interface PaginationProps {
   pageSize?: number;
 }
 
-interface PageMessages {
-  itemRange: string;
-  previousPage: string;
-  nextPage: string;
-}
 export const Pagination: React.FC<PaginationProps> = ({
   currentPage,
   totalPages,
@@ -29,6 +24,8 @@ export const Pagination: React.FC<PaginationProps> = ({
   pageSize = 10,
 }) => {
   if (totalPages <= 1) return null;
+
+  const t = useTranslations('page');
 
   // Calculate the range of items being shown
   const startItem = (currentPage - 1) * pageSize + 1;
@@ -51,7 +48,7 @@ export const Pagination: React.FC<PaginationProps> = ({
     return pages;
   };
 
-  const t = useTranslations('page');
+
 
   return (
     <div className={`flex flex-col sm:flex-row items-center justify-between gap-4 ${className}`}>

@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Text } from "../Typography/Text";
 import { useTranslations } from "next-intl";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 
 interface SidebarProps {
   items: { id: string; label: string; icon: string; component: React.ReactNode }[];
