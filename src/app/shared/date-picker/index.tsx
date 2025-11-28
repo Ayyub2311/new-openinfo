@@ -1,7 +1,72 @@
+"use client";
+
 import { CalendarOutlined } from "@ant-design/icons";
 import { DatePicker as AntDatePicker } from "antd";
 import dayjs, { Dayjs } from "dayjs";
 import React, { useEffect, useState } from "react";
+import { useLocale } from "next-intl";
+
+import enUS from "antd/es/date-picker/locale/en_US";
+import ruRU from "antd/es/date-picker/locale/ru_RU";
+import "dayjs/locale/uz";
+import updateLocale from "dayjs/plugin/updateLocale";
+
+dayjs.extend(updateLocale);
+
+dayjs.updateLocale("uz", {
+  name: "uz",
+  months: [
+    "Yanvar", "Fevral", "Mart", "Aprel", "May", "Iyun",
+    "Iyul", "Avgust", "Sentyabr", "Oktyabr", "Noyabr", "Dekabr"
+  ],
+  monthsShort: [
+    "Yan", "Fev", "Mar", "Apr", "May", "Iyun",
+    "Iyul", "Avg", "Sen", "Okt", "Noy", "Dek"
+  ],
+  weekdays: [
+    "Yakshanba", "Dushanba", "Seshanba", "Chorshanba",
+    "Payshanba", "Juma", "Shanba"
+  ],
+  weekdaysShort: ["Yak", "Dush", "Sesh", "Chor", "Pay", "Jum", "Shan"],
+  weekdaysMin: ["Ya", "Du", "Se", "Ch", "Pa", "Ju", "Sh"],
+});
+
+const uzUZ = {
+  lang: {
+    locale: 'uz',
+    today: 'Bugun',
+    now: 'Hozir',
+    backToToday: 'Bugunga qayt',
+    ok: 'OK',
+    clear: 'Tozalash',
+    month: 'Oy',
+    year: 'Yil',
+    timeSelect: 'Vaqtni tanlash',
+    dateSelect: 'Sana tanlash',
+    monthSelect: 'Oyni tanlash',
+    yearSelect: 'Yilni tanlash',
+    decadeSelect: 'O‘n yillikni tanlash',
+    yearFormat: 'YYYY',
+    dateFormat: 'DD.MM.YYYY',
+    dayFormat: 'DD',
+    dateTimeFormat: 'DD.MM.YYYY HH:mm:ss',
+    monthFormat: 'MMMM',
+    monthBeforeYear: true,
+    previousMonth: 'Oldingi oy',
+    nextMonth: 'Keyingi oy',
+    previousYear: 'Oldingi yil',
+    nextYear: 'Keyingi yil',
+    previousDecade: 'Oldingi o‘n yillik',
+    nextDecade: 'Keyingi o‘n yillik',
+    previousCentury: 'Oldingi asr',
+    nextCentury: 'Keyingi asr',
+  },
+  timePickerLocale: {
+    placeholder: 'Vaqtni tanlash',
+  },
+};
+
+
 
 interface DatePickerProps {
   selected?: Date;
@@ -11,13 +76,15 @@ interface DatePickerProps {
   picker?: "date" | "week" | "month" | "quarter" | "year";
 }
 
-export const DatePicker = ({
+export const DatePicker: React.FC<DatePickerProps> = ({
   selected,
   onSelect,
   placeholder = "Select date",
   className = "",
-  picker = "date", // ✅ Added picker to destructuring with default
-}: DatePickerProps) => {
+  picker = "date",
+}) => {
+  const locale = useLocale();
+
   const [value, setValue] = useState<Dayjs | null>(selected ? dayjs(selected) : null);
 
   useEffect(() => {
@@ -29,6 +96,12 @@ export const DatePicker = ({
     onSelect(date ? date.toDate() : undefined);
   };
 
+  const antLocaleMap: Record<string, any> = {
+    en: enUS,
+    ru: ruRU,
+    uz: uzUZ,
+  };
+
   return (
     <div className={`relative ${className} min-w-[200px]`}>
       <AntDatePicker
@@ -38,6 +111,7 @@ export const DatePicker = ({
         placeholder={placeholder}
         allowClear
         suffixIcon={<CalendarOutlined className="text-gray-500" />}
+        locale={antLocaleMap[locale]}
         style={{
           width: "100%",
           borderRadius: "9999px", // Full rounded

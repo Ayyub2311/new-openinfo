@@ -166,7 +166,7 @@ const StockOverviewCombined = () => {
               {selectedStock ? `${formatIssuerName(selectedStock.issuer_short_name ?? "")}` : "Select a stock"}
             </h2>
           </div>
-          <div>
+          <div className="w-full overflow-x-auto">
             <Tabs
               tabs={["1D", "1W", "1M", "6M"].map(id => ({ id, label: t(`StockTabs.${id}` as any) }))}
               onChange={setActiveTab}

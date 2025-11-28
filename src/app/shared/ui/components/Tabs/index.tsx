@@ -171,7 +171,7 @@ export const Tabs: React.FC<TabsProps> = ({
 
         <div
           ref={scrollContainerRef}
-          className="overflow-x-auto relative w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="relative w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           <nav
             ref={navRef}
