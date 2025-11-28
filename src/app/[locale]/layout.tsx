@@ -9,7 +9,6 @@ import "@/app/globals.css";
 import { NotificationWrapper } from "../shared/contexts/NotificationWrapper";
 import { NextIntlClientProvider } from "next-intl";
 import AuthUIMount from "../providers/AuthUIMount";
-import { Mulish, Poppins } from "next/font/google";
 
 // const mulish = Mulish({
 //   subsets: ["latin"],
@@ -64,11 +63,11 @@ export default async function RootLayout({
 
   return (
     <html
-    lang={locale}
-    suppressHydrationWarning
+      lang={locale}
+      suppressHydrationWarning
     // className={`${mulish.variable} ${poppins.variable}`}
-  >
-    
+    >
+
       {/* I commented DarkMode */}
       <head>{/* <DarkModeScript /> */}</head>
       <body className="bg-white dark:bg-slate-900">
