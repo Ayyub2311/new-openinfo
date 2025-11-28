@@ -106,18 +106,18 @@ const MarketScreenerTable = () => {
   const sortedData =
     sortKey && sortOrder
       ? [...filteredData].sort((a, b) => {
-          const aVal = getValue(a, sortKey);
-          const bVal = getValue(b, sortKey);
+        const aVal = getValue(a, sortKey);
+        const bVal = getValue(b, sortKey);
 
-          if (aVal == null) return 1;
-          if (bVal == null) return -1;
+        if (aVal == null) return 1;
+        if (bVal == null) return -1;
 
-          if (typeof aVal === "string") {
-            return sortOrder === "asc" ? aVal.localeCompare(bVal as string) : (bVal as string).localeCompare(aVal);
-          }
+        if (typeof aVal === "string") {
+          return sortOrder === "asc" ? aVal.localeCompare(bVal as string) : (bVal as string).localeCompare(aVal);
+        }
 
-          return sortOrder === "asc" ? (aVal as number) - (bVal as number) : (bVal as number) - (aVal as number);
-        })
+        return sortOrder === "asc" ? (aVal as number) - (bVal as number) : (bVal as number) - (aVal as number);
+      })
       : filteredData;
 
   const renderSortableHeader = (label: string, key: string) => (
@@ -260,7 +260,7 @@ const MarketScreenerTable = () => {
 
   return (
     <Container className="p-4">
-      <div className="bg-white rounded-lg shadow-sm border overflow-hidden">
+      <div className="bg-white rounded-xl shadow-sm border overflow-hidden">
         <div className="p-4 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
           <input
             type="text"

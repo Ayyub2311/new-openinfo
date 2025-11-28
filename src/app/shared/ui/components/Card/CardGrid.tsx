@@ -9,7 +9,7 @@ export const CardGrid: React.FC<CardGridProps> = ({ items, className = "" }) => 
       {items.map((item, index) => (
         <motion.div
           key={index}
-          className="min-h-[100px] w-full h-full relative overflow-hidden rounded-2xl shadow-md bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow duration-300"
+          className="min-h-[100px] w-full h-full relative overflow-hidden rounded-xl shadow-md bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow duration-300"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: index * 0.1 }}

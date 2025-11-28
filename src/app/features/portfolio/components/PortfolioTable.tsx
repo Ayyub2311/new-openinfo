@@ -147,7 +147,7 @@ function SearchableStockSelect({
       <button
         type="button"
         onClick={() => setOpen(s => !s)}
-        className="flex w-full items-center justify-between rounded-lg border border-gray-300 px-3 py-2 text-left outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+        className="flex w-full items-center justify-between rounded-xl border border-default px-3 py-2 text-left outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
         aria-haspopup="listbox"
         aria-expanded={open}
       >
@@ -165,7 +165,7 @@ function SearchableStockSelect({
       </button>
 
       {open && (
-        <div className="absolute z-[62] mt-1 w-full overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg">
+        <div className="absolute z-[62] mt-1 w-full overflow-hidden rounded-xl border border-default bg-white shadow-lg">
           <div className="flex items-center gap-2 border-b px-3 py-2">
             <Search size={16} className="text-gray-400" />
             <input
@@ -548,13 +548,13 @@ export const PortfolioTicker = () => {
         data={positions}
         bordered={false}
         rowClassName={(_, index) =>
-          `transition-colors border-b border-gray-100/30 hover:bg-gray-50/70 ${index % 2 === 0 ? "bg-gray-50/30" : ""}`
+          `transition-colors border-b border-default hover:bg-gray-50/70 ${index % 2 === 0 ? "bg-gray-50/30" : ""}`
         }
         className="mb-8 overflow-hidden rounded-xl"
       />
 
       {/* Summary (compact) */}
-      <div className=" max-w-xl rounded-xl border border-gray-200/70 bg-white/80 p-5 shadow-sm">
+      <div className=" max-w-xl rounded-xl border border-default/70 bg-white/80 p-5 shadow-sm">
         <h2 className="text-sm font-medium text-gray-600">{t("summary.title")}</h2>
 
         <div className="mt-2 flex items-end justify-between gap-4">
@@ -637,7 +637,7 @@ export const PortfolioTicker = () => {
               min={0}
               step="1"
               inputMode="decimal"
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-xl border border-default px-3 py-2 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
               placeholder={t("placeholders.example100", "Например: 100")}
               value={addForm.number_of_shares}
               onChange={e => setAddForm(s => ({ ...s, number_of_shares: e.target.value }))}
@@ -654,7 +654,7 @@ export const PortfolioTicker = () => {
               min={0}
               step="0.0001"
               inputMode="decimal"
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-xl border border-default px-3 py-2 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
               placeholder={t("placeholders.example12500", "Например: 12500")}
               value={addForm.initial_price}
               onChange={e => setAddForm(s => ({ ...s, initial_price: e.target.value }))}
@@ -662,7 +662,7 @@ export const PortfolioTicker = () => {
           </label>
 
           {selectedStock ? (
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-3 text-xs text-gray-600">
+            <div className="rounded-xl border border-default bg-gray-50 p-3 text-xs text-gray-600">
               {t("selected.youChose", "Вы выбрали:")} <span className="font-medium">{selectedStock.ticker}</span> —{" "}
               {selectedStock.short_name_text}
               <span className="mx-2">•</span> ISIN: {selectedStock.isin_code}
@@ -712,7 +712,7 @@ export const PortfolioTicker = () => {
         <div className="space-y-4">
           {/* Read-only context */}
           {editRecord ? (
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-3 text-sm text-gray-700">
+            <div className="rounded-xl border border-default bg-gray-50 p-3 text-sm text-gray-700">
               <div className="flex items-center gap-3">
                 <OrgLogo id={editRecord.id} shortName={editRecord.ticker || "-"} logoFile={null} size={28} />
                 <div>
@@ -731,7 +731,7 @@ export const PortfolioTicker = () => {
               min={0}
               step="1"
               inputMode="decimal"
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-xl border border-default px-3 py-2 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
               placeholder={t("placeholders.example100", "Например: 100")}
               value={editForm.number_of_shares}
               onChange={e => setEditForm(s => ({ ...s, number_of_shares: e.target.value }))}
@@ -748,7 +748,7 @@ export const PortfolioTicker = () => {
               min={0}
               step="0.0001"
               inputMode="decimal"
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-xl border border-default px-3 py-2 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
               placeholder={t("placeholders.example12500", "Например: 12500")}
               value={editForm.initial_price}
               onChange={e => setEditForm(s => ({ ...s, initial_price: e.target.value }))}

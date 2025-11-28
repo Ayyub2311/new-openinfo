@@ -89,7 +89,7 @@ const PageInvestmentBrokers = () => {
     <Container>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         <div className="lg:col-span-2 flex flex-col gap-4 mt-[30px] mb-[30px]">
-          <div className="flex flex-wrap gap-2 items-center mb-4">
+          <div className="flex flex-wrap w-full  gap-2 items-center mb-4">
             {/* <span className="px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm flex items-center">
               Сортировать брокеров по категориям <ArrowDown className="w-4 h-4 ml-1" />
             </span> */}
@@ -99,7 +99,7 @@ const PageInvestmentBrokers = () => {
               onChange={opt => setSelectedYear(opt?.value)}
               options={yearOptions}
               placeholder={t("investment_brokers_menu.sort_by_year")}
-              className="min-w-[180px] sm:min-w-[200px] flex-1"
+              className="flex-1 w-full md:min-w-[180px] md:max-w-[400px]"
             />
 
             <Select
@@ -110,7 +110,7 @@ const PageInvestmentBrokers = () => {
               }}
               options={sortOptionsAmount}
               placeholder={t("investment_brokers_menu.sort_by_amount")}
-              className="min-w-[180px] sm:min-w-[200px] flex-1"
+              className="flex-1 md:min-w-[180px] md:max-w-[400px]"
             />
 
             <Select
@@ -121,17 +121,20 @@ const PageInvestmentBrokers = () => {
               }}
               options={sortOptionsQuantity}
               placeholder={t("investment_brokers_menu.sort_by_quantity")}
-              className="min-w-[180px] sm:min-w-[200px] flex-1"
+              className="flex-1 w-full md:min-w-[180px] md:max-w-[400px]"
             />
 
-            <BrokersAutoComplete
-              value={searchValue}
-              onChange={setSearchValue}
-              placeholder={t("filters.search_placeholder")}
-              className="min-w-[380px] sm:min-w-[400px] flex-1"
-            />
-            <SearchButton onClick={handleSearch} />
-            <ClearButton onClick={handleClear} />
+            <div className="flex items-center gap-2 w-full">
+              <BrokersAutoComplete
+                value={searchValue}
+                onChange={setSearchValue}
+                placeholder={t("filters.search_placeholder")}
+                className="w-full min-w-[200px] flex-1"
+              />
+              <SearchButton onClick={handleSearch} />
+              <ClearButton onClick={handleClear} />
+            </div>
+
           </div>
 
           {/* <div className="flex flex-wrap gap-2 items-center">

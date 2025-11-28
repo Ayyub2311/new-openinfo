@@ -6,6 +6,7 @@ import Container from "@/app/shared/ui/components/Container";
 import { Table } from "@/app/shared/ui/components/Table";
 import type { TableColumn } from "@/app/shared/ui/components/Table/types";
 import Link from "next/link";
+import Image from "next/image";
 
 import { Download } from "lucide-react";
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
@@ -50,8 +51,8 @@ const MaterialFiles = () => {
       dataIndex: "file",
       align: "center",
       render: value => (
-        <Link href={value} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900">
-          <Download className="w-6 h-6" />
+        <Link href={value} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900 flex justify-center">
+          <Image src="/assets/general-icons/download.svg" alt="Download" width={24} height={24} className="w-6 h-6" />
         </Link>
       ),
     },
@@ -63,7 +64,7 @@ const MaterialFiles = () => {
         data={data}
         columns={columns}
         bordered={false}
-        className="bg-white rounded shadow-sm"
+        className="bg-white -xl shadow-sm"
         rowClassName="hover:bg-gray-50"
       />
 

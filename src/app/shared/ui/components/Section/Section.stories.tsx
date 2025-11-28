@@ -47,7 +47,7 @@ export const ComplexContent: Story = {
           <Bell className="w-4 h-4" />
           <span>Notification item</span>
         </div>
-        <button className="px-4 py-2 bg-blue-500 text-white rounded">Action Button</button>
+        <button className="px-4 py-2 bg-blue-500 text-white rounded-xl">Action Button</button>
       </div>
     ),
   },

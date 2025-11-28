@@ -159,7 +159,7 @@ const Calculator: React.FC = () => {
 
         <div className="w-full">
           <p className="font-medium mb-4 text-blue-500">Торговые площадки</p>
-          <div className="w-[347px]">
+          <div className="w-full lg:w-[347px] overflow-x-auto">
             <Tabs
               items={[
                 { key: "g1", label: "Main (G1)" },
@@ -176,9 +176,8 @@ const Calculator: React.FC = () => {
             {["STK", "SMS", "BND", "SMB"].map(type => (
               <label
                 key={type}
-                className={`border rounded-lg py-1 px-3 flex items-center gap-2 justify-center cursor-pointer ${
-                  stockType === type ? "bg-blue-100 border-blue-500" : "border-black"
-                }`}
+                className={`border rounded-xl py-1 px-3 flex items-center gap-2 justify-center cursor-pointer ${stockType === type ? "bg-blue-100 border-blue-500" : "border-black"
+                  }`}
               >
                 <input
                   type="radio"
@@ -201,7 +200,7 @@ const Calculator: React.FC = () => {
               type="text"
               value={transactionAmount.toLocaleString()}
               readOnly
-              className="w-full border rounded-lg px-3 py-2 bg-gray-100 dark:bg-zinc-800 dark:text-white dark:border-zinc-600"
+              className="w-full border rounded-xl px-3 py-2 bg-gray-100 dark:bg-zinc-800 dark:text-white dark:border-zinc-600"
             />
           </div>
           <div>
@@ -210,7 +209,7 @@ const Calculator: React.FC = () => {
               type="text"
               value={commissionCosts.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               readOnly
-              className="w-full border rounded-lg px-3 py-2 bg-gray-100 dark:bg-zinc-800 dark:text-white dark:border-zinc-600"
+              className="w-full border rounded-xl px-3 py-2 bg-gray-100 dark:bg-zinc-800 dark:text-white dark:border-zinc-600"
             />
           </div>
           <div>
@@ -221,7 +220,7 @@ const Calculator: React.FC = () => {
               type="text"
               value={totalCosts.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               readOnly
-              className="w-full border rounded-lg px-3 py-2 bg-gray-100 dark:bg-zinc-800 dark:text-white dark:border-zinc-600"
+              className="w-full border rounded-xl px-3 py-2 bg-gray-100 dark:bg-zinc-800 dark:text-white dark:border-zinc-600"
             />
           </div>
         </div>

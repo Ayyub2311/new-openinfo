@@ -162,7 +162,7 @@ async function PageAnnounce({ params }: PageProps) {
           <a
             href={`https://openinfo.uz/ru/announce/to_pdf/${id}/`}
             download
-            className="inline-flex items-center gap-1 px-3 py-1.5 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center gap-1 px-3 py-1.5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors"
           >
             <Download size={16} />
             Скачать PDF
@@ -186,12 +186,12 @@ async function PageAnnounce({ params }: PageProps) {
             className="[&>p]:mb-4 [&>h2]:text-xl [&>h2]:font-semibold [&>h2]:mb-4 [&>h2]:text-center
                       [&>h3]:text-lg [&>h3]:font-semibold [&>h3]:mb-3 [&>ol]:list-decimal [&>ol]:pl-5
                       [&>ul]:list-disc [&>ul]:pl-5 [&>li]:mb-2 [&>.important]:bg-gray-50 [&>.important]:p-4
-                      [&>.important]:rounded-lg [&>.important]:my-6"
+                      [&>.important]:rounded-xl [&>.important]:my-6"
           />
         </div>
 
         {/* Organization info */}
-        <div className="mt-8 p-4 bg-gray-50 rounded-lg">
+        <div className="mt-8 p-4 bg-gray-50 rounded-xl">
           <h3 className="text-lg font-semibold mb-3">Информация об организации</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>

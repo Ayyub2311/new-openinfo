@@ -44,9 +44,9 @@ export function FinancialIndicatorsTable({ organizationId }: { organizationId: n
         <table className="min-w-full text-sm text-left border-collapse">
           <thead>
             <tr className="bg-gray-100 text-xs text-gray-600 font-semibold">
-              <th className="p-3 border border-gray-200">Indicators</th>
+              <th className="p-3 border border-default">Indicators</th>
               {years.map(year => (
-                <th key={year} className="p-3 border border-gray-200 text-center">
+                <th key={year} className="p-3 border border-default text-center">
                   {year}
                 </th>
               ))}
@@ -55,7 +55,7 @@ export function FinancialIndicatorsTable({ organizationId }: { organizationId: n
           <tbody>
             {filtered.map(row => (
               <tr key={row.title}>
-                <td className="p-3 font-medium text-gray-700 border border-gray-200 bg-gray-50">
+                <td className="p-3 font-medium text-gray-700 border border-default bg-gray-50">
                   {t(row.title as any) || row.title.replaceAll("_", " ")}
                 </td>
                 {years.map(year => {
@@ -72,7 +72,7 @@ export function FinancialIndicatorsTable({ organizationId }: { organizationId: n
                   }
 
                   return (
-                    <td key={year} className="p-3 text-center border border-gray-200">
+                    <td key={year} className="p-3 text-center border border-default">
                       {formatted}
                     </td>
                   );

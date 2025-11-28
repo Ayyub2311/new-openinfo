@@ -146,12 +146,12 @@ export default function DividendCalendarTable() {
       },
       ...(type === "bond"
         ? [
-            {
-              title: t("DividendTable.annual_interest"),
-              dataIndex: "annual_interest",
-              align: "right" as const, // ✅ fix
-            },
-          ]
+          {
+            title: t("DividendTable.annual_interest"),
+            dataIndex: "annual_interest",
+            align: "right" as const, // ✅ fix
+          },
+        ]
         : []),
 
       {
@@ -194,16 +194,15 @@ export default function DividendCalendarTable() {
             <button
               key={option.value}
               onClick={() => handleTypeChange(option.value as DividendType)}
-              className={`px-4 py-2 rounded-full text-sm transition-all border text-nowrap border-gray-300 ${
-                type === option.value ? "bg-blue-500 text-white border-blue-500" : "text-blue-700 hover:bg-blue-100"
-              }`}
+              className={`px-4 py-2 rounded-full text-sm transition-all border text-nowrap border-default ${type === option.value ? "bg-blue-500 text-white border-blue-500" : "text-blue-700 hover:bg-blue-100"
+                }`}
             >
               {option.label}
             </button>
           ))}
           <a
             href={`/disclosure/dividend-calendar/download-excel/?stock_type=${type}&search=`}
-            className="flex items-center gap-2 px-4 py-2 rounded-full text-sm border border-gray-300 text-blue-700 hover:border-blue-500 transition-all"
+            className="flex items-center gap-2 px-4 py-2 rounded-full text-sm border border-default text-blue-700 hover:border-blue-500 transition-all"
             download
             target="_blank"
           >

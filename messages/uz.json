@@ -3,6 +3,13 @@
     "title": "UZ version",
     "about": "UZ version"
   },
+  "Hero": {
+  "title1": "O'zbekiston Respublikasi Milliy istiqbolli loyihalar agentligining ",
+  "title2": "Yagona Korporativ Axborot Portali"
+},
+"Pagination": {
+  "range": "{start}-{end} dan {total} ta"
+},
   "Facts": {
     "factbase": {
       "title": "Emissiya haqida ma'lumot",
@@ -684,7 +691,7 @@
     "change_percent": "O'zgarish (%)"
   },
   "UCIChart": {
-    "title": "📈 Oʻzbekiston Kompozit Indeksi (UCI)",
+    "title": "Oʻzbekiston Kompozit Indeksi (UCI)",
     "description": "Oʻzbekiston Kompozit Indeksi (UCI) - bu O‘zbekiston Respublikasi Fond Birjasi 'Toshkent' (UZSE) birja indeksidir, u ro‘yxatga olingan aksiyadorlik jamiyatlari va ularning bozor kapitallashuvining umumiy natijalarini aks ettiradi.",
     "last_updated": "Oxirgi yangilanish",
     "current_index": "Joriy indeks",

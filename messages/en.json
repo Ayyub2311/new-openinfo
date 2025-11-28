@@ -4,9 +4,12 @@
     "about": "Go to the about page"
   },
   "Hero": {
-  "title1": "Unified Corporate Information Portal",
-  "title2": "National Agency for Advanced Projects of the Republic of Uzbekistan"
-},
+    "title1": "Unified Corporate Information Portal of the",
+    "title2": "National Agency for Advanced Projects of the Republic of Uzbekistan"
+  },
+  "Pagination": {
+    "range": "{start}-{end} of {total}"
+  },
   "Facts": {
     "factbase": {
       "title": "Issuer Information",
@@ -689,7 +692,7 @@
     "change_percent": "Change (%)"
   },
   "UCIChart": {
-    "title": "📈 Uzbekistan Composite Index (UCI)",
+    "title": "Uzbekistan Composite Index (UCI)",
     "description": "The Uzbekistan Composite Index (UCI) is a stock exchange index of the Republican Stock Exchange 'Tashkent' (UZSE), reflecting the overall performance of listed joint-stock companies and their market capitalization.",
     "last_updated": "Last updated",
     "current_index": "Current index",
@@ -984,7 +987,6 @@
   "emission": {
     "title_object_detection": "Дополнительная информация организации"
   },
-
   "portfolio": {
     "header": {
       "title": "Portfolio",

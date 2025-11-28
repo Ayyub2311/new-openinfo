@@ -71,7 +71,7 @@ export const SubscribeToggle = ({
       type="button"
       onClick={toggle}
       disabled={busy}
-      className={`inline-flex items-center justify-center rounded-md ${busy ? "opacity-60" : ""} ${className ?? ""}`}
+      className={`inline-flex items-center justify-center rounded-xl ${busy ? "opacity-60" : ""} ${className ?? ""}`}
       style={box}
     >
       <Bell

@@ -8,7 +8,7 @@ interface NewsProps {
 
 const Post: React.FC<NewsProps> = ({ title, date }) => {
   return (
-    <div className="border-b border-gray-300 py-4">
+    <div className="border-b border-default py-4">
       <Text className="text-lg font-medium">{title}</Text>
       <Text className="text-gray-500 text-sm">{date}</Text>
     </div>

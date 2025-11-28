@@ -39,7 +39,7 @@ const Select = ({ options, value, onChange, placeholder = "Выберите...",
   return (
     <div ref={containerRef} className={`relative ${className}`}>
       <div
-        className="flex items-center justify-between px-4 py-2 rounded-full bg-blue-50 text-sm text-gray-700 border border-gray-300 cursor-pointer select-none w-full min-w-[200px]"
+        className="flex items-center justify-between px-4 py-2 rounded-full bg-blue-50 text-sm text-gray-700 border border-default cursor-pointer select-none w-full min-w-[200px]"
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex-1 truncate text-left">{value ? value.label : placeholder}</div>
@@ -47,13 +47,12 @@ const Select = ({ options, value, onChange, placeholder = "Выберите...",
       </div>
 
       {isOpen && (
-        <ul className="absolute z-50 mt-1 py-1 bg-white border rounded-md shadow-lg max-h-64 overflow-auto text-sm min-w-[12rem]">
+        <ul className="absolute z-50 mt-1 py-1 bg-white border rounded-xl shadow-lg max-h-64 overflow-auto text-sm min-w-[12rem]">
           {options.map(option => (
             <li
               key={option.value}
-              className={`px-4 py-2 whitespace-nowrap cursor-pointer hover:bg-blue-100 ${
-                value?.value === option.value ? "bg-blue-50" : ""
-              } ${option.disabled ? "opacity-50 cursor-not-allowed" : ""}`}
+              className={`px-4 py-2 whitespace-nowrap cursor-pointer hover:bg-blue-100 ${value?.value === option.value ? "bg-blue-50" : ""
+                } ${option.disabled ? "opacity-50 cursor-not-allowed" : ""}`}
               onClick={() => handleSelect(option)}
             >
               {option.label}

@@ -15,7 +15,7 @@ const Sidebar: React.FC<SidebarProps> = ({ items }) => {
   return (
     <div className="w-full box-border items-stretch flex border-2 border-default mb-6">
       <div className="flex-1 min-w-0 ">
-        <div className=" p-6 box-border ">{items.find(item => item.id === current)?.component}</div>
+        <div className=" p-6 box-border overflow-hidden w-full">{items.find(item => item.id === current)?.component}</div>
       </div>
 
       <div
@@ -25,9 +25,8 @@ const Sidebar: React.FC<SidebarProps> = ({ items }) => {
         <div className="flex flex-col gap-8">
           {items.map(item => (
             <div
-              className={`flex flex-col gap-1 items-center cursor-pointer p-2 rounded-md transition-colors ${
-                item.id === current ? "bg-[#1256A0]/10 text-[#1256A0]" : "hover:bg-gray-100 text-gray-600"
-              }`}
+              className={`flex flex-col gap-1 items-center cursor-pointer p-2 rounded-xl transition-colors ${item.id === current ? "bg-[#1256A0]/10 text-[#1256A0]" : "hover:bg-gray-100 text-gray-600"
+                }`}
               key={item.id}
               onClick={() => setCurrent(item.id)}
             >

@@ -44,7 +44,7 @@ export function Notification({ message, type, duration = 4000, onClose }: Notifi
   }[type];
 
   return (
-    <div className={`fixed top-4 right-4 z-50 p-4 rounded-lg border ${bgColor} shadow-lg max-w-sm`}>
+    <div className={`fixed top-4 right-4 z-50 p-4 rounded-xl border ${bgColor} shadow-lg max-w-sm`}>
       <div className="flex items-start gap-3">
         <div className={`mt-0.5 ${iconColor}`}>
           {type === "success" && <CheckCircle2 className="w-5 h-5" />}

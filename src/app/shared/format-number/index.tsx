@@ -61,9 +61,8 @@ export default function FormatNumbers({
   }
 
   const currency = locale === "uz" ? "so‘m" : "сум";
-  const short = `${number(parsedValue / factor)} ${bigSuffix}${
-    showCurrency ? ` ${currency}` : ""
-  }${suffix ? suffix : ""}`;
+  const short = `${number(parsedValue / factor)} ${bigSuffix}${showCurrency ? ` ${currency}` : ""
+    }${suffix ? suffix : ""}`;
 
   const full = `${parsedValue.toLocaleString(locale)}${showCurrency ? ` ${currency}` : ""}${suffix ? suffix : ""}`;
 
@@ -73,7 +72,7 @@ export default function FormatNumbers({
   return (
     <div className="relative group inline-block">
       <span className={`${textColor} ${className}`}>{short}</span>
-      <div className="absolute z-10 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800 text-white text-xs rounded px-2 py-1 -top-5 left-1/2 -translate-x-1/2 select-text whitespace-nowrap">
+      <div className="absolute z-10 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-800 text-white text-xs rounded-xl px-2 py-1 -top-5 left-1/2 -translate-x-1/2 select-text whitespace-nowrap">
         {full}
       </div>
     </div>

@@ -7,5 +7,5 @@ const sizeClasses = {
 };
 
 export const ChartLabelIndicator = ({ color, size = "sm", className }: ChartLabelIndicatorProps) => (
-  <div className={`${sizeClasses[size]} rounded ${color} ${className}`} role="presentation" />
+  <div className={`${sizeClasses[size]} rounded-xl ${color} ${className}`} role="presentation" />
 );

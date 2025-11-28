@@ -52,17 +52,17 @@ type WatchlistItem = {
 // };
 
 const RowSkeleton: React.FC = () => (
-  <li className="flex items-center justify-between rounded-xl border border-gray-100 bg-white/60 p-3 shadow-sm shadow-black/[0.02] ring-1 ring-black/[0.02] transition-colors md:p-3.5">
+  <li className="flex items-center justify-between rounded-xl border border-default bg-white/60 p-3 shadow-sm shadow-black/[0.02] ring-1 ring-black/[0.02] transition-colors md:p-3.5">
     <div className="flex items-center gap-3">
       <div className="h-8 w-8 animate-pulse rounded-xl bg-gray-200" />
       <div className="space-y-1">
-        <div className="h-3 w-16 animate-pulse rounded bg-gray-200" />
-        <div className="h-2.5 w-28 animate-pulse rounded bg-gray-100" />
+        <div className="h-3 w-16 animate-pulse rounded-xl bg-gray-200" />
+        <div className="h-2.5 w-28 animate-pulse rounded-xl bg-gray-100" />
       </div>
     </div>
     <div className="text-right">
-      <div className="mb-0.5 h-3 w-12 animate-pulse rounded bg-gray-200" />
-      <div className="h-2.5 w-20 animate-pulse rounded bg-gray-100" />
+      <div className="mb-0.5 h-3 w-12 animate-pulse rounded-xl bg-gray-200" />
+      <div className="h-2.5 w-20 animate-pulse rounded-xl bg-gray-100" />
     </div>
   </li>
 );
@@ -162,7 +162,7 @@ const WatchlistSidebar: React.FC = () => {
         )}
 
         {!loading && items.length === 0 && (
-          <div className="rounded-xl border border-dashed border-gray-200 bg-gray-50/60 p-5 text-center">
+          <div className="rounded-xl border border-dashed border-default bg-gray-50/60 p-5 text-center">
             <div className="mx-auto mb-2 h-8 w-8 rounded-xl bg-gray-200" />
             <Text className="text-[13px] text-gray-500">Список наблюдения пуст</Text>
             <Text className="mt-1 text-[12px] text-gray-400">
@@ -185,7 +185,7 @@ const WatchlistSidebar: React.FC = () => {
                 <li
                   key={it.id}
                   className="grid grid-cols-[auto,1fr,auto] items-center gap-3 md:gap-4
-                         rounded-2xl border border-gray-100 bg-white/70 p-3 md:p-3.5
+                         rounded-xl border border-default bg-white/70 p-3 md:p-3.5
                          shadow-sm shadow-black/[0.02] ring-1 ring-black/[0.02] hover:bg-white min-w-[288px]"
                 >
                   {/* Left: logo + texts */}
@@ -219,7 +219,7 @@ const WatchlistSidebar: React.FC = () => {
                       onClick={() => removeItem(it.id)}
                       disabled={deletingIds.has(it.id)}
                       className="inline-flex h-9 w-9 items-center justify-center rounded-xl border
-                             border-gray-200 bg-white/70 text-gray-500 hover:text-red-600 hover:border-red-200
+                             border-default bg-white/70 text-gray-500 hover:text-red-600 hover:border-red-200
                              transition disabled:opacity-60"
                       title="Удалить"
                     >

@@ -31,7 +31,7 @@ export const AreaLineChart: React.FC<AreaLineChartProps> = ({ data, width = 800,
 
   return (
     <div className={className}>
-      <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} className="w-full">
+      <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`} className="w-full h-auto">
         {/* Gradient Background */}
         <defs>
           <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">

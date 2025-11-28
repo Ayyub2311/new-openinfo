@@ -113,10 +113,10 @@ export default function SidebarSubscribedLists({
           value={search}
           onChange={e => setSearch(e.target.value)}
           placeholder="Поиск организации"
-          className="h-8 w-full rounded-md border border-gray-200 px-2 text-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="h-8 w-full rounded-xl border border-default px-2 text-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <button
-          className="h-8 px-3 rounded-md bg-blue-600 text-white text-xs disabled:opacity-60"
+          className="h-8 px-3 rounded-xl bg-blue-600 text-white text-xs disabled:opacity-60"
           onClick={() => setQuery(search.trim())}
           disabled={loading && rows.length === 0}
         >
@@ -135,7 +135,7 @@ export default function SidebarSubscribedLists({
           {rows.map(it => (
             <li
               key={it.organization.id}
-              className="group flex items-center justify-between rounded-xl border border-gray-100 bg-white/60 p-3 shadow-sm shadow-black/[0.02] ring-1 ring-black/[0.02] transition-colors hover:bg-white md:p-3.5"
+              className="group flex items-center justify-between rounded-xl border border-default bg-white/60 p-3 shadow-sm shadow-black/[0.02] ring-1 ring-black/[0.02] transition-colors hover:bg-white md:p-3.5"
             >
               <Link href={`/ru/organizations/${it.organization.id}`} className="flex items-center gap-2 min-w-0">
                 <OrgLogo id={it.organization.id} shortName={it.organization.full_name_text} />
@@ -158,7 +158,7 @@ export default function SidebarSubscribedLists({
 
       {nextUrl && (
         <button
-          className="mt-3 w-full h-7 rounded-md bg-gray-100 text-xs hover:bg-gray-200"
+          className="mt-3 w-full h-7 rounded-xl bg-gray-100 text-xs hover:bg-gray-200"
           onClick={() => fetchPage(nextUrl)}
           disabled={loading}
         >

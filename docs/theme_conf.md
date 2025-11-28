@@ -86,7 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 // components/Card.tsx
 export function Card({ title, content }: { title: string; content: string }) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+    <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
       <h2 className="text-gray-900 dark:text-white text-xl font-bold">{title}</h2>
       <p className="text-gray-600 dark:text-gray-300 mt-2">{content}</p>
     </div>
@@ -113,7 +113,7 @@ export function ThemeSwitcher() {
   };
 
   return (
-    <button onClick={toggleTheme} className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800">
+    <button onClick={toggleTheme} className="p-2 rounded-xl bg-gray-200 dark:bg-gray-800">
       <span className="block dark:hidden">🌙</span>
       <span className="hidden dark:block">☀️</span>
     </button>
@@ -191,7 +191,7 @@ export default config;
 
 ```typescript
 function CustomButton({ children }: { children: React.ReactNode }) {
-  return <button className="bg-primary text-primary hover:bg-primary/90 px-4 py-2 rounded-lg">{children}</button>;
+  return <button className="bg-primary text-primary hover:bg-primary/90 px-4 py-2 rounded-xl">{children}</button>;
 }
 ```
 

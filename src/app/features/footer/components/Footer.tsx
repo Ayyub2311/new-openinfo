@@ -19,7 +19,7 @@ const Footer = () => {
       <Image src={Pattern} alt="Random Pattern" className="absolute bottom-[100px] right-1/4 w-[120px] h-[120px] opacity-5"/>
       <Image src={Pattern} alt="Random Pattern" className="absolute bottom-[160px] left-1/4 w-[140px] h-[140px] opacity-5"/>
       <div className="flex relative z-10 h-full">
-        <div className="container mx-auto mt-8 md:mt-12 lg:mt-16 xl:mt-24 2xl:mt-32 mb-8 px-4 xl:px-0">
+        <div className="container mx-auto mt-8 md:mt-12 lg:mt-16 xl:mt-24 2xl:mt-32 mb-8 px-4 lg:px-8 xl:px-0">
           <div className="flex flex-col lg:flex-row justify-between gap-8">
             <div className="space-y-6">
               <h2 className="text-white font-semibold text-sm md:text-base max-w-lg">

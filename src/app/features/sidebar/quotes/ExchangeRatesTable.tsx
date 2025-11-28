@@ -34,7 +34,7 @@ const ExchangeRatesTable: React.FC<ExchangeRatesTableProps> = ({ tableData, load
           <thead>
             <tr className="border-b">
               <th className="py-3 px-4 text-left">{t("ExchangeRatesTable.currency")}</th>
-              <th className="py-3 px-4 text-right">{t("ExchangeRatesTable.rate")}</th>
+              <th className="py-3 px-4 text-right whitespace-nowrap">{t("ExchangeRatesTable.rate")}</th>
               <th className="py-3 px-4 text-right">{t("ExchangeRatesTable.diff")}</th>
               <th className="py-3 px-4 text-right"></th>
             </tr>

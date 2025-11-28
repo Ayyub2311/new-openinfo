@@ -77,8 +77,8 @@ const TradeAnalyticsTables = () => {
     }}>
       <div className="w-full md:w-1/2">
         <div className="d-flex flex-column mb-2">
-          <h2 className="text-lg font-semibold  text-900 ">{t("TradeAnalytics.top_by_deals")}</h2>
-          <span>({t("TradeAnalytics.last_30_days")})</span>
+          <h2 className="text-lg font-semibold  text-900 ">{t("TradeAnalytics.top_by_deals")} <br /> <span className="text-base font-normal">({t("TradeAnalytics.last_30_days")})</span></h2>
+          
         </div>
 
         <Table
@@ -92,8 +92,8 @@ const TradeAnalyticsTables = () => {
       </div>
       <div className="w-full md:w-1/2">
         <div className="d-flex flex-column mb-2">
-          <h2 className="text-lg font-semibold text-900 ">{t("TradeAnalytics.top_by_volume")}</h2>
-          <span>({t("TradeAnalytics.last_30_days")})</span>
+          <h2 className="text-lg font-semibold text-900 ">{t("TradeAnalytics.top_by_volume")}  <span className="text-base font-normal">({t("TradeAnalytics.last_30_days")})</span></h2>
+          
         </div>
 
         <Table

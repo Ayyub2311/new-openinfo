@@ -92,7 +92,7 @@ export default function CorporatePortal() {
     <div className="absolute left-2 top-2 z-10 flex gap-1">
       <button
         onClick={toggleSize}
-        className="inline-flex items-center justify-center rounded-md bg-white/10 hover:bg-white/20 text-white px-2 py-1 backdrop-blur-md transition"
+        className="inline-flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 text-white px-2 py-1 backdrop-blur-md transition"
         aria-label={view === "expanded" ? "Collapse" : "Expand"}
         title={view === "expanded" ? "Collapse" : "Expand"}
       >
@@ -100,7 +100,7 @@ export default function CorporatePortal() {
       </button>
       <button
         onClick={hide}
-        className="inline-flex items-center justify-center rounded-md bg-white/10 hover:bg-white/20 text-white px-2 py-1 backdrop-blur-md transition"
+        className="inline-flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 text-white px-2 py-1 backdrop-blur-md transition"
         aria-label="Hide"
         title="Hide"
       >
@@ -115,9 +115,8 @@ export default function CorporatePortal() {
         {Controls}
         <Background isMain backgroundImage="/assets/backgrounds/big-card.svg" view={view}>
           <h1
-            className={`font-heading text-white font-semibold  lg:w-7/12 xl:w-5/6 2xl:w-9/12 mx-auto ${
-              view === "expanded" ? "text-[32px] md:text-[44px]" : "text-sm sm:text-base"
-            }`}
+            className={`font-heading text-white font-semibold  lg:w-7/12 xl:w-5/6 2xl:w-9/12 mx-auto ${view === "expanded" ? "text-[32px] md:text-[44px]" : "text-sm sm:text-base"
+              }`}
           >
             {t("Hero.title1")}
           </h1>
@@ -127,9 +126,8 @@ export default function CorporatePortal() {
       <div className="relative lg:col-span-1">
         <Background backgroundImage="/assets/backgrounds/card.svg" view={view}>
           <h2
-            className={`font-body text-white font-semibold lg:w-5/6 xl:w-4/5 2xl:w-4/6 mx-auto ${
-              view === "expanded" ? "text-[16px] md:text-[24px]" : "text-sm sm:text-base"
-            }`}
+            className={`font-body text-white font-semibold lg:w-5/6 xl:w-4/5 2xl:w-4/6 mx-auto ${view === "expanded" ? "text-[16px] md:text-[24px]" : "text-sm sm:text-base"
+              }`}
           >
             {t("Hero.title2")}
           </h2>

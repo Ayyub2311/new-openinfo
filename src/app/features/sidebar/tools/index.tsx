@@ -3,7 +3,7 @@ import React from "react";
 const CalendarMenu: React.FC = () => {
   return (
     <div className="py-4">
-      <h2 className="text-lg bg-blue-400 px-1 rounded-lg font-medium mb-4">Календари</h2>
+      <h2 className="text-lg bg-blue-400 px-1 rounded-xl font-medium mb-4">Календари</h2>
       <ul className="space-y-2">
         <li>
           <a href="#" className=" hover:underline">
@@ -28,7 +28,7 @@ const CalendarMenu: React.FC = () => {
 const EconomicsUZB: React.FC = () => {
   return (
     <div className="py-4">
-      <h2 className="text-lg bg-blue-400 px-1 rounded-lg font-medium mb-4">Экономика УЗБ</h2>
+      <h2 className="text-lg bg-blue-400 px-1 rounded-xl font-medium mb-4">Экономика УЗБ</h2>
       <ul className="space-y-2">
         <li>
           <a href="#" className=" hover:underline">
@@ -48,7 +48,7 @@ const EconomicsUZB: React.FC = () => {
 const MoreTools: React.FC = () => {
   return (
     <div className="py-4">
-      <h2 className="text-lg bg-blue-400 px-1 rounded-lg font-medium mb-4">Больше Инструментов</h2>
+      <h2 className="text-lg bg-blue-400 px-1 rounded-xl font-medium mb-4">Больше Инструментов</h2>
       <ul className="space-y-2">
         <li>
           <a href="#" className=" hover:underline">

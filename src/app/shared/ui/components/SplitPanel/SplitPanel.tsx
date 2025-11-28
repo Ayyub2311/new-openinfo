@@ -12,7 +12,7 @@ export const SplitPanelContainer = React.forwardRef<HTMLDivElement, SplitPanelCo
 
     return (
       <div ref={ref} className={cn("w-full h-full", className)} {...props}>
-        <div className="w-full h-full rounded border border-gray-300">
+        <div className="w-full h-full rounded-xl border border-default">
           <div
             className={cn(
               "grid h-full",
@@ -33,13 +33,13 @@ export const SplitPanelContainer = React.forwardRef<HTMLDivElement, SplitPanelCo
                   // Responsive padding
                   "p-2 md:p-2 lg:p-4",
                   showDividers &&
-                    index < items.length - 1 &&
-                    (isVertical
-                      ? "border-b border-gray-200"
-                      : cn(
-                          "border-b md:border-b-0 md:border-r border-gray-200",
-                          index % 2 === 0 && "md:border-r lg:border-r"
-                        ))
+                  index < items.length - 1 &&
+                  (isVertical
+                    ? "border-b border-default"
+                    : cn(
+                      "border-b md:border-b-0 md:border-r border-default",
+                      index % 2 === 0 && "md:border-r lg:border-r"
+                    ))
                 )}
               >
                 {item}

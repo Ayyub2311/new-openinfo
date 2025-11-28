@@ -6,7 +6,7 @@ export const DescriptionList: React.FC<DescriptionListProps> = ({ items, classNa
   return (
     <div className={cn("w-full", className)}>
       {items.map((item, index) => (
-        <div key={index} className="flex border-b border-gray-200">
+        <div key={index} className="flex border-b border-default">
           <div className="py-4 w-1/3">
             <Text variant="secondary" className="font-semibold">
               {item.label}

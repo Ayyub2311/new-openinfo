@@ -75,7 +75,7 @@ export const AutocompleteSelect: React.FC<Props> = ({
   return (
     <div ref={searchRef} className={`relative ${className}`}>
       {/* Input Box */}
-      <div className="flex items-center justify-between px-4 py-2 rounded-full bg-blue-50 text-sm text-gray-700 border border-gray-300 cursor-text select-none">
+      <div className="flex items-center justify-between px-4 py-2 rounded-full bg-blue-50 text-sm text-gray-700 border border-default cursor-text select-none">
         <input
           type="text"
           placeholder={placeholder}
@@ -96,7 +96,7 @@ export const AutocompleteSelect: React.FC<Props> = ({
 
       {/* Dropdown */}
       {showResults && (
-        <div className="absolute z-50 mt-1 py-1 bg-white border rounded-md shadow-lg max-h-64 overflow-auto text-sm min-w-[14rem]">
+        <div className="absolute z-50 mt-1 py-1 bg-white border rounded-xl shadow-lg max-h-64 overflow-auto text-sm min-w-[14rem]">
           {results.length > 0 ? (
             results.map(result => (
               <div

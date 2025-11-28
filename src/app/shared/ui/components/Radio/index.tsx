@@ -36,7 +36,7 @@ const Radio: React.FC<RadioProps> = ({
           <div
             className={`w-3 h-3 rounded-full border transition-colors
               ${checked ? "border-sky-700" : "border-black/60"}
-              ${disabled ? "border-gray-300" : ""}
+              ${disabled ? "border-default" : ""}
             `}
           />
 
@@ -75,7 +75,7 @@ const Radio: React.FC<RadioProps> = ({
         <div
           className={`w-4 h-4 rounded-full border transition-colors
             ${checked ? "border-sky-700" : "border-black/60"}
-            ${disabled ? "border-gray-300" : ""}
+            ${disabled ? "border-default" : ""}
           `}
         />
 

@@ -170,6 +170,7 @@ const StockOverviewCombined = () => {
             <Tabs
               tabs={["1D", "1W", "1M", "6M"].map(id => ({ id, label: t(`StockTabs.${id}` as any) }))}
               onChange={setActiveTab}
+              variant="pill"
             />
           </div>
         </div>

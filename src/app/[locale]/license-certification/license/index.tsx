@@ -128,43 +128,44 @@ const LicenseTable = () => {
     <Container style={{ padding: "0" }}>
       {/* Filters */}
       <div className="flex flex-wrap gap-4 items-center mb-4">
-       <div className="flex gap-4 items-center w-full">
-        <a
-          href="https://license.gov.uz/auth"
-          target="_blank"
-          className="px-4 py-2 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-200 text-sm border border-gray-300 whitespace-nowrap"
-        >
-          → {t("AttestationTabs.get_license")}
-        </a>
+        <div className="flex flex-wrap md:flex-nowrap gap-4 items-center w-full h-full">
+          <a
+            href="https://license.gov.uz/auth"
+            target="_blank"
+            className="w-full md:w-[180px] px-4 py-2 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-200 text-sm border border-default whitespace-nowrap "
+          >
+            → {t("AttestationTabs.get_license")}
+          </a>
 
-        <Select
-          options={activityOptions}
-          value={activityType}
-          onChange={setActivityType}
-          placeholder={t("AttestationTabs.service_name")}
-        />
+          <Select
+            options={activityOptions}
+            value={activityType}
+            onChange={setActivityType}
+            placeholder={t("AttestationTabs.service_name")}
+            className="w-full md:min-w-[215px] md:max-w-[1000px]"
+          />
 
-        <Input
-          placeholder={t("AttestationTabs.organization_column")}
-          value={organization}
-          onChange={e => setOrganization(e.target.value)}
-          className="rounded-full bg-blue-50  w-full"
-        />
+          <Input
+            placeholder={t("AttestationTabs.organization_column")}
+            value={organization}
+            onChange={e => setOrganization(e.target.value)}
+            className="rounded-full bg-blue-50  w-full md:min-w-[215px] md:max-w-[1000px] h-full"
+          />
         </div>
-        
+
 
         <div className="flex items-center gap-2 w-full">
- <Input
-          placeholder={t("AttestationTabs.license_number")}
-          value={licenseNumber}
-          onChange={e => setLicenseNumber(e.target.value)}
-          className="rounded-full bg-blue-50 w-full"
-        />
+          <Input
+            placeholder={t("AttestationTabs.license_number")}
+            value={licenseNumber}
+            onChange={e => setLicenseNumber(e.target.value)}
+            className="rounded-full bg-blue-50 w-full"
+          />
 
-        <SearchButton onClick={handleSearch} />
-        <ClearButton onClick={handleClear} />
+          <SearchButton onClick={handleSearch} />
+          <ClearButton onClick={handleClear} />
         </div>
-       
+
       </div>
 
       {/* Table */}
@@ -172,7 +173,7 @@ const LicenseTable = () => {
         data={data}
         columns={columns}
         bordered={false}
-        className="bg-white rounded shadow-sm"
+        className="bg-white rounded-xl shadow-sm"
         rowClassName="hover:bg-gray-50"
       />
 

@@ -169,7 +169,7 @@ const GeneralTable: React.FC<GeneralTableProps> = ({ id, isListing }) => {
       <div className="flex flex-col lg:flex-row w-full gap-4 lg:gap-6 ">
         {/* Chart Panel */}
         <div className="w-full lg:w-[70%]">
-          <div className="p-3 rounded border">
+          <div className="p-3 rounded-xl border">
             <div className="flex flex-col ">
               <div className="flex flex-wrap gap-2">
                 {periods.map(period => (

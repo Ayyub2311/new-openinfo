@@ -68,12 +68,12 @@ export const GDPRConsent = ({ onAccept, initiallyAccepted = false }: GDPRConsent
   };
 
   return (
-    <div className="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+    <div className="mt-4 p-4 bg-gray-50 rounded-xl border border-default">
       <div className="flex items-center justify-between mb-3">
         <h3 className="font-medium text-gray-900">{translations[language].title}</h3>
         <button
           onClick={toggleLanguage}
-          className="flex items-center gap-1 px-2 py-1 rounded-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 text-xs"
+          className="flex items-center gap-1 px-2 py-1 rounded-full bg-white border border-default text-gray-700 hover:bg-gray-100 text-xs"
         >
           <Languages size={14} />
           <span className="uppercase">{language}</span>
@@ -84,7 +84,7 @@ export const GDPRConsent = ({ onAccept, initiallyAccepted = false }: GDPRConsent
 
       <button
         onClick={toggleAccordion}
-        className="w-full flex justify-between items-center p-2 bg-white rounded-md border border-gray-200 hover:bg-gray-50 text-sm"
+        className="w-full flex justify-between items-center p-2 bg-white rounded-xl border border-default hover:bg-gray-50 text-sm"
       >
         <span className="text-gray-700">
           {translations[language].sections.length}{" "}
@@ -94,7 +94,7 @@ export const GDPRConsent = ({ onAccept, initiallyAccepted = false }: GDPRConsent
       </button>
 
       {isOpen && (
-        <div className="mt-2 p-3 bg-white rounded-md border border-gray-200">
+        <div className="mt-2 p-3 bg-white rounded-xl border border-default">
           <ul className="space-y-2">
             {translations[language].sections.map((section, index) => (
               <li key={index} className="flex items-start text-sm">

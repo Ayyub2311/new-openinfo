@@ -82,7 +82,7 @@ export default function LoginModal({ isOpen, onClose, setNotification }: Props) 
       {showRegistration && <RegistrationModal onClose={handleRegistrationClose} />}
 
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-        <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 relative border border-gray-200">
+        <div className="bg-white rounded-xl shadow-2xl w-full max-w-md p-8 relative borderborder-default">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
@@ -97,7 +97,7 @@ export default function LoginModal({ isOpen, onClose, setNotification }: Props) 
                 type="text"
                 value={username}
                 onChange={e => setUsername(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                className="w-full px-4 py-3 border border-default rounded-xl shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                 required
               />
             </div>
@@ -107,7 +107,7 @@ export default function LoginModal({ isOpen, onClose, setNotification }: Props) 
                 type="password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                className="w-full px-4 py-3 border border-default rounded-xl shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                 required
               />
             </div>
@@ -118,18 +118,16 @@ export default function LoginModal({ isOpen, onClose, setNotification }: Props) 
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`h-12 w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all font-medium shadow-md hover:shadow-lg ${
-                  isLoading ? "opacity-70 cursor-not-allowed" : ""
-                }`}
+                className={`h-12 w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all font-medium shadow-md hover:shadow-lg ${isLoading ? "opacity-70 cursor-not-allowed" : ""
+                  }`}
               >
                 {isLoading ? t("Login.loading") : t("Login.login")}
               </button>
               <button
                 type="button"
                 disabled={isLoading}
-                className={`h-12 w-full bg-white border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-all font-medium shadow-sm hover:shadow-md ${
-                  isLoading ? "opacity-70 cursor-not-allowed" : ""
-                }`}
+                className={`h-12 w-full bg-white border border-blue-600 text-blue-600 rounded-xl hover:bg-blue-50 transition-all font-medium shadow-sm hover:shadow-md ${isLoading ? "opacity-70 cursor-not-allowed" : ""
+                  }`}
               >
                 <Link
                   href="/auth/register"
@@ -156,9 +154,8 @@ export default function LoginModal({ isOpen, onClose, setNotification }: Props) 
                 type="button"
                 onClick={handleGoogleSignIn}
                 disabled={isLoading}
-                className={`h-12 w-full flex items-center justify-center gap-3 px-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition shadow-sm hover:shadow-md ${
-                  isLoading ? "opacity-70 cursor-not-allowed" : ""
-                }`}
+                className={`h-12 w-full flex items-center justify-center gap-3 px-4 border border-default rounded-xl hover:bg-gray-50 transition shadow-sm hover:shadow-md ${isLoading ? "opacity-70 cursor-not-allowed" : ""
+                  }`}
               >
                 <svg className="w-5 h-5" viewBox="0 0 24 24">
                   <path

@@ -43,7 +43,7 @@ const OrgLogo = ({ id, shortName, logoFile = "", size = 40 }: OrgLogoProps) => {
   const hasLogo = !!logoFile;
   return hasLogo ? (
     <div
-      className="rounded-md overflow-hidden p-1 flex items-center justify-center border border-gray-200 dark:border-gray-600"
+      className="rounded-xl overflow-hidden p-1 flex items-center justify-center border border-default dark:border-gray-600"
       style={{
         width: size,
         height: size,
@@ -54,7 +54,7 @@ const OrgLogo = ({ id, shortName, logoFile = "", size = 40 }: OrgLogoProps) => {
     </div>
   ) : (
     <div
-      className="flex items-center justify-center rounded-md text-white font-semibold flex-shrink-0"
+      className="flex items-center justify-center rounded-xl text-white font-semibold flex-shrink-0"
       style={{
         backgroundColor: bgColor,
         width: size,

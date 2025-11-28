@@ -70,12 +70,12 @@ const AutocompleteSearch = () => {
   return (
     <div className="w-full max-w-xl px-8" ref={searchRef}>
       <div className="relative">
-        <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white/80" />
+        <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 scale-75 text-white/80" />
 
         <input
           type="text"
           placeholder="Search"
-          className="w-full h-10 pl-4 pr-10 py-2
+          className="w-full h-8 pl-4 pr-10 py-0
              rounded-full
              border border-white/20
              bg-white/10
@@ -95,11 +95,11 @@ const AutocompleteSearch = () => {
         )}
 
         {showResults && results.length > 0 && (
-          <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded shadow-lg max-h-60 overflow-y-auto">
+          <div className="absolute z-10 w-full mt-1 bg-white border border-default rounded-xl shadow-lg max-h-60 overflow-y-auto">
             {results.map(result => (
               <div
                 key={result.id}
-                className="flex items-center p-3 hover:bg-gray-100 cursor-pointer border-b border-gray-100"
+                className="flex items-center p-3 hover:bg-gray-100 cursor-pointer border-b border-default"
                 onClick={() => handleItemClick(result)}
               >
                 <div className="text-sm">{result.full_name_text}</div>
@@ -109,7 +109,7 @@ const AutocompleteSearch = () => {
         )}
 
         {showResults && searchTerm && results.length === 0 && !isLoading && (
-          <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded shadow-lg p-3 text-center text-gray-500">
+          <div className="absolute z-10 w-full mt-1 bg-white border border-default rounded-xl shadow-lg p-3 text-center text-gray-500">
             No results found
           </div>
         )}

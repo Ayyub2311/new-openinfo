@@ -48,7 +48,7 @@ const CompanyCard: React.FC<any> = ({
   }, []);
 
   return (
-    <div className={`w-full rounded border border-gray-300 bg-white ${className}`}>
+    <div className={`w-full rounded-xl border border-2 border-default bg-white ${className}`}>
       <div className="px-3 sm:px-6 py-4 sm:py-6">
         <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-x-6 ">
           {/* Logo */}
@@ -113,7 +113,7 @@ const CompanyCard: React.FC<any> = ({
               href={`http://${websiteUrl}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-4 py-2 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors text-sky-700 font-semibold text-sm w-full sm:w-auto text-center"
+              className="inline-block px-4 py-2 bg-slate-100 rounded-xl hover:bg-slate-200 transition-colors text-sky-700 font-semibold text-sm w-full sm:w-auto text-center"
             >
               {t("issuer_profile.website")}
             </a>

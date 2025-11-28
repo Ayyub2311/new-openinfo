@@ -85,7 +85,7 @@ const StockCard: React.FC<StockCardProps> = ({
   const currentStatus = selectedOption?.is_listing ?? status_rfb ?? false;
 
   return (
-    <div className="flex gap-2 flex-col lg:flex-row md:flex-row   items-start lg:items-center justify-between px-3 bg-white transition duration-300  border  rounded-t rounded-sm  border-gray-200 space-y-4 lg:space-y-0 wrap">
+    <div className="flex gap-2 flex-col lg:flex-row md:flex-row   items-start lg:items-center justify-between px-3 bg-white transition duration-300  border  rounded-b rounded-xl border-default space-y-4 lg:space-y-0 wrap">
       {/* Left: Logo & Company Info */}
       <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 w-full lg:w-auto">
         <div className="flex items-center gap-5">
@@ -140,7 +140,7 @@ const StockCard: React.FC<StockCardProps> = ({
                 <select
                   value={selectedIsuCd}
                   onChange={handleStockTypeChange}
-                  className="block w-full max-w-full sm:max-w-[95vw] truncate px-1 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
+                  className="block w-full max-w-full sm:max-w-[95vw] truncate px-1 py-2 border border-default rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
                 >
                   {stockTypeOptions.map(option => (
                     <option key={option.value} value={option.value} className="truncate">
@@ -160,7 +160,7 @@ const StockCard: React.FC<StockCardProps> = ({
           <select
             value={selectedIsuCd}
             onChange={handleStockTypeChange}
-            className="px-1 py-2 border border-gray-300 rounded-md text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition "
+            className="px-1 py-2 border border-default rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition "
           >
             {stockTypeOptions.map(option => (
               <option key={option.value} value={option.value}>

@@ -44,7 +44,7 @@ export const DatePicker = ({
           backgroundColor: "#eff6ff", // Matches Select bg
           padding: "6px 16px", // Matches Select padding
         }}
-        className="w-full text-sm text-gray-700"
+        className="w-full text-sm text-gray-700 border-default"
       />
     </div>
   );

@@ -10,9 +10,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className={`w-full px-4 py-1 rounded border border-slate-200 text-base font-normal
+        className={`w-full px-4 py-2 rounded-full border border-default text-base font-normal
         focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500
-        disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+        disabled:bg-slate-50 disabled:text-slate-500 disabled:border-default disabled:shadow-none
         ${className}`}
         {...props}
       />

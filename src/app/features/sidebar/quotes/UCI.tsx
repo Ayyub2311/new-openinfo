@@ -54,7 +54,7 @@ const UCIChart: React.FC = () => {
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-red-50 border-l-4 border-red-500 p-3 text-sm text-red-700 flex items-center gap-2 rounded-lg shadow-md"
+        className="bg-red-50 border-l-4 border-red-500 p-3 text-sm text-red-700 flex items-center gap-2 rounded-xl shadow-md"
       >
         <AlertCircle className="w-5 h-5 text-red-500" />
         {error}
@@ -70,15 +70,18 @@ const UCIChart: React.FC = () => {
   }));
 
   return (
-    <div className="bg-white p-6 w-full max-w-lg mx-auto  border-gray-200">
+    <div className="bg-white p-6 w-full max-w-lg mx-auto  border-default">
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-900">{t("UCIChart.title")}</h2>
+        <h2 className="text-2xl font-bold text-gray-900">
+          <img src="/assets/general-icons/chart-up.svg" className="w-6 h-6 inline align-text-top mt-1 mr-2" />
+          {t("UCIChart.title")}
+        </h2>
         <p className="text-sm text-gray-600 mt-2">{t("UCIChart.description")}</p>
         <div className="mt-4">
           <p className="text-sm text-gray-700">
             {t("UCIChart.last_updated")}: {new Date(data.last_index.last_date).toLocaleDateString()}
           </p>
-          <p className="text-xl font-semibold text-indigo-600">
+          <p className="pt-4 text-xl font-semibold text-indigo-600">
             {t("UCIChart.current_index")}: {data.last_index.idx.toFixed(2)}
           </p>
         </div>

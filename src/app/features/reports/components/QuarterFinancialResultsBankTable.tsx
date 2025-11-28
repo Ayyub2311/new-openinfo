@@ -16,7 +16,7 @@ export function QuarterFinancialResultsTable({ title, data }: QuarterFinancialRe
   };
 
   return (
-    <div className="p-4 bg-white shadow-lg rounded-lg">
+    <div className="p-4 bg-white shadow-lg rounded-xl">
       {title && (
         <Text variant="accent" weight="bold" size="lg" className="mb-2">
           {title}

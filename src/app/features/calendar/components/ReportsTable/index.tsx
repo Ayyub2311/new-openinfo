@@ -88,11 +88,11 @@ export default function ReportsTable() {
         endDate?: Date;
         selectedOrg?: ResultItem | null;
       } = {
-        reportType: selectedReportType,
-        startDate,
-        endDate,
-        selectedOrg,
-      }
+          reportType: selectedReportType,
+          startDate,
+          endDate,
+          selectedOrg,
+        }
     ) => {
       setLoading(true);
       try {
@@ -232,7 +232,7 @@ export default function ReportsTable() {
   return (
     <div className="py-4 space-y-4">
       <div className="flex flex-wrap gap-2 mb-3 items-center">
-        
+
         <Select
           options={[
             { value: "", label: t("TableHeaders.all") },
@@ -248,7 +248,7 @@ export default function ReportsTable() {
           }
           onChange={opt => handleReportTypeChange(opt?.value || null)}
           placeholder={t("filters.select_type")}
-          className="max-w-[200px]"
+          className="w-full md:max-w-[200px]"
         />
         <DatePicker
           selected={startDate}
@@ -256,18 +256,19 @@ export default function ReportsTable() {
           placeholder={t("filters.start_date")}
           className="flex-1"
         />
+        <DatePicker selected={endDate} onSelect={setEndDate} placeholder={t("filters.end_date")} className="flex-1" />
         <div className="flex items-center gap-2 w-full">
-          <DatePicker selected={endDate} onSelect={setEndDate} placeholder={t("filters.end_date")} className="flex-1" />
+
           <AutocompleteSelect
-          value={selectedOrg}
-          onChange={setSelectedOrg}
-          placeholder={t("filters.search_placeholder")}
-          className="flex-1 min-w-[400px] w-full"
-        /> 
-        <SearchButton onClick={handleSearch} />
-        <ClearButton onClick={clearFilters} />
+            value={selectedOrg}
+            onChange={setSelectedOrg}
+            placeholder={t("filters.search_placeholder")}
+            className="flex-1 min-w-[400px] w-full"
+          />
+          <SearchButton onClick={handleSearch} />
+          <ClearButton onClick={clearFilters} />
         </div>
-        
+
       </div>
 
       <Table columns={columns} data={reportsData} bordered={false} loading={loading} />

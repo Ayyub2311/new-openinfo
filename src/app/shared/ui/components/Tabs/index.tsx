@@ -146,7 +146,7 @@ export const Tabs: React.FC<TabsProps> = ({
   };
 
   return (
-    <div className={`relative box-border ${className}`} style={{ width: "100%", overflow: "hidden" }}>
+    <div className={`relative box-border ${className}`} style={{ width: "100%" }}>
       <div className="relative w-full border-b border-zinc-100 dark:border-zinc-700">
         {showLeftScroll && (
           <button
@@ -175,9 +175,8 @@ export const Tabs: React.FC<TabsProps> = ({
         >
           <nav
             ref={navRef}
-            className={`flex select-none gap-3 overflow-x-auto ${
-              variant === "bordered" ? "justify-between py-1 border-b border-l border-r border-gray-200" : ""
-            }`}
+            className={`flex whitespace-nowrap w-full select-none gap-3 rounded-xl rounded-t ${variant === "bordered" ? "justify-between py-1 border-b border-l border-r border-default" : ""
+              }`}
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
@@ -191,19 +190,17 @@ export const Tabs: React.FC<TabsProps> = ({
                 ? "text-sky-700 dark:text-sky-400"
                 : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200";
 
-              const pillStyles = `rounded-full ${
-                isActive
-                  ? "bg-sky-100 text-sky-700 dark:bg-sky-900 dark:text-sky-300"
-                  : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
-              }`;
+              const pillStyles = `rounded-full px-4 mt-3 ${isActive
+                ? "bg-sky-100 text-sky-700 dark:bg-sky-900 dark:text-sky-300"
+                : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
+                }`;
 
               const borderedStyles = `
                  text-sm px-3 py-2 mx-1 transition-colors duration-200 grow
 
-                ${
-                  isActive
-                    ? "border-sky-700 text-sky-700 font-semibold bg-white dark:border-sky-400 dark:text-sky-300"
-                    : "border-gray-300 text-gray-500 hover:text-gray-700 hover:border-gray-400 dark:border-zinc-600 dark:text-gray-400 dark:hover:text-gray-200  "
+                ${isActive
+                  ? "border-sky-700 text-sky-700 font-semibold bg-white dark:border-sky-400 dark:text-sky-300"
+                  : "border-default text-gray-500 hover:text-gray-700 hover:border-gray-400 dark:border-zinc-600 dark:text-gray-400 dark:hover:text-gray-200  "
                 }
               `;
 
@@ -214,9 +211,8 @@ export const Tabs: React.FC<TabsProps> = ({
                     tabsRef.current[index] = el;
                   }}
                   onClick={() => handleTabClick(tab.id)}
-                  className={`${baseClasses} ${
-                    variant === "pill" ? pillStyles : variant === "bordered" ? borderedStyles : underlineStyles
-                  }`}
+                  className={`${baseClasses} ${variant === "pill" ? pillStyles : variant === "bordered" ? borderedStyles : underlineStyles
+                    }`}
                 >
                   {tab.label}
                 </button>

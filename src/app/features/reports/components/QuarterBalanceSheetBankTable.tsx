@@ -12,7 +12,7 @@ export function QuarterBalanceSheetTable({ title, data }: QuarterBalanceSheetBan
   const tableProps: TableProps<QuarterBalanceSheetBankResp> = {
     columns: QuarterBalanceSheetBankResp.getColumns,
     data,
-    className: "border rounded-lg",
+    className: "border rounded-xl",
   };
 
   return (

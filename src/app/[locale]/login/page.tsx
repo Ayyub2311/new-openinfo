@@ -62,7 +62,7 @@ export default function LoginPage() {
       {showRegistration && <RegistrationModal onClose={handleRegistrationClose} />}
 
       <div className="flex items-center justify-center mt-10 px-4">
-        <div className="bg-white rounded-xl shadow-lg w-full max-w-[400px] p-6 border border-gray-200">
+        <div className="bg-white rounded-xl shadow-lg w-full max-w-[400px] p-6 border border-default">
           <h1 className="text-xl font-bold text-center text-gray-800 mb-5">{t("Login.login")}</h1>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
@@ -124,7 +124,7 @@ export default function LoginPage() {
 
             <div className="relative py-2">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300"></div>
+                <div className="w-full border-t border-default"></div>
               </div>
               <div className="relative flex justify-center text-xs">
                 <span className="px-2 bg-white text-gray-500">или</span>

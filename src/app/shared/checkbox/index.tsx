@@ -14,7 +14,7 @@ export const Checkbox = ({ id, checked, onCheckedChange, className = "" }: Check
       id={id}
       checked={checked}
       onChange={e => onCheckedChange(e.target.checked)}
-      className={`h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500 ${className}`}
+      className={`h-4 w-4 rounded-xl border-default text-indigo-600 focus:ring-indigo-500 ${className}`}
     />
   );
 };

@@ -23,7 +23,7 @@ export default function RequireAuth({ children, fallback }: { children: ReactNod
         <button
           type="button"
           onClick={() => authModal.open("required")}
-          className="inline-flex px-4 py-2 rounded-lg bg-blue-600 text-white text-sm"
+          className="inline-flex px-4 py-2 rounded-xl bg-blue-600 text-white text-sm"
         >
           {t("Login.login")}
         </button>

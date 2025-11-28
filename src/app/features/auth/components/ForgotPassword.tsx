@@ -15,7 +15,7 @@ const SuccessState: React.FC<{
   onClose?: () => void;
   onResend: () => void;
 }> = ({ email, onBackToLogin, onClose, onResend }) => (
-  <div className="relative bg-white dark:bg-slate-800 rounded-2xl shadow-xl w-full max-w-md overflow-hidden border border-gray-200 dark:border-slate-700">
+  <div className="relative bg-white dark:bg-slate-800 rounded-xl shadow-xl w-full max-w-md overflow-hidden borderborder-default dark:border-slate-700">
     {onClose && <CloseButton onClick={onClose} className="absolute top-4 right-4 z-10" />}
 
     <div className="relative p-8 text-center">
@@ -29,7 +29,7 @@ const SuccessState: React.FC<{
 
       <button
         onClick={onBackToLogin}
-        className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+        className="px-6 py-3 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition-colors"
       >
         Back to login
       </button>
@@ -55,7 +55,7 @@ const FormState: React.FC<{
   onBackToLogin: () => void;
   onClose?: () => void;
 }> = ({ email, isSubmitting, setEmail, onSubmit, onBackToLogin, onClose }) => (
-  <div className="relative bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden border border-gray-100">
+  <div className="relative bg-white rounded-xl shadow-xl w-full max-w-md overflow-hidden border border-default">
     {onClose && <CloseButton onClick={onClose} className="absolute top-4 right-4 z-10" />}
 
     <div className="absolute inset-0 overflow-hidden">
@@ -140,7 +140,7 @@ const EmailInput: React.FC<{
         type="email"
         value={email}
         onChange={e => setEmail(e.target.value)}
-        className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+        className="w-full px-4 py-3 border border-default rounded-xl shadow-inner focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
         placeholder="your@email.com"
         required
       />
@@ -181,9 +181,8 @@ const SubmitButton: React.FC<{ isSubmitting: boolean }> = ({ isSubmitting }) => 
   <button
     type="submit"
     disabled={isSubmitting}
-    className={`w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-lg hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 shadow-md hover:shadow-lg ${
-      isSubmitting ? "opacity-75 cursor-not-allowed" : ""
-    }`}
+    className={`w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium rounded-xl hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 shadow-md hover:shadow-lg ${isSubmitting ? "opacity-75 cursor-not-allowed" : ""
+      }`}
   >
     {isSubmitting ? <Spinner /> : "Send reset link"}
   </button>
@@ -252,7 +251,7 @@ const ForgotPassword: React.FC<ForgotPasswordProps> = ({ onSubmit, onBackToLogin
           onClose={onClose}
           onResend={() => {
             setIsSuccess(false);
-            handleSubmit({ preventDefault: () => {} } as React.FormEvent);
+            handleSubmit({ preventDefault: () => { } } as React.FormEvent);
           }}
         />
       ) : (

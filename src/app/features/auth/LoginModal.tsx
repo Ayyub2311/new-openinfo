@@ -67,7 +67,7 @@ export default function LoginModal() {
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 relative border border-gray-200">
+      <div className="bg-white rounded-xl shadow-2xl w-full max-w-md p-8 relative border border-default">
         <button onClick={close} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
           <X className="w-5 h-5" />
         </button>
@@ -79,7 +79,7 @@ export default function LoginModal() {
           <div>
             <label className="block mb-2 text-sm font-semibold text-gray-700">{t("Login.username")}</label>
             <input
-              className="w-full px-4 py-3 border rounded-lg"
+              className="w-full px-4 py-3 border rounded-xl"
               value={username}
               onChange={e => setUsername(e.target.value)}
             />
@@ -87,7 +87,7 @@ export default function LoginModal() {
           <div>
             <label className="block mb-2 text-sm font-semibold text-gray-700">{t("Login.password")}</label>
             <input
-              className="w-full px-4 py-3 border rounded-lg"
+              className="w-full px-4 py-3 border rounded-xl"
               type="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
@@ -97,7 +97,7 @@ export default function LoginModal() {
           {error && <div className="text-red-500 text-sm text-center">{error}</div>}
 
           <div className="flex justify-center gap-4">
-            <button type="submit" disabled={isLoading} className="h-12 w-full bg-blue-600 text-white rounded-lg">
+            <button type="submit" disabled={isLoading} className="h-12 w-full bg-blue-600 text-white rounded-xl">
               {isLoading ? t("Login.loading") : t("Login.login")}
             </button>
           </div>
@@ -107,7 +107,7 @@ export default function LoginModal() {
               type="button"
               onClick={handleGoogleSignIn}
               disabled={isLoading}
-              className="h-12 w-full flex items-center justify-center gap-3 border rounded-lg"
+              className="h-12 w-full flex items-center justify-center gap-3 border rounded-xl"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24">
                 <path

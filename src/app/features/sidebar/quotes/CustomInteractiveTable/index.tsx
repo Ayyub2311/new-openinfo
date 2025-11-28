@@ -174,7 +174,7 @@ export const Table = <T extends Record<string, any>>({
   };
 
   return (
-    <div className={cn("overflow-x-auto", className)}>
+    <div className={cn("overflow-x-auto w-full", className)}>
       {loading && <div className="absolute inset-0 bg-white/50 flex items-center justify-center">Loading...</div>}
       <table className="w-full border-collapse">
         <thead>

@@ -75,10 +75,10 @@ export default function SecuritiesTable() {
         startDate?: Date;
         endDate?: Date;
       } = {
-        selectedOrg,
-        startDate,
-        endDate,
-      }
+          selectedOrg,
+          startDate,
+          endDate,
+        }
     ) => {
       setLoading(true);
       setError(null);
@@ -201,7 +201,7 @@ export default function SecuritiesTable() {
   return (
     <div className="py-4 space-y-4">
       <div className="flex flex-wrap gap-2 mb-3 items-center">
-        
+
         <Select
           placeholder={t("SecuritiesTable.select_type")}
           value={{ value: selectedType, label: t(`SecuritiesTable.options.${selectedType}` as any) }}
@@ -210,7 +210,7 @@ export default function SecuritiesTable() {
             value: key,
             label: t(`SecuritiesTable.options.${key}` as any),
           }))}
-          className="max-w-[200px]"
+          className="w-full md:max-w-[200px]"
         />
         <DatePicker
           selected={startDate}
@@ -220,16 +220,16 @@ export default function SecuritiesTable() {
         />
         <DatePicker selected={endDate} onSelect={setEndDate} placeholder={t("filters.end_date")} className="flex-1" />
         <div className="flex items-center gap-2 w-full">
- <AutocompleteSelect
-          value={selectedOrg}
-          onChange={setSelectedOrg}
-          placeholder={t("filters.search_placeholder")}
-          className="flex-1 min-w-[400px] w-full"
-        />
-        <SearchButton onClick={handleSearch} />
-        <ClearButton onClick={clearFilters} />
+          <AutocompleteSelect
+            value={selectedOrg}
+            onChange={setSelectedOrg}
+            placeholder={t("filters.search_placeholder")}
+            className="flex-1 min-w-[400px] w-full"
+          />
+          <SearchButton onClick={handleSearch} />
+          <ClearButton onClick={clearFilters} />
         </div>
-       
+
       </div>
 
       {error && <div className="text-red-600">{error}</div>}

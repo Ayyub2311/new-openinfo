@@ -87,34 +87,35 @@ const AttestationTable = () => {
   return (
     <Container style={{ padding: "0" }}>
       {/* Filters */}
-      <div className="flex gap-4 items-center mb-4">
+      <div className="flex flex-wrap lg:flex-nowrap gap-4 items-center mb-4 h-full">
 
         <a
           href="https://license.gov.uz/auth"
           target="_blank"
-          className="px-4 py-2 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-200 text-sm whitespace-nowrap"
+          className="w-full lg:w-[180px] px-4 py-2 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-200 text-sm whitespace-nowrap"
         >
           → Получить лицензию
         </a>
 
-        <Input
-          placeholder={t("AttestationTabs.full_name_owner_certificate")}
-          value={searchName}
-          onChange={e => setSearchName(e.target.value)}
-          className="rounded-full  bg-blue-50 w-full"
-        />
+        <div className="flex items-center gap-2 w-full">
+          <Input
+            placeholder={t("AttestationTabs.full_name_owner_certificate")}
+            value={searchName}
+            onChange={e => setSearchName(e.target.value)}
+            className="rounded-full  bg-blue-50 w-full h-full"
+          />
+          <SearchButton onClick={handleSearch} />
+          <ClearButton onClick={handleClear} /></div>
 
-        <SearchButton onClick={handleSearch} />
-        <ClearButton onClick={handleClear} />
 
-        <span className="whitespace-nowrap">{t("AttestationTabs.as_of_date")} 07.06.2024</span>
+        <span className="w-full lg:w-auto whitespace-nowrap">{t("AttestationTabs.as_of_date")} 07.06.2024</span>
       </div>
 
       <Table
         data={data}
         columns={columns}
         bordered={false}
-        className="bg-white rounded shadow-sm"
+        className="bg-white rounded-xl shadow-sm"
         rowClassName="hover:bg-gray-50"
       />
 

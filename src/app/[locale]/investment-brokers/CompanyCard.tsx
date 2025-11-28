@@ -76,7 +76,7 @@ const CompanyCard: React.FC<CompanyCardProps> = ({
   }, []);
 
   return (
-    <div className={`w-full rounded border border-gray-300 bg-white ${className}`}>
+    <div className={`w-full rounded-xl border-2 border-default bg-white ${className}`}>
       <div className="px-3 sm:px-6 py-4 sm:py-6">
         <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-x-6 ">
           {/* Logo */}

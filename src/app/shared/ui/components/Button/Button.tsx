@@ -44,13 +44,13 @@ const variants = {
     export: "bg-slate-200 text-sky-700 hover:bg-slate-300",
   },
   outline: {
-    default: "border-2 border-gray-200 text-gray-800 hover:bg-gray-50",
+    default: "border-2 border-default text-gray-800 hover:bg-gray-50",
     primary: "border-2 border-blue-200 text-blue-800 hover:bg-blue-50",
     success: "border-2 border-green-200 text-green-800 hover:bg-green-50",
     warning: "border-2 border-yellow-200 text-yellow-800 hover:bg-yellow-50",
     danger: "border-2 border-red-200 text-red-800 hover:bg-red-50",
-    gray: "border-2 border-gray-300 text-gray-700 hover:bg-gray-50",
-    export: "border-2 border-slate-200 text-sky-700 hover:bg-slate-50",
+    gray: "border-2 border-default text-gray-700 hover:bg-gray-50",
+    export: "border-2 border-default text-sky-700 hover:bg-slate-50",
   },
   ghost: {
     default: "text-gray-800 hover:bg-gray-100",
@@ -74,7 +74,7 @@ const variants = {
 
 const shapes = {
   rect: "",
-  rounded: "rounded-md",
+  rounded: "rounded-xl",
   pill: "rounded-full",
   circle: "rounded-full aspect-square p-0",
 } as const;

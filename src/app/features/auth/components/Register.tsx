@@ -68,17 +68,17 @@ const DatePicker = ({
           value={inputValue}
           onClick={() => setIsOpen(!isOpen)}
           placeholder={placeholder}
-          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 pl-10 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          className="flex h-10 w-full rounded-xl border border-input bg-background px-3 py-2 pl-10 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         />
         <CalendarIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
       </div>
 
       {isOpen && (
-        <div className="absolute z-50 mt-1 w-auto rounded-md border bg-popover p-2 shadow-md">
+        <div className="absolute z-50 mt-1 w-auto rounded-xl border bg-popover p-2 shadow-md">
           <input
             type="date"
             onChange={handleDateChange}
-            className="block w-full rounded-md border p-2 text-sm"
+            className="block w-full rounded-xl border p-2 text-sm"
             value={selected?.toISOString().split("T")[0] || ""}
           />
         </div>
@@ -102,7 +102,7 @@ export default function RegistrationModal({ onClose }: RegistrationModalProps) {
       </div>
 
       <div className="flex space-x-2">
-        <Button variant="ghost" className="font-semibold border-b-2 border-black rounded-none">
+        <Button variant="ghost" className="font-semibold border-b-2 border-black rounded-xl">
           Регистрация физического лица
         </Button>
       </div>
