@@ -23,9 +23,12 @@ export const Pagination: React.FC<PaginationProps> = ({
   maxVisiblePages = 5,
   pageSize = 10,
 }) => {
-  if (totalPages <= 1) return null;
 
   const t = useTranslations('page');
+
+  if (totalPages <= 1) return null;
+
+
 
   // Calculate the range of items being shown
   const startItem = (currentPage - 1) * pageSize + 1;
