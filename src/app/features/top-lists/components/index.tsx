@@ -6,7 +6,6 @@ import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import { useTranslations } from "next-intl";
 import OrgLogo from "@/app/shared/default-logo";
 import FormatNumbers from "@/app/shared/format-number";
-import Container from "@/app/shared/ui/components/Container";
 
 const TradeAnalyticsTables = () => {
   const [byDeals, setByDeals] = useState([]);
@@ -71,12 +70,12 @@ const TradeAnalyticsTables = () => {
   }, []);
 
   return (
-    <Container className="flex flex-col md:flex-row gap-6"
+    <div className="flex flex-col md:flex-row gap-6"
       style={{
         padding: "0"
       }}>
       <div className="w-full md:w-1/2">
-        <div className="d-flex flex-column mb-2">
+        <div className="d-flex flex-column mb-2 h-24">
           <h2 className="text-lg font-semibold  text-900 ">{t("TradeAnalytics.top_by_deals")} <br /> <span className="text-base font-normal">({t("TradeAnalytics.last_30_days")})</span></h2>
 
         </div>
@@ -91,18 +90,17 @@ const TradeAnalyticsTables = () => {
         />
       </div>
       <div className="w-full md:w-1/2 ">
-        <div className="d-flex flex-column mb-2 ">
+        <div className="d-flex flex-column mb-2 h-24">
           <h2 className="text-lg font-semibold text-900 ">{t("TradeAnalytics.top_by_volume")} <br /> <span className="text-base font-normal">({t("TradeAnalytics.last_30_days")})</span></h2>
-
         </div>
 
         <Table
           columns={[
-            { title: t("TradeAnalytics.issuer"), dataIndex: "name", width: "70%" },
+            { title: t("TradeAnalytics.issuer"), dataIndex: "name", width: "75%" },
             {
               title: t("TradeAnalytics.volume"),
               dataIndex: "price",
-              width: "30%",
+              width: "25%",
               className: "text-right whitespace-nowrap font-numbers",
               render: value => {
                 if (typeof value === "string") {
@@ -133,7 +131,7 @@ const TradeAnalyticsTables = () => {
 
 
       </div>
-    </Container>
+    </div>
   );
 };
 

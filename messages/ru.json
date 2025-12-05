@@ -658,6 +658,28 @@
     "search_placeholder": "Поиск по наименованию эмитента",
     "annual_interest": "Годовая ставка купона (%)"
   },
+  "IncomeTable": {
+    "netRevenue": "Чистая Выручка",
+    "netProfit": "Чистая Прибыль",
+    "totalAssets": "Общие Активы",
+    "totalLiabilities": "Общие Обязательства",
+    "billion": "млрд",
+    "PageCode": "Код стр.",
+    "IndicatorName": "Наименование показателя",
+    "Year": "Год",
+    "Group": "Группировать данные по",
+    "Quarter": "Квартал",
+    "ThousandSum": "все цифры в тыс. сум",
+    "Option": "Выберите опцию...",
+    "Detail": "Показать детали"
+  },
+  "PerformanceTable": {
+    "ROE": "ROE",
+    "ROA": "ROA",
+    "NetProfitMargin": "Чистая маржа прибыли",
+    "KPIs": "Ключевые показатели (KPI)",
+    "Ratios": "Коэффициенты"
+  },
   "AnnouncementTable": {
     "organization": "Организация",
     "title": " Название",
@@ -687,7 +709,9 @@
     "quotes": "Котировки",
     "watchlist": "Список наблюдения",
     "notifications": "Уведомления",
-    "fees": "Тарифы рынка"
+    "fees": "Тарифы рынка",
+    "SelectStock": "Выберите акцию",
+    "SelectBond": "Выберите облигацию"
   },
   "SecuritiesTableSidebar": {
     "ticker": "Тикер",
@@ -699,12 +723,30 @@
     "1D": "1 День",
     "1W": "1 Неделя",
     "1M": "1 Месяц",
-    "6M": "6 Месяцев"
+    "6M": "6 Месяцев",
+    "1Y": "1 Год"
   },
   "QuotesTabs": {
     "obligations": "Облигации",
     "stock": "Акции",
     "exchange_rates": "Курсы валют"
+  },
+  "CalculatorTabs": {
+    "Header": "РАСЧЕТ СТОИМОСТИ РАСХОДОВ ПРИ СОВЕРШЕНИИ СДЕЛОК НА РФБ \"ТОШКЕНТ\"",
+    "Data": "Данные о ценной бумаге",
+    "Quantity": "Количество",
+    "Price": "Цена",
+    "BrokerCommission": "Комиссия брокера (%)",
+    "TransactionType": "Тип сделки",
+    "Buy": "Покупка",
+    "Sell": "Продажа",
+    "PrimaryPlacement": "Первичное размещение",
+    "SecondaryPlacement": "Вторичное обращение",
+    "Exchanges": "Торговые площадки",
+    "TransactionAmount": "Сумма сделки:",
+    "CommissionCosts": "Итого комиссионные расходы:",
+    "OperationSell": "Общая сумма к получению составляет:",
+    "OperationBuy": "Общая сумма к оплате составляет:"
   },
   "AttestationTabs": {
     "attestation": "Аттестация",
@@ -1084,7 +1126,8 @@
     "common": {
       "cancel": "Отмена",
       "save": "Сохранить",
-      "saving": "Сохраняю…"
+      "saving": "Сохраняю…",
+      "more": "+ ещё"
     },
     "errors": {
       "selectSecurity": "Выберите ценную бумагу.",

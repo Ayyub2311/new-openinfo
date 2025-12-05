@@ -9,6 +9,7 @@ import { Pagination } from "@/app/shared/ui/components/Pagination";
 import { Text } from "@/app/shared/ui/components/Typography/Text";
 import { ConvertTypes } from "@/app/features/facts/models/base/ConvertTypes";
 import Image from "next/image";
+import { color } from "framer-motion";
 
 interface DividendItem {
   id: number;
@@ -102,22 +103,31 @@ export default function DividendCalendarTable() {
   const columns = useMemo<TableColumn<DividendItem>[]>(
     () => [
       {
-        title: t("DividendTable.issuer_name"),
+        title:
+          <div className="text-center">
+            {t("DividendTable.issuer_name")}
+          </div>,
         dataIndex: "organization",
         render: (_, record) => (
           <a href={record.link} target="_blank" rel="noopener noreferrer">
-            <Text variant="accent">{record.organization}</Text>
+            <Text variant="accent" className="break-words text-base-important xl:text-[14px] 2xl:text-base ">{record.organization}</Text>
           </a>
         ),
       },
       {
-        title: t("DividendTable.decision_date"),
+        title:
+          <div className="text-center">
+            {t("DividendTable.decision_date")}
+          </div>,
         dataIndex: "decision_date",
         align: "right",
         render: (_, record) => converter.formatDate(record.decision_date),
       },
       {
-        title: t("DividendTable.amount"),
+        title:
+          <div className="text-center">
+            {t("DividendTable.amount")}
+          </div>,
         dataIndex: "amount",
         align: "right",
         render: (_, record) => {
@@ -131,7 +141,10 @@ export default function DividendCalendarTable() {
         },
       },
       {
-        title: t("DividendTable.percent"),
+        title:
+          <div className="text-center">
+            {t("DividendTable.percent")}
+          </div>,
         dataIndex: "percent",
         align: "right",
         render: (_, record) => {
@@ -147,7 +160,10 @@ export default function DividendCalendarTable() {
       ...(type === "bond"
         ? [
           {
-            title: t("DividendTable.annual_interest"),
+            title:
+              <div className="text-center">
+                {t("DividendTable.annual_interest")}
+              </div>,
             dataIndex: "annual_interest",
             align: "right" as const, // ✅ fix
           },
@@ -155,7 +171,10 @@ export default function DividendCalendarTable() {
         : []),
 
       {
-        title: t("DividendTable.start_date"),
+        title:
+          <div className="text-center">
+            {t("DividendTable.start_date")}
+          </div>,
         dataIndex: "start_date",
         align: "right",
         render: (_, record) => {
@@ -169,7 +188,11 @@ export default function DividendCalendarTable() {
         },
       },
       {
-        title: t("DividendTable.end_date"),
+        title:
+          <div className="text-center">
+            {t("DividendTable.end_date")}
+          </div>
+        ,
         dataIndex: "end_date",
         align: "right",
         render: (_, record) => {

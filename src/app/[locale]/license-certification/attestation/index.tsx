@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Container from "@/app/shared/ui/components/Container";
 import { Table } from "@/app/shared/ui/components/Table";
 import { Pagination } from "@/app/shared/ui/components/Pagination";
 import { TableColumn } from "@/app/shared/ui/components/Table/types";
@@ -70,6 +69,7 @@ const AttestationTable = () => {
     {
       title: t("AttestationTabs.category"),
       dataIndex: "category",
+      align: "center",
       render: (value: string) => <span className="text-sm">{value}</span>,
     },
     {
@@ -85,7 +85,7 @@ const AttestationTable = () => {
   ];
 
   return (
-    <Container style={{ padding: "0" }}>
+    <div>
       {/* Filters */}
       <div className="flex flex-wrap lg:flex-nowrap gap-4 items-center mb-4 h-full">
 
@@ -127,7 +127,7 @@ const AttestationTable = () => {
           onPageChange={newPage => setPage(newPage)}
         />
       </div>
-    </Container>
+    </div>
   );
 };
 

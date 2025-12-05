@@ -619,6 +619,28 @@
     "search_placeholder": "Qidirish",
     "annual_interest": "Yillik kupon stavkasi %"
   },
+  "IncomeTable": {
+    "netRevenue": "Sof Daromad",
+    "netProfit": "Sof Foyda",
+    "totalAssets": "Jami Aktivlar",
+    "totalLiabilities": "Jami Majburiyatlar",
+    "billion": "mlrd",
+    "PageCode": "Sahifa kodi",
+    "IndicatorName": "Ko'rsatkich nomi",
+    "Year": "Yil",
+    "Group": "Ma'lumotlarni guruhlash bo'yicha",
+    "Quarter": "Chorak",
+    "ThousandSum": "barcha raqamlar ming so'mda",
+    "Option": "Variantni tanlang...",
+    "Detail": "Tafsilotlarni ko'rsatish"
+  },
+  "PerformanceTable": {
+    "ROE": "ROE",
+    "ROA": "ROA",
+    "NetProfitMargin": "Sof foyda marjasi",
+    "KPIs": "Asosiy ko'rsatkichlar (KPI)",
+    "Ratios": "Ko'rsatkichlar"
+  },
   "AnnouncementTable": {
     "organization": " Tashkilot",
     "title": " E'lon nomi",
@@ -644,7 +666,9 @@
     "quotes": "Narxlar",
     "watchlist": "Kuzatuv ro'yxati",
     "notifications": "Bildirishnomalar",
-    "fees": "To'lovlar va tariflar"
+    "fees": "To'lovlar va tariflar",
+    "SelectStock": "Aksiyani tanlang",
+    "SelectBond": "Obligatsiyani tanlang"
   },
   "SecuritiesTableSidebar": {
     "ticker": "Tiker",
@@ -656,12 +680,30 @@
     "1D": "1 Kun",
     "1W": "1 Hafta",
     "1M": "1 Oy",
-    "6M": "6 Oy"
+    "6M": "6 Oy",
+    "1Y": "1 Yil"
   },
   "QuotesTabs": {
     "obligations": "Obligatsiyalar",
     "stock": "Aksiyalar",
     "exchange_rates": "Valyuta kurslari"
+  },
+  "CalculatorTabs": {
+    "Header": "\"TOSHKENT\" AKTSIONER BOZORIDA OMMAWIY AMALGA OSHIRILGAN TRANZAKTSIYALARNING XARAJATLARINI HISOBLASH",
+    "Data": "Qimmatli qog'oz ma'lumotlari",
+    "Quantity": "Miqdor",
+    "Price": "Narxi",
+    "BrokerCommission": "Broker komissiyasi (%)",
+    "TransactionType": "Tranzaksiya turi",
+    "Buy": "Sotib olish",
+    "Sell": "Sotish",
+    "PrimaryPlacement": "Birinchóla joylashtirish",
+    "SecondaryPlacement": "Ikkinchóla aylanish",
+    "Exchanges": "Savdo maydonlari",
+    "TransactionAmount": "Tranzaksiya summasi:",
+    "CommissionCosts": "Jami komissiya xarajatlari:",
+    "OperationSell": "Qabul qilinishi kerak bo'lgan umumiy summa:",
+    "OperationBuy": "To'lanishi kerak bo'lgan umumiy summa:"
   },
   "AttestationTabs": {
     "attestation": "Attestatsiya",
@@ -1032,7 +1074,8 @@
     "common": {
       "cancel": "Bekor qilish",
       "save": "Saqlash",
-      "saving": "Saqlanmoqda…"
+      "saving": "Saqlanmoqda…",
+      "more": "+ yana"
     },
     "errors": {
       "selectSecurity": "Qimmatli qog‘ozni tanlang.",

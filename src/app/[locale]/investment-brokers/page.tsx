@@ -89,49 +89,52 @@ const PageInvestmentBrokers = () => {
 
   return (
     <Container>
-      <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-3 gap-5 relative min-h-screen">
-        <div className="lg:col-span-2 flex flex-col gap-4 mt-[30px] mb-[30px]">
+      <div ref={gridRef} className="grid grid-cols-1 xl:grid-cols-5 gap-5 relative min-h-screen">
+        <div className="xl:col-span-3 flex flex-col gap-4 mt-[30px] mb-[30px]">
           <div className="flex flex-wrap w-full  gap-2 items-center mb-4">
             {/* <span className="px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm flex items-center">
               Сортировать брокеров по категориям <ArrowDown className="w-4 h-4 ml-1" />
             </span> */}
 
-            <Select
-              value={yearOptions.find(opt => opt.value === selectedYear) || null}
-              onChange={opt => setSelectedYear(opt?.value)}
-              options={yearOptions}
-              placeholder={t("investment_brokers_menu.sort_by_year")}
-              className="flex-1 w-full md:min-w-[180px] md:max-w-[400px]"
-            />
+            <div className="w-full gap-2 flex flex-wrap md:flex-nowrap">
+              <Select
+                value={yearOptions.find(opt => opt.value === selectedYear) || null}
+                onChange={opt => setSelectedYear(opt?.value)}
+                options={yearOptions}
+                placeholder={t("investment_brokers_menu.sort_by_year")}
+                className="w-full"
+              />
 
-            <Select
-              value={sortOptionsAmount.find(opt => opt.value === selectedAmount) || null}
-              onChange={opt => {
-                setSelectedAmount(opt?.value);
-                setSelectedQuantity(null);
-              }}
-              options={sortOptionsAmount}
-              placeholder={t("investment_brokers_menu.sort_by_amount")}
-              className="flex-1 md:min-w-[180px] md:max-w-[400px]"
-            />
+              <Select
+                value={sortOptionsAmount.find(opt => opt.value === selectedAmount) || null}
+                onChange={opt => {
+                  setSelectedAmount(opt?.value);
+                  setSelectedQuantity(null);
+                }}
+                options={sortOptionsAmount}
+                placeholder={t("investment_brokers_menu.sort_by_amount")}
+                className="w-full"
+              />
 
-            <Select
-              value={sortOptionsQuantity.find(opt => opt.value === selectedQuantity) || null}
-              onChange={opt => {
-                setSelectedQuantity(opt?.value);
-                setSelectedAmount(null);
-              }}
-              options={sortOptionsQuantity}
-              placeholder={t("investment_brokers_menu.sort_by_quantity")}
-              className="flex-1 w-full md:min-w-[180px] md:max-w-[400px]"
-            />
+              <Select
+                value={sortOptionsQuantity.find(opt => opt.value === selectedQuantity) || null}
+                onChange={opt => {
+                  setSelectedQuantity(opt?.value);
+                  setSelectedAmount(null);
+                }}
+                options={sortOptionsQuantity}
+                placeholder={t("investment_brokers_menu.sort_by_quantity")}
+                className="w-full"
+              />
+            </div>
+
 
             <div className="flex items-center gap-2 w-full">
               <BrokersAutoComplete
                 value={searchValue}
                 onChange={setSearchValue}
                 placeholder={t("filters.search_placeholder")}
-                className="w-full min-w-[200px] flex-1"
+                className="w-full"
               />
               <SearchButton onClick={handleSearch} />
               <ClearButton onClick={handleClear} />
@@ -166,7 +169,7 @@ const PageInvestmentBrokers = () => {
           </div>
         </div>
 
-        <aside className="hidden md:block lg:block shrink-0 grow-0 basis-[clamp(280px,26vw,360px)]">
+        <aside className="hidden md:block lg:block shrink-0 grow-0 basis-[clamp(280px,26vw,360px)] col-span-1 xl:col-span-2">
           <div className="sticky top-10 max-h-[calc(100vh-5rem] overflow-auto">
             <Sidebar items={sidebarItems} />
           </div>

@@ -202,29 +202,32 @@ export default function SecuritiesTable() {
     <div className="py-4 space-y-4">
       <div className="flex flex-wrap gap-2 mb-3 items-center">
 
-        <Select
-          placeholder={t("SecuritiesTable.select_type")}
-          value={{ value: selectedType, label: t(`SecuritiesTable.options.${selectedType}` as any) }}
-          onChange={handleTypeChange}
-          options={Object.keys(apiMap).map(key => ({
-            value: key,
-            label: t(`SecuritiesTable.options.${key}` as any),
-          }))}
-          className="w-full md:max-w-[200px]"
-        />
-        <DatePicker
-          selected={startDate}
-          onSelect={setStartDate}
-          placeholder={t("filters.start_date")}
-          className="flex-1"
-        />
-        <DatePicker selected={endDate} onSelect={setEndDate} placeholder={t("filters.end_date")} className="flex-1" />
+        <div className="w-full gap-2 flex flex-wrap sm:flex-nowrap">
+          <Select
+            placeholder={t("SecuritiesTable.select_type")}
+            value={{ value: selectedType, label: t(`SecuritiesTable.options.${selectedType}` as any) }}
+            onChange={handleTypeChange}
+            options={Object.keys(apiMap).map(key => ({
+              value: key,
+              label: t(`SecuritiesTable.options.${key}` as any),
+            }))}
+            className="w-full"
+          />
+          <DatePicker
+            selected={startDate}
+            onSelect={setStartDate}
+            placeholder={t("filters.start_date")}
+            className="w-full"
+          />
+          <DatePicker selected={endDate} onSelect={setEndDate} placeholder={t("filters.end_date")} className="w-full" />
+        </div>
+
         <div className="flex items-center gap-2 w-full">
           <AutocompleteSelect
             value={selectedOrg}
             onChange={setSelectedOrg}
             placeholder={t("filters.search_placeholder")}
-            className="flex-1 min-w-[400px] w-full"
+            className="w-full"
           />
           <SearchButton onClick={handleSearch} />
           <ClearButton onClick={clearFilters} />

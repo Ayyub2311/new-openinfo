@@ -92,11 +92,11 @@ export default function AnnouncementsTable() {
         startDate?: Date;
         endDate?: Date;
       } = {
-        type: selectedType,
-        selectedOrg,
-        startDate,
-        endDate,
-      }
+          type: selectedType,
+          selectedOrg,
+          startDate,
+          endDate,
+        }
     ) => {
       setLoading(true);
       try {
@@ -185,9 +185,9 @@ export default function AnnouncementsTable() {
     {
       title: t("TableHeaders.an_type"),
       dataIndex: "id",
-      align: "left" as const,
+      align: "center" as const,
       render: (_value, record: AnnouncementData) => (
-        <Link href={`/announce/${record.id}`}>
+        <Link href={`/announce/${record.id}`} className="flex justify-center">
           <Badge variant={getTypeBadgeVariant(record.an_type)}>{t(`AnnouncementTypes.${record.an_type}` as any)}</Badge>
         </Link>
       ),
@@ -206,42 +206,45 @@ export default function AnnouncementsTable() {
   return (
     <div className="py-4 space-y-4">
       <div className="flex flex-wrap gap-2 mb-3 items-center">
-        
-        <Select
-          options={[
-            { value: "", label: t("TableHeaders.all") },
-            ...ANNOUNCEMENT_TYPES.map(type => ({
-              value: type,
-              label: t(`AnnouncementTypes.${type}`),
-            })),
-          ]}
-          value={
-            selectedType
-              ? { value: selectedType, label: t(`AnnouncementTypes.${selectedType}`) }
-              : { value: "", label: t("TableHeaders.all") }
-          }
-          onChange={opt => setSelectedType((opt?.value as AnnouncementType) || null)}
-          placeholder={t("filters.select_type")}
-          className="max-w-[200px]"
-        />
-        <DatePicker
-          selected={startDate}
-          onSelect={setStartDate}
-          placeholder={t("filters.start_date")}
-          className="flex-1"
-        />
-        <DatePicker selected={endDate} onSelect={setEndDate} placeholder={t("filters.end_date")} className="flex-1" />
-        <div className="flex items-center gap-2 w-full">
-         <AutocompleteSelect
-          value={selectedOrg}
-          onChange={setSelectedOrg}
-          placeholder={t("filters.search_placeholder")}
-          className="flex-1 min-w-[400px] w-full"
-        />
-        <SearchButton onClick={handleSearch} />
-        <ClearButton onClick={clearFilters} /> 
+
+        <div className="w-full gap-2 flex flex-wrap sm:flex-nowrap">
+          <Select
+            options={[
+              { value: "", label: t("TableHeaders.all") },
+              ...ANNOUNCEMENT_TYPES.map(type => ({
+                value: type,
+                label: t(`AnnouncementTypes.${type}`),
+              })),
+            ]}
+            value={
+              selectedType
+                ? { value: selectedType, label: t(`AnnouncementTypes.${selectedType}`) }
+                : { value: "", label: t("TableHeaders.all") }
+            }
+            onChange={opt => setSelectedType((opt?.value as AnnouncementType) || null)}
+            placeholder={t("filters.select_type")}
+            className="w-full"
+          />
+          <DatePicker
+            selected={startDate}
+            onSelect={setStartDate}
+            placeholder={t("filters.start_date")}
+            className="w-full"
+          />
+          <DatePicker selected={endDate} onSelect={setEndDate} placeholder={t("filters.end_date")} className="w-full" />
         </div>
-        
+
+        <div className="flex items-center gap-2 w-full">
+          <AutocompleteSelect
+            value={selectedOrg}
+            onChange={setSelectedOrg}
+            placeholder={t("filters.search_placeholder")}
+            className="flex-1 w-full"
+          />
+          <SearchButton onClick={handleSearch} />
+          <ClearButton onClick={clearFilters} />
+        </div>
+
       </div>
 
       <Table columns={columns} data={announcementsData} bordered={false} loading={loading} />

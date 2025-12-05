@@ -94,11 +94,11 @@ export default function EssentialFactsTable() {
         startDate?: Date;
         endDate?: Date;
       } = {
-        selectedOrg,
-        selectedFactType,
-        startDate,
-        endDate,
-      }
+          selectedOrg,
+          selectedFactType,
+          startDate,
+          endDate,
+        }
     ) => {
       setLoading(true);
       try {
@@ -130,10 +130,10 @@ export default function EssentialFactsTable() {
             typeof fact.organization === "number"
               ? fact.organization
               : {
-                  id: fact.organization?.id ?? 0,
-                  short_name_text: fact.organization?.short_name_text ?? "",
-                  detailinfo: fact.organization?.detailinfo ?? undefined,
-                },
+                id: fact.organization?.id ?? 0,
+                short_name_text: fact.organization?.short_name_text ?? "",
+                detailinfo: fact.organization?.detailinfo ?? undefined,
+              },
         }));
 
         setFactsData(normalized);
@@ -238,28 +238,31 @@ export default function EssentialFactsTable() {
     <div className="py-4 space-y-4">
       <div className="mb-4">
         <div className="flex flex-wrap gap-2 mb-3 items-center">
-       
-          <Select
-            options={factOptions}
-            value={selectedFactType}
-            onChange={handleFactTypeChange}
-            placeholder={t("filters.select_type")}
-            className="flex-1 min-w-[200px]"
-          />
-          <DatePicker
-            selected={startDate}
-            onSelect={setStartDate}
-            placeholder={t("filters.start_date")}
-            className="flex-1"
-          />
-          <DatePicker selected={endDate} onSelect={setEndDate} placeholder={t("filters.end_date")} className="flex-1" />
-            <div className="flex items-center gap-2 w-full">
-             <AutocompleteSelect
-            value={selectedOrg}
-            onChange={setSelectedOrg}
-            placeholder={t("filters.search_placeholder")}
-            className="flex-1 w-full"
-          />
+
+          <div className="w-full gap-2 flex flex-wrap sm:flex-nowrap">
+            <Select
+              options={factOptions}
+              value={selectedFactType}
+              onChange={handleFactTypeChange}
+              placeholder={t("filters.select_type")}
+              className="w-full"
+            />
+            <DatePicker
+              selected={startDate}
+              onSelect={setStartDate}
+              placeholder={t("filters.start_date")}
+              className="w-full"
+            />
+            <DatePicker selected={endDate} onSelect={setEndDate} placeholder={t("filters.end_date")} className="w-full" />
+          </div>
+
+          <div className="flex items-center gap-2 w-full">
+            <AutocompleteSelect
+              value={selectedOrg}
+              onChange={setSelectedOrg}
+              placeholder={t("filters.search_placeholder")}
+              className="w-full"
+            />
             <SearchButton onClick={handleSearch} />
             <ClearButton onClick={clearFilters} />
           </div>

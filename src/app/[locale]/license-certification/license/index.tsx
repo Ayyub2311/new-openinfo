@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Container from "@/app/shared/ui/components/Container";
 import { Table } from "@/app/shared/ui/components/Table";
 import { Pagination } from "@/app/shared/ui/components/Pagination";
 import { TableColumn } from "@/app/shared/ui/components/Table/types";
@@ -83,8 +82,9 @@ const LicenseTable = () => {
     {
       title: t("AttestationTabs.organization_column"),
       dataIndex: "organization",
+      width: "35%",
       render: (_, record) => (
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 pr-2">
           <span className="text-sm text-gray-900">{record.organization}</span>
         </div>
       ),
@@ -92,24 +92,34 @@ const LicenseTable = () => {
     {
       title: t("AttestationTabs.service_name"),
       dataIndex: "activity_type",
+      width: "25%",
       render: (value: string) => {
-        const a: any = `AttestationTabs.${value}`;
-        return t(a);
+        const key = `AttestationTabs.${value}`;
+        return (
+          <div className="flex items-center gap-3 pr-2">
+            <span className="text-sm text-gray-900">
+              {t(key)}
+            </span>
+          </div>
+        );
       },
     },
     {
       title: t("AttestationTabs.license_number"),
       dataIndex: "license_number",
+      width: "15%",
       render: (value: string) => <span className="text-sm font-medium">{value}</span>,
     },
     {
       title: t("AttestationTabs.date_issue"),
       dataIndex: "issue_date",
+      width: "15%",
       render: (value: string) => <span className="text-sm">{value}</span>,
     },
     {
       title: t("AttestationTabs.download"),
       dataIndex: "pdf_file",
+      width: "10%",
       align: "center",
       render: value => (
         <Link
@@ -125,14 +135,14 @@ const LicenseTable = () => {
   ];
 
   return (
-    <Container style={{ padding: "0" }}>
+    <div>
       {/* Filters */}
       <div className="flex flex-wrap gap-4 items-center mb-4">
-        <div className="flex flex-wrap md:flex-nowrap gap-4 items-center w-full h-full">
+        <div className="w-full gap-2 flex flex-wrap sm:flex-nowrap">
           <a
             href="https://license.gov.uz/auth"
             target="_blank"
-            className="w-full md:w-[180px] px-4 py-2 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-200 text-sm border border-default whitespace-nowrap "
+            className="w-full sm:w-[180px] px-4 py-2 rounded-full bg-blue-100 text-blue-700 hover:bg-blue-200 text-sm border border-default whitespace-nowrap "
           >
             → {t("AttestationTabs.get_license")}
           </a>
@@ -142,14 +152,14 @@ const LicenseTable = () => {
             value={activityType}
             onChange={setActivityType}
             placeholder={t("AttestationTabs.service_name")}
-            className="w-full md:min-w-[215px] md:max-w-[1000px]"
+            className="w-full"
           />
 
           <Input
             placeholder={t("AttestationTabs.organization_column")}
             value={organization}
             onChange={e => setOrganization(e.target.value)}
-            className="rounded-full bg-blue-50  w-full md:min-w-[215px] md:max-w-[1000px] h-full"
+            className="rounded-full bg-blue-50  w-full h-full"
           />
         </div>
 
@@ -181,7 +191,7 @@ const LicenseTable = () => {
       <div className="mt-4">
         <Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} totalItems={count} />
       </div>
-    </Container>
+    </div>
   );
 };
 

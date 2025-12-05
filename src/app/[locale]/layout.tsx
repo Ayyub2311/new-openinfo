@@ -9,36 +9,37 @@ import "@/app/globals.css";
 import { NotificationWrapper } from "../shared/contexts/NotificationWrapper";
 import { NextIntlClientProvider } from "next-intl";
 import AuthUIMount from "../providers/AuthUIMount";
+import { Mulish, Poppins } from "next/font/google";
 
-// const mulish = Mulish({
-//   subsets: ["latin"],
-//   weight: ["400", "500", "600", "700"],
-//   variable: "--font-body",
-// });
+const mulish = Mulish({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+});
 
-// const poppins = Poppins({
-//   subsets: ["latin"],
-//   weight: ["400", "500", "600", "700"],
-//   variable: "--font-heading",
-// });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-heading",
+});
 
-// const DarkModeScript = () => (
-//   <script
-//     dangerouslySetInnerHTML={{
-//       __html: `
-//         try {
-//           if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-//             document.documentElement.classList.add('dark');
-//           } else {
-//             document.documentElement.classList.remove('dark');
-//           }
-//         } catch (e) {
-//           console.log(e);
-//         }
-//       `,
-//     }}
-//   />
-// );
+const DarkModeScript = () => (
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+        try {
+          if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {
+          console.log(e);
+        }
+      `,
+    }}
+  />
+);
 
 export const metadata = {
   title: "Openinfo - Открытые данные о компаниях Узбекистана",
@@ -65,7 +66,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       suppressHydrationWarning
-    // className={`${mulish.variable} ${poppins.variable}`}
+      className={`${mulish.variable} ${poppins.variable}`}
     >
 
       {/* I commented DarkMode */}

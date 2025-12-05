@@ -17,12 +17,12 @@ export const TableHeader: React.FC<TableHeaderProps> = ({ bordered, align, class
   return (
     <th
       className={cn(
-        "sticky top-0 z-30 py-2 font-bold text-primary text-sm border-b border-default",
+        "sticky top-0 z-30 bg-white py-2 font-bold text-primary text-sm border-b border-default",
         {
           border: bordered,
           "text-left": align === "left" || !align,
           "text-center": align === "center",
-          "text-right": align === "right",
+          "text-right": align === "right", "align-top": true,
         },
         className
       )}

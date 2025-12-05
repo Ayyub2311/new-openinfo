@@ -13,18 +13,18 @@ const Sidebar: React.FC<SidebarProps> = ({ items }) => {
   const t = useTranslations();
 
   return (
-    <div className="w-full flex box-border items-stretch border-2 border-default mb-[30px]">
+    <div className="w-full rounded-xl flex flex-col-reverse xl:flex-row box-border items-stretch border-2 border-default mb-[30px]">
 
       <div className="flex-1 min-w-0 ">
-        <div className=" p-6 box-border overflow-hidden w-full">
+        <div className="p-6 box-border overflow-hidden w-full">
           {items.find(item => item.id === current)?.component}
         </div>
       </div>
 
 
-      <div className="bg-secondary w-[75px] pl-[3px] pr-[3px] box-border pt-6 pb-6 border-l-2 border-default">
+      <div className="bg-secondary w-full xl:w-[75px] pl-6 pr-6 xl:pl-[3px] xl:pr-[3px] box-border pt-[3px] pb-[3px] xl:pt-6 xl:pb-6 border-l-2 border-default">
 
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-row xl:flex-col gap-8">
           {items.map(item => (
             <div
               className={`flex flex-col gap-1 items-center cursor-pointer p-2 rounded-xl transition-colors 

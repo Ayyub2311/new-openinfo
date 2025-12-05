@@ -14,6 +14,7 @@ import { nestedTitleIds } from "./nestedTitleIds";
 import { allowedTitleIds } from "./allowedTitleIds";
 import DownloadCSV from "./DownloadCSV";
 import { convertReportsToReportArr } from "./convertReportsToReportArr";
+import { useTranslations } from "next-intl";
 
 type IncomeTableType = Array<{
   id: number;
@@ -37,13 +38,14 @@ type IncomeTableType = Array<{
 }>;
 
 export const IncomeTable = ({ organizationId }: { organizationId: string }) => {
+  const t = useTranslations();
   const [incomeList, setIncomeList] = useState<IncomeTableType>([]);
   const [columns, setColumns] = useState<TableColumn<{ tnum?: string; title: string; title_id: number } & any>[]>([]);
   const [hideNested, setHideNested] = useState(true);
   const [reportType, setReportType] = useState<{
     label: string;
     value: "annual" | "quarter";
-  }>({ label: "Год", value: "annual" });
+  }>({ label: t("IncomeTable.Year"), value: "annual" });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -68,7 +70,7 @@ export const IncomeTable = ({ organizationId }: { organizationId: string }) => {
         }
         setColumns([
           {
-            title: "Код стр.",
+            title: t("IncomeTable.PageCode"),
             dataIndex: key,
             render: (_, r: any) => {
               if (key === "title_id") {
@@ -94,7 +96,7 @@ export const IncomeTable = ({ organizationId }: { organizationId: string }) => {
             },
           },
           {
-            title: "Наименование показателя",
+            title: t("IncomeTable.IndicatorName"),
             dataIndex: "title",
             className: "min-w-100 w-[500px]",
             render: (_, r: any) => {
@@ -140,27 +142,27 @@ export const IncomeTable = ({ organizationId }: { organizationId: string }) => {
   return (
     <Box>
       <div className="mb-3 flex flex-wrap items-center  gap-2 justify-between">
-        <Text>Группировать данные по</Text>
+        <Text>{t("IncomeTable.Group")}</Text>
         <Select
           onChange={option => setReportType(option as any)}
           options={[
-            { label: "Год", value: "annual" },
-            { label: "Квартал", value: "quarter" },
+            { label: t("IncomeTable.Year"), value: "annual" },
+            { label: t("IncomeTable.Quarter"), value: "quarter" },
           ]}
-          placeholder="Выберите опцию..."
+          placeholder={t("IncomeTable.Option")}
           value={reportType}
         />
-        <Switch label="Показать детали" onChange={c => setHideNested(!c)} checked={!hideNested} />
-        <Text>все цифры в тыс. сум</Text>
+        <Switch label={t("IncomeTable.Detail")} onChange={c => setHideNested(!c)} checked={!hideNested} />
+        <Text>{t("IncomeTable.ThousandSum")}</Text>
         <DownloadCSV
           reports={convertReportsToReportArr(
             columns as any[],
             hideNested
               ? incomeList.filter((i: any) => {
-                  const key = getKeyFilterReport(incomeList as any[]);
-                  if (key === "title_id") return !nestedTitleIds.includes(i.title_id);
-                  return !nestedTnums.includes(i.tnum);
-                })
+                const key = getKeyFilterReport(incomeList as any[]);
+                if (key === "title_id") return !nestedTitleIds.includes(i.title_id);
+                return !nestedTnums.includes(i.tnum);
+              })
               : incomeList
           )}
         />
@@ -172,10 +174,10 @@ export const IncomeTable = ({ organizationId }: { organizationId: string }) => {
         data={
           hideNested
             ? incomeList.filter((i: any) => {
-                const key = getKeyFilterReport(incomeList as any[]);
-                if (key === "title_id") return !nestedTitleIds.includes(i.title_id);
-                return !nestedTnums.includes(i.tnum);
-              })
+              const key = getKeyFilterReport(incomeList as any[]);
+              if (key === "title_id") return !nestedTitleIds.includes(i.title_id);
+              return !nestedTnums.includes(i.tnum);
+            })
             : incomeList
         }
       />

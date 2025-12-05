@@ -5,7 +5,7 @@ const Container = React.forwardRef<HTMLDivElement, ContainerProps>(({ children, 
   return (
     <div
       ref={ref}
-      className={`container mx-auto px-4 lg:px-8 xl:px-0 sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl ${className}`}
+      className={`w-[90%] 2xl:w-[85%] mx-auto px-0 xl:px-8 2xl:px-16 ${className}`}
       {...props}
     >
       {children}

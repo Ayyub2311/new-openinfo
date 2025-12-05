@@ -7,7 +7,6 @@ import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import { ErrorMessage } from "../ErrorMessage";
 import { LoadingSkeleton } from "../NewsLoadingSkeleton";
 import { CardGrid } from "@/app/shared/ui/components/Card/CardGrid";
-import Container from "@/app/shared/ui/components/Container";
 
 const fetchNewsData = async (imageSize: number) => {
   const endDate = new Date();
@@ -87,10 +86,6 @@ export const NewsGrid = () => {
   if (error) return <ErrorMessage error={error} />;
 
   return (
-    <Container className="w-full"style={{
-      padding: "0"
-    }}>
-      <CardGrid items={items} className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6" />
-    </Container>
+    <CardGrid items={items} className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6" />
   );
 };

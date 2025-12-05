@@ -25,9 +25,9 @@ export default function Home() {
       <div className="mt-4">
         <CorporatePortal />
       </div>
-      <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-3 gap-x-4 mt-[30px] relative">
+      <div ref={gridRef} className="grid grid-cols-1 xl:grid-cols-5 gap-x-4 mt-[30px] relative">
         { /* Main Content */}
-        <div className="col-span-1 lg:col-span-2">
+        <div className="col-span-1 xl:col-span-3">
           <div>
             <Section
               title={
@@ -75,7 +75,7 @@ export default function Home() {
             <PieBarGrid />
           </Section> */}
         </div>
-        <aside className="hidden md:block lg:block shrink-0 grow-0 basis-[clamp(280px,26vw,360px)]">
+        <aside className="hidden md:block lg:block shrink-0 grow-0 basis-[clamp(280px,26vw,360px)] col-span-1 xl:col-span-2">
           <div className="sticky top-10 max-h-[calc(100vh-5rem] overflow-auto">
             <Sidebar items={sidebarItems} />
           </div>

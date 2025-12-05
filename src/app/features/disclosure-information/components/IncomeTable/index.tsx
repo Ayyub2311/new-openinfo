@@ -4,7 +4,7 @@ import { useEffect, useState, useMemo } from "react";
 import dynamic from "next/dynamic";
 import Box from "@/app/shared/ui/components/Box";
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
-
+import { useTranslations } from "next-intl";
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 import { IncomeTable as IncTable } from "./IncomeTable";
 
@@ -24,6 +24,7 @@ interface Props {
 }
 
 export const IncomeTable = ({ organizationId }: Props) => {
+  const t = useTranslations();
   const [financialData, setFinancialData] = useState<FinancialData[]>([]);
   const [error, setError] = useState<string | null>(null);
 
@@ -50,14 +51,14 @@ export const IncomeTable = ({ organizationId }: Props) => {
 
   const formatBarSeries = [
     {
-      name: "Net Profit",
+      name: t("IncomeTable.netProfit"),
       data: years.map(year => {
         const item = financialData.find(d => d.reporting_year === year);
         return item?.net_profit ?? 0;
       }),
     },
     {
-      name: "Revenue",
+      name: t("IncomeTable.netRevenue"),
       data: years.map(year => {
         const item = financialData.find(d => d.reporting_year === year);
         return item?.net_revenue ?? 0;
@@ -67,14 +68,14 @@ export const IncomeTable = ({ organizationId }: Props) => {
 
   const formatLineSeries = [
     {
-      name: "Total Assets",
+      name: t("IncomeTable.totalAssets"),
       data: years.map(year => {
         const item = financialData.find(d => d.reporting_year === year);
         return item?.total_assets ?? 0;
       }),
     },
     {
-      name: "Total Liabilities",
+      name: t("IncomeTable.totalLiabilities"),
       data: years.map(year => {
         const item = financialData.find(d => d.reporting_year === year);
         return item?.total_liabilites ?? 0;
@@ -101,7 +102,7 @@ export const IncomeTable = ({ organizationId }: Props) => {
     },
     yaxis: {
       labels: {
-        formatter: (val: number) => `${(val / 1_000_000_000).toFixed(1)} млрд`,
+        formatter: (val: number) => `${(val / 1_000_000_000).toFixed(1)} ${t("IncomeTable.billion")}`,
       },
     },
     legend: {
@@ -131,7 +132,7 @@ export const IncomeTable = ({ organizationId }: Props) => {
     },
     dataLabels: {
       enabled: true,
-      formatter: (val: number) => `${(val / 1_000_000_000).toFixed(2)} млрд`,
+      formatter: (val: number) => `${(val / 1_000_000_000).toFixed(2)} ${t("IncomeTable.billion")}`,
       background: {
         enabled: true,
         borderRadius: 6,
@@ -142,7 +143,7 @@ export const IncomeTable = ({ organizationId }: Props) => {
     },
     yaxis: {
       labels: {
-        formatter: (val: number) => `${(val / 1_000_000_000).toFixed(1)} млрд`,
+        formatter: (val: number) => `${(val / 1_000_000_000).toFixed(1)} ${t("IncomeTable.billion")}`,
       },
     },
     colors: ["#6366F1", "#1F2937"],

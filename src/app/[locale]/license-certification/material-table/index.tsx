@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import Container from "@/app/shared/ui/components/Container";
 import { Table } from "@/app/shared/ui/components/Table";
 import type { TableColumn } from "@/app/shared/ui/components/Table/types";
 import Link from "next/link";
@@ -44,6 +43,7 @@ const MaterialFiles = () => {
       title: t("AttestationTabs.questions_list"),
       dataIndex: "description",
       render: (value: string) => <span className="text-sm">{value}</span>,
+      width: "80%",
     },
     {
       title: t("AttestationTabs.download"),
@@ -58,7 +58,7 @@ const MaterialFiles = () => {
   ];
 
   return (
-    <Container style={{ padding: "0" }}>
+    <div>
       <Table
         data={data}
         columns={columns}
@@ -73,7 +73,7 @@ const MaterialFiles = () => {
           {t("AttestationTabs.testProcess")}
         </button>
       </div>
-    </Container>
+    </div>
   );
 };
 

@@ -145,45 +145,51 @@ const PageOrganizations = () => {
 
   return (
     <Container>
-      <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        <div className="lg:col-span-2 flex flex-col gap-4 mt-[30px] mb-[30px]">
+      <div ref={gridRef} className="grid grid-cols-1 xl:grid-cols-5 gap-5">
+        <div className="xl:col-span-3 flex flex-col gap-4 mt-[30px] mb-[30px]">
           <div className="px-0 flex flex-wrap gap-2 mt-3 mb-3 items-center">
-            <Select
-              value={listedOptions.find(opt => opt.value === statusRFB) || null}
-              onChange={opt => setStatusRFB(opt?.value ?? "")}
-              options={listedOptions}
-              placeholder={t("rfb_status")}
-              className="flex-1   w-full"
-            />
-            <Select
-              value={statusOptions.find(opt => opt.value === statusAO) || null}
-              onChange={opt => setStatusAO(opt.value)}
-              options={statusOptions}
-              placeholder={t("jsc_status")}
-              className="flex-1    w-full"
-            />
-            <Select
-              value={orgTypes.find(opt => opt.value === orgType) || null}
-              onChange={opt => setOrgType(opt.value)}
-              options={orgTypes}
-              placeholder={t("organization_type")}
-              className="flex-1 w-full"
-            />
+            <div className="w-full gap-2 flex flex-wrap sm:flex-nowrap">
+              <Select
+                value={listedOptions.find(opt => opt.value === statusRFB) || null}
+                onChange={opt => setStatusRFB(opt?.value ?? "")}
+                options={listedOptions}
+                placeholder={t("rfb_status")}
+                className="w-full"
+              />
+              <Select
+                value={statusOptions.find(opt => opt.value === statusAO) || null}
+                onChange={opt => setStatusAO(opt.value)}
+                options={statusOptions}
+                placeholder={t("jsc_status")}
+                className="w-full"
+              />
+              <Select
+                value={orgTypes.find(opt => opt.value === orgType) || null}
+                onChange={opt => setOrgType(opt.value)}
+                options={orgTypes}
+                placeholder={t("organization_type")}
+                className="w-full"
+              />
+            </div>
 
-            <AutocompleteSelect
-              value={selectedOrg}
-              onChange={setSelectedOrg}
-              placeholder={t("search_placeholder")}
-              className="flex-1  w-full min-w-[400px]"
-            />
 
-            <SearchButton
-              onClick={() => {
-                setPage(1);
-                updateQuery();
-              }}
-            />
-            <ClearButton onClick={handleResetFilters} />
+            <div className="flex items-center gap-2 w-full">
+              <AutocompleteSelect
+                value={selectedOrg}
+                onChange={setSelectedOrg}
+                placeholder={t("search_placeholder")}
+                className="w-full"
+              />
+
+              <SearchButton
+                onClick={() => {
+                  setPage(1);
+                  updateQuery();
+                }}
+              />
+              <ClearButton onClick={handleResetFilters} />
+            </div>
+
           </div>
 
           {loading ? (
@@ -225,7 +231,7 @@ const PageOrganizations = () => {
             </>
           )}
         </div>
-        <aside className="hidden md:block lg:block shrink-0 grow-0 basis-[clamp(280px,26vw,360px)]">
+        <aside className="hidden md:block lg:block mt-[42px] col-span-1 xl:col-span-2 shrink-0 grow-0 basis-[clamp(280px,26vw,360px)]">
           <div className="sticky top-10 max-h-[calc(100vh-5rem] overflow-auto">
             <Sidebar items={sidebarItems} />
           </div>

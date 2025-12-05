@@ -7,7 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import { SplitPanelContainer } from "@/app/shared/ui/components/SplitPanel/SplitPanel";
 import { Globe, AtSign } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import FormatNumbers from "@/app/shared/format-number";
 import { StockCardPrice } from "@/app/shared/ui/containers/StockCard/StockCardPrice";
 
@@ -26,6 +26,7 @@ const GeneralTable: React.FC<GeneralTableProps> = ({ id, isListing }) => {
   const [series, setSeries] = useState<any[]>([]);
   const [selectedPeriod, setSelectedPeriod] = useState("1Y");
 
+  const locale = useLocale();
   const t = useTranslations();
 
   const periods = ["1M", "3M", "6M", "1Y", "3Y"];
@@ -64,7 +65,7 @@ const GeneralTable: React.FC<GeneralTableProps> = ({ id, isListing }) => {
           .map(item => [new Date(item.date).getTime(), Number(item.close.toFixed(2))])
           .reverse();
 
-        setSeries([{ name: "Price", data: formatted }]);
+        setSeries([{ name: t("SecuritiesTableSidebar.price"), data: formatted }]);
       } catch (error) {
         console.error("Error fetching chart data:", error);
       }
@@ -101,6 +102,52 @@ const GeneralTable: React.FC<GeneralTableProps> = ({ id, isListing }) => {
     };
   };
 
+  const MONTH_TRANSLATIONS: Record<string, string> = {
+    ru: {
+      Jan: "Янв",
+      Feb: "Фев",
+      Mar: "Мар",
+      Apr: "Апр",
+      May: "Май",
+      Jun: "Июн",
+      Jul: "Июл",
+      Aug: "Авг",
+      Sep: "Сен",
+      Oct: "Окт",
+      Nov: "Ноя",
+      Dec: "Дек",
+    },
+    uz: {
+      Jan: "Yan",
+      Feb: "Fev",
+      Mar: "Mar",
+      Apr: "Apr",
+      May: "May",
+      Jun: "Iyun",
+      Jul: "Iyul",
+      Aug: "Avg",
+      Sep: "Sen",
+      Oct: "Okt",
+      Nov: "Noy",
+      Dec: "Dek",
+    },
+  };
+
+  const formatChartLabel = (timestamp: number, tab: string) => {
+    const d = new Date(timestamp);
+    const day = d.getDate();
+    const year = String(d.getFullYear()).slice(2);
+
+    const monthEng = d.toLocaleString("en-US", { month: "short" });
+    const monthShort = MONTH_TRANSLATIONS[locale as "ru" | "uz"]?.[monthEng] ?? monthEng;
+
+    if (tab === "1W" || tab === "1M") {
+      return `${day} ${monthShort}`;
+    }
+
+    return `${day} ${monthShort} '${year}`;
+  };
+
   const chartOptions = {
     chart: {
       id: "area-datetime",
@@ -128,19 +175,24 @@ const GeneralTable: React.FC<GeneralTableProps> = ({ id, isListing }) => {
       type: "datetime",
       tickAmount: 6,
       labels: {
-        datetimeFormatter: {
-          year: "yyyy",
-          month: "MMM yy",
-          day: "dd MMM",
-        },
+        formatter: (value) => formatChartLabel(Number(value), selectedPeriod),
       },
     },
     tooltip: {
       x: {
-        format: "dd MMM yyyy",
+        formatter: (value) => {
+          const d = new Date(Number(value));
+          const day = d.getDate();
+          const year = String(d.getFullYear());
+
+          const monthEng = d.toLocaleString("en-US", { month: "short" });
+          const monthShort = MONTH_TRANSLATIONS[locale as "ru" | "uz"]?.[monthEng] ?? monthEng;
+
+          return `${day} ${monthShort} ${year}`;
+        }
       },
       y: {
-        formatter: (val: number) => `Price: ${val.toLocaleString("en-US", { minimumFractionDigits: 2 })}`,
+        formatter: (val: number) => `${val.toLocaleString("en-US", { minimumFractionDigits: 2 })}`,
       },
     },
     fill: {

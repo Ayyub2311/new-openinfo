@@ -17,6 +17,7 @@ import {
   OperationType,
   StockType,
 } from "./calculator";
+import { useTranslations } from "next-intl";
 
 // Map tab IDs to board types
 const tabToBoard: Record<string, Board> = {
@@ -28,6 +29,7 @@ const tabToBoard: Record<string, Board> = {
 
 const Calculator: React.FC = () => {
   // Basic inputs as strings for better UX
+  const t = useTranslations();
   const [quantityStr, setQuantityStr] = useState<string>("");
   const [unitPriceStr, setUnitPriceStr] = useState<string>("");
   const [brokerCommissionStr, setBrokerCommissionStr] = useState<string>("");
@@ -88,14 +90,21 @@ const Calculator: React.FC = () => {
     }
   }, [quantity, unitPrice, brokerCommission, operationType, operationContinue, activeTab, stockType]);
 
+  const stockTypeOptions = {
+    g1: ["STK", "SMS", "BND", "SMB"],
+    t1: ["STK", "SMS", "BND"],
+    nc: ["STK", "SMS"],
+    ipo: ["STK"],
+  }
+
   return (
     <div className="w-full">
       <h2 className="text-lg font-medium mb-4">
-        РАСЧЕТ СТОИМОСТИ РАСХОДОВ ПРИ СОВЕРШЕНИИ СДЕЛОК НА РФБ &quot;ТОШКЕНТ&quot;
+        {t("CalculatorTabs.Header")}
       </h2>
       <div className="w-full space-y-4">
-        <p className="font-medium mb-4 text-blue-500">Данные о ценной бумаге</p>
-        <FormItem label="Quantity">
+        <p className="font-medium mb-4 text-blue-500">{t("CalculatorTabs.Data")}</p>
+        <FormItem label={t("CalculatorTabs.Quantity")}>
           <Input
             type="number"
             id="quantity"
@@ -104,7 +113,7 @@ const Calculator: React.FC = () => {
             placeholder="0"
           />
         </FormItem>
-        <FormItem label="Price">
+        <FormItem label={t("CalculatorTabs.Price")}>
           <Input
             type="number"
             id="price"
@@ -113,7 +122,7 @@ const Calculator: React.FC = () => {
             placeholder="0"
           />
         </FormItem>
-        <FormItem label="Broker Commission (%)">
+        <FormItem label={t("CalculatorTabs.BrokerCommission")}>
           <Input
             type="number"
             id="brokerCommission"
@@ -123,17 +132,17 @@ const Calculator: React.FC = () => {
           />
         </FormItem>
 
-        <Text variant="accent">Transaction Type</Text>
+        <Text variant="accent">{t("CalculatorTabs.TransactionType")}</Text>
         <div className="flex flex-col gap-4 mt-5">
           <div className="flex gap-4">
             <Radio
-              label="Покупка"
+              label={t("CalculatorTabs.Buy")}
               value="buy"
               checked={operationType === "buy"}
               onChange={() => setOperationType("buy")}
             />
             <Radio
-              label="Продажа"
+              label={t("CalculatorTabs.Sell")}
               value="sell"
               checked={operationType === "sell"}
               onChange={() => setOperationType("sell")}
@@ -142,13 +151,13 @@ const Calculator: React.FC = () => {
           {operationType === "sell" && (
             <div className="flex gap-4">
               <Radio
-                label="Первичное размещение"
+                label={t("CalculatorTabs.PrimaryPlacement")}
                 value="1"
                 checked={operationContinue === "1"}
                 onChange={() => setOperationContinue("1")}
               />
               <Radio
-                label="Вторичное обращение"
+                label={t("CalculatorTabs.SecondaryPlacement")}
                 value="2"
                 checked={operationContinue === "2"}
                 onChange={() => setOperationContinue("2")}
@@ -158,7 +167,7 @@ const Calculator: React.FC = () => {
         </div>
 
         <div className="w-full">
-          <p className="font-medium mb-4 text-blue-500">Торговые площадки</p>
+          <p className="font-medium mb-4 text-blue-500">{t("CalculatorTabs.Exchanges")}</p>
           <div className="w-full lg:w-[347px] overflow-x-auto">
             <Tabs
               items={[
@@ -167,13 +176,14 @@ const Calculator: React.FC = () => {
                 { key: "nc", label: "FOP (NC)" },
                 { key: "ipo", label: "IPO/SPO/PO" },
               ]}
-              defaultActiveKey="1"
+              defaultActiveKey="g1"
               onChange={tabId => setActiveTab(tabId)}
             />
           </div>
 
           <div className="grid grid-cols-2 gap-2 xl:grid-cols-4 mt-4">
-            {["STK", "SMS", "BND", "SMB"].map(type => (
+
+            {stockTypeOptions[activeTab]?.map(type => (
               <label
                 key={type}
                 className={`border rounded-xl py-1 px-3 flex items-center gap-2 justify-center cursor-pointer ${stockType === type ? "bg-blue-100 border-blue-500" : "border-black"
@@ -190,12 +200,13 @@ const Calculator: React.FC = () => {
                 <span>{type}</span>
               </label>
             ))}
+
           </div>
         </div>
 
         <div className="space-y-4 mt-6">
           <div>
-            <label className="block font-medium mb-1">Сумма сделки:</label>
+            <label className="block font-medium mb-1">{t("CalculatorTabs.TransactionAmount")}</label>
             <input
               type="text"
               value={transactionAmount.toLocaleString()}
@@ -204,7 +215,7 @@ const Calculator: React.FC = () => {
             />
           </div>
           <div>
-            <label className="block font-medium mb-1">Итого комиссионные расходы:</label>
+            <label className="block font-medium mb-1">{t("CalculatorTabs.CommissionCosts")}</label>
             <input
               type="text"
               value={commissionCosts.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -214,7 +225,7 @@ const Calculator: React.FC = () => {
           </div>
           <div>
             <label className="block font-medium mb-1">
-              {operationType === "sell" ? "Общая сумма к получению составляет:" : "Общая сумма к оплате составляет:"}
+              {operationType === "sell" ? t("CalculatorTabs.OperationSell") : t("CalculatorTabs.OperationBuy")}
             </label>
             <input
               type="text"

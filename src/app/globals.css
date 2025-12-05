@@ -7,6 +7,10 @@
   body {
     @apply font-body antialiased bg-primary text-primary;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
 }
 
 
@@ -19,7 +23,7 @@
   --bg-secondary: 241 245 249;
   --bg-accent: 248 250 252;
 
-  --text-primary: 0 0 0;
+  --text-primary: 55 65 81;
   --text-secondary: 0 0 0 / 0.9;
   --text-tertiary: 0 0 0 / 0.6;
   --text-inverse: 255 255 255;
@@ -48,7 +52,7 @@
 
 @layer base {
   body {
-    @apply antialiased bg-primary text-primary;
+    @apply font-body antialiased bg-primary text-primary;
   }
 }
 

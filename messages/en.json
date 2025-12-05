@@ -620,6 +620,28 @@
     "search_placeholder": "Search by issuer name",
     "annual_interest": "Annual Interest %"
   },
+  "IncomeTable": {
+    "netRevenue": "Net Revenue",
+    "netProfit": "Net Profit",
+    "totalAssets": "Total Assets",
+    "totalLiabilities": "Total Liabilities",
+    "billion": "bln",
+    "PageCode": "Page Code",
+    "IndicatorName": "Indicator Name",
+    "Year": "Year",
+    "Group": "Group data by",
+    "Quarter": "Quarter",
+    "ThousandSum": "All values in thousand UZS",
+    "Option": "Select an option...",
+    "Detail": "Show details"
+  },
+  "PerformanceTable": {
+    "ROE": "ROE",
+    "ROA": "ROA",
+    "NetProfitMargin": "Net Profit Margin",
+    "KPIs": "KPIs",
+    "Ratios": "Ratios"
+  },
   "AnnouncementTable": {
     "organization": "Organization",
     "title": "Title",
@@ -645,7 +667,9 @@
     "quotes": "Quotes",
     "watchlist": "Watchlist",
     "notifications": "Notifications",
-    "fees": "Fees"
+    "fees": "Fees",
+    "SelectStock": "Select a stock",
+    "SelectBond": "Select a bond"
   },
   "SecuritiesTableSidebar": {
     "ticker": "Ticker",
@@ -657,7 +681,8 @@
     "1D": "1 Day",
     "1W": "1 Week",
     "1M": "1 Month",
-    "6M": "6 Months"
+    "6M": "6 Months",
+    "1Y": "1 Year"
   },
   "AttestationTabs": {
     "attestation": "Attestation",
@@ -684,6 +709,23 @@
     "obligations": "Obligations",
     "stock": "Stock",
     "exchange_rates": "Exchange Rates"
+  },
+  "CalculatorTabs": {
+    "Header": "CALCULATION OF EXPENSES WHEN MAKING TRANSACTIONS ON THE \"TASHKENT\" STOCK EXCHANGE",
+    "Data": "Security Data",
+    "Quantity": "Quantity",
+    "Price": "Price",
+    "BrokerCommission": "Broker Commission (%)",
+    "TransactionType": "Transaction Type",
+    "Buy": "Buy",
+    "Sell": "Sell",
+    "PrimaryPlacement": "Primary Placement",
+    "SecondaryPlacement": "Secondary Placement",
+    "Exchanges": "Exchanges",
+    "TransactionAmount": "Transaction Amount:",
+    "CommissionCosts": "Total Commission Costs:",
+    "OperationSell": "Total amount to receive:",
+    "OperationBuy": "Total amount to pay:"
   },
   "ExchangeRatesTable": {
     "currency": "Currency",
@@ -1032,7 +1074,8 @@
     "common": {
       "cancel": "Cancel",
       "save": "Save",
-      "saving": "Saving…"
+      "saving": "Saving…",
+      "more": "+ more"
     },
     "errors": {
       "selectSecurity": "Select a security.",

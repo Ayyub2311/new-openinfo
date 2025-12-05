@@ -8,6 +8,7 @@ import { FinancialIndicatorsTable } from "./IndicatorTable";
 
 // Dynamically import ApexCharts for SSR safety
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
+import { useTranslations } from "next-intl";
 
 interface PerformanceData {
   reporting_year: number;
@@ -24,6 +25,7 @@ interface Props {
 }
 
 export const PerformanceIndicatorTable = ({ organizationId }: Props) => {
+  const t = useTranslations();
   const [performanceData, setPerformanceData] = useState<PerformanceData[]>([]);
   const [error, setError] = useState<string | null>(null);
 
@@ -50,10 +52,10 @@ export const PerformanceIndicatorTable = ({ organizationId }: Props) => {
   const years = [...new Set(performanceData.map(item => item.reporting_year))].sort((a, b) => a - b);
 
   const indicators = [
-    { key: "return_on_equity", label: "ROE", color: "#4F46E5" },
-    { key: "return_on_assets", label: "ROA", color: "#374151" },
+    { key: "return_on_equity", label: t("PerformanceTable.ROE"), color: "#4F46E5" },
+    { key: "return_on_assets", label: t("PerformanceTable.ROA"), color: "#374151" },
     // { key: "gross_profit_margin", label: "GrossProfitMargin", color: "#EF4444" },
-    { key: "net_profit_margin", label: "NetProfitMargin", color: "#10B981" },
+    { key: "net_profit_margin", label: t("PerformanceTable.NetProfitMargin"), color: "#10B981" },
   ];
 
   const ratios = [{ key: "debt_to_equity_ratio", label: "DebtToEquity", color: "#60A5FA" }];
@@ -116,7 +118,7 @@ export const PerformanceIndicatorTable = ({ organizationId }: Props) => {
         <div className="w-full lg:w-[50%]">
           <Box>
             <ApexChart
-              options={getChartOptions("KPIs", true) as any}
+              options={getChartOptions(t("PerformanceTable.KPIs"), true) as any}
               series={formatSeries(indicators)}
               type="line"
               height={400}
@@ -126,7 +128,7 @@ export const PerformanceIndicatorTable = ({ organizationId }: Props) => {
         <div className="w-full lg:w-[50%]">
           <Box>
             <ApexChart
-              options={getChartOptions("Ratios", false) as any}
+              options={getChartOptions(t("PerformanceTable.ROE"), false) as any}
               series={formatSeries(ratios)}
               type="line"
               height={400}

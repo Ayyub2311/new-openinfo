@@ -167,14 +167,23 @@ export default function ReportsTable() {
   };
 
   const getTranslatedReportType = (type: string) => {
+    let label: string;
     switch (type) {
       case "annual":
-        return t("Report.annual");
+        label = t("Report.annual");
+        break;
       case "quarter":
-        return t("Report.quarter_fallback");
+        label = t("Report.quarter_fallback");
+        break;
       default:
-        return type;
+        label = type;
+        break;
     }
+    return (
+      <span className="w-[130px] truncate block" >
+        {label}
+      </span>
+    )
   };
 
   const columns = [
@@ -210,9 +219,10 @@ export default function ReportsTable() {
     {
       title: t("TableHeaders.report_types"),
       dataIndex: "properties",
+      align: "center" as const,
       className: "w-[200px]",
       render: (value: ReportData["properties"], r: ReportData) => (
-        <Link href={`/reports/${r.properties.org_type}/${r.properties.report_type}/${r.object_id}`}>
+        <Link href={`/reports/${r.properties.org_type}/${r.properties.report_type}/${r.object_id}`} className="flex justify-center">
           <Badge variant={getReportTypeBadgeVariant(value?.report_type)}>
             {getTranslatedReportType(value?.report_type) || "-"}
           </Badge>
@@ -233,37 +243,41 @@ export default function ReportsTable() {
     <div className="py-4 space-y-4">
       <div className="flex flex-wrap gap-2 mb-3 items-center">
 
-        <Select
-          options={[
-            { value: "", label: t("TableHeaders.all") },
-            ...REPORT_TYPES.map(type => ({
-              value: type,
-              label: getTranslatedReportType(type),
-            })),
-          ]}
-          value={
-            selectedReportType
-              ? { value: selectedReportType, label: getTranslatedReportType(selectedReportType) }
-              : { value: "", label: t("TableHeaders.all") }
-          }
-          onChange={opt => handleReportTypeChange(opt?.value || null)}
-          placeholder={t("filters.select_type")}
-          className="w-full md:max-w-[200px]"
-        />
-        <DatePicker
-          selected={startDate}
-          onSelect={setStartDate}
-          placeholder={t("filters.start_date")}
-          className="flex-1"
-        />
-        <DatePicker selected={endDate} onSelect={setEndDate} placeholder={t("filters.end_date")} className="flex-1" />
+        <div className="w-full gap-2 flex flex-wrap sm:flex-nowrap">
+          <Select
+            options={[
+              { value: "", label: t("TableHeaders.all") },
+              ...REPORT_TYPES.map(type => ({
+                value: type,
+                label: getTranslatedReportType(type),
+              })),
+            ]}
+            value={
+              selectedReportType
+                ? { value: selectedReportType, label: getTranslatedReportType(selectedReportType) }
+                : { value: "", label: t("TableHeaders.all") }
+            }
+            onChange={opt => handleReportTypeChange(opt?.value || null)}
+            placeholder={t("filters.select_type")}
+            className="w-full"
+          />
+          <DatePicker
+            selected={startDate}
+            onSelect={setStartDate}
+            placeholder={t("filters.start_date")}
+            className="w-full"
+          />
+          <DatePicker selected={endDate} onSelect={setEndDate} placeholder={t("filters.end_date")} className="w-full" />
+        </div>
+
+
         <div className="flex items-center gap-2 w-full">
 
           <AutocompleteSelect
             value={selectedOrg}
             onChange={setSelectedOrg}
             placeholder={t("filters.search_placeholder")}
-            className="flex-1 min-w-[400px] w-full"
+            className="flex-1 w-full"
           />
           <SearchButton onClick={handleSearch} />
           <ClearButton onClick={clearFilters} />

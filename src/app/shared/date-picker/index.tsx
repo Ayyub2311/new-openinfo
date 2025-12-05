@@ -103,7 +103,7 @@ export const DatePicker: React.FC<DatePickerProps> = ({
   };
 
   return (
-    <div className={`relative ${className} min-w-[200px]`}>
+    <div className={`relative ${className}`}>
       <AntDatePicker
         value={value} // ✅ value must be Dayjs | null
         picker={picker} // ✅ picker now available here

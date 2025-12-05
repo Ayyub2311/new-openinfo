@@ -5,11 +5,50 @@ import { Calendar, ConfigProvider, Badge, Popover, Collapse, Tooltip, Spin } fro
 import type { CalendarMode } from "antd/es/calendar/generateCalendar";
 import dayjs, { Dayjs } from "dayjs";
 import "dayjs/locale/ru";
+import "dayjs/locale/en";
+import "dayjs/locale/uz";
 import ruRU from "antd/locale/ru_RU";
-
+import enUS from "antd/locale/en_US";
+import type { Locale } from "antd/es/locale";
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
+import { useLocale, useTranslations } from "next-intl";
 
-dayjs.locale("ru");
+const uzUZ = {
+  lang: {
+    locale: 'uz',
+    today: 'Bugun',
+    now: 'Hozir',
+    backToToday: 'Bugunga qaytish',
+    ok: 'OK',
+    clear: 'Tozalash',
+    month: 'Oy',
+    year: 'Yil',
+    monthSelect: 'Oy tanlash',
+    yearSelect: 'Yil tanlash',
+    decadeSelect: 'O‘n yillik tanlash',
+    yearFormat: 'YYYY',
+    dateFormat: 'D/M/YYYY',
+    dayFormat: 'D',
+    dateTimeFormat: 'D/M/YYYY HH:mm:ss',
+    monthBeforeYear: true,
+    previousMonth: 'Oldingi oy',
+    nextMonth: 'Keyingi oy',
+    previousYear: 'Oldingi yil',
+    nextYear: 'Keyingi yil',
+    previousDecade: 'Oldingi o‘n yillik',
+    nextDecade: 'Keyingi o‘n yillik',
+  },
+  timePickerLocale: {
+    placeholder: 'Vaqtni tanlang',
+  },
+
+};
+
+const antLocaleMap: Record<string, any> = {
+  en: enUS,
+  ru: ruRU,
+  uz: uzUZ,
+};
 
 // Types
 interface ApiCalendarEvent {
@@ -27,12 +66,23 @@ interface MappedCalendarEvent {
   moderator_name: string;
   full: ApiCalendarEvent;
 }
+interface CalendarViewProps {
+  lang: "en" | "ru" | "uz";
+}
 
-export default function CalendarView() {
+export default function CalendarView({ lang }: CalendarViewProps) {
+  const locale = useLocale();
+  const t = useTranslations();
   const [value, setValue] = useState<Dayjs>(dayjs());
   const [mode, setMode] = useState<CalendarMode>("month");
   const [events, setEvents] = useState<ApiCalendarEvent[]>([]);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (lang === "ru") dayjs.locale("ru");
+    else if (lang === "uz") dayjs.locale("uz");
+    else dayjs.locale("en");
+  }, [lang]);
 
   const fetchCalendarData = async (year: number, month?: number) => {
     setLoading(true);
@@ -126,7 +176,7 @@ export default function CalendarView() {
             <span>
               <Tooltip title={item.moderator_name}>
                 <Badge status={item.type as any}>
-                  <span className="block truncate  max-w-[120px] overflow-hidden text-ellipsis whitespace-nowrap">
+                  <span className="block truncate max-w-6 sm:max-w-14 md:max-w-16 lg:max-w-20 xl:max-w-16 2xl:max-w-18 text-ellipsis">
                     {item.content}
                   </span>
                 </Badge>
@@ -153,8 +203,9 @@ export default function CalendarView() {
               />
             }
           >
-            <span className="cursor-pointer text-xs text-blue-600 flex items-center">
-              <span className="w-[6px] h-[6px] bg-blue-600 rounded-full mr-1"></span>+ ещё {eventList.length - 2}
+            <span className="truncate cursor-pointer text-xs text-blue-600 flex items-center text-ellipsis">
+              <span className="w-[6px] h-[6px] bg-blue-600 rounded-full mr-1"></span>
+              {t("portfolio.common.more")} {eventList.length - 2}
             </span>
           </Popover>
         </li>
@@ -163,11 +214,14 @@ export default function CalendarView() {
   );
 
   return (
-    <ConfigProvider locale={ruRU}>
+    <ConfigProvider locale={antLocaleMap[locale]}>
       <Spin spinning={loading}>
         <Calendar
+          key={lang}
+          locale={antLocaleMap[locale]}
           value={value}
           mode={mode}
+
           onPanelChange={handlePanelChange}
           cellRender={(current, info) => {
             if (info.type === "date") {

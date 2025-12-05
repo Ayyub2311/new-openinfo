@@ -113,13 +113,13 @@ export const SelectTable = <T extends Record<string, any>>({
     ? selectOptions
     : selectProp
       ? Array.from(
-          new Set(
-            data.map(item => getNestedValue(item, selectProp)).filter(value => value !== undefined && value !== null)
-          )
-        ).map(value => ({
-          value: value.toString(),
-          label: value.toString(),
-        }))
+        new Set(
+          data.map(item => getNestedValue(item, selectProp)).filter(value => value !== undefined && value !== null)
+        )
+      ).map(value => ({
+        value: value.toString(),
+        label: value.toString(),
+      }))
       : [];
 
   // Filter data based on selected value (client-side filtering)

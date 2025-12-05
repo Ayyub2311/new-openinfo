@@ -9,6 +9,8 @@ interface TabsProps {
   onChange?: (tabId: string) => void;
   className?: string;
   variant?: "underline" | "pill" | "bordered";
+  tabGap?: string;
+  gapClass?: string;
 }
 
 export const Tabs: React.FC<TabsProps> = ({
@@ -17,6 +19,7 @@ export const Tabs: React.FC<TabsProps> = ({
   onChange,
   className = "",
   variant = "underline",
+  tabGap,
 }) => {
   const [activeTab, setActiveTab] = useState(defaultActiveTab || tabs[0]?.id);
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
@@ -171,12 +174,13 @@ export const Tabs: React.FC<TabsProps> = ({
 
         <div
           ref={scrollContainerRef}
-          className="relative w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="overflow-x-auto relative w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           <nav
             ref={navRef}
-            className={`flex whitespace-nowrap w-full select-none gap-3 rounded-xl rounded-t ${variant === "bordered" ? "justify-between py-1 border-b border-l border-r border-default" : ""
-              }`}
+            className={`flex whitespace-nowrap w-full select-none ${variant === "bordered" ? "justify-between py-1 border-b border-l border-r border-gray-200" : ""
+              }  ${tabGap || ""}
+            `}
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
@@ -184,23 +188,23 @@ export const Tabs: React.FC<TabsProps> = ({
           >
             {tabs.map((tab, index) => {
               const isActive = activeTab === tab.id;
-              const baseClasses = `px-0 py-2 text-sm font-medium transition-colors relative flex-shrink-0 y `;
+              const baseClasses = `px-3 xl:px-2 2xl:px-3 py-2 text-sm font-medium transition-colors relative flex-shrink-0 y `;
 
               const underlineStyles = isActive
                 ? "text-sky-700 dark:text-sky-400"
                 : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200";
 
-              const pillStyles = `rounded-full px-4 mt-3 ${isActive
+              const pillStyles = `rounded-full ${isActive
                 ? "bg-sky-100 text-sky-700 dark:bg-sky-900 dark:text-sky-300"
                 : "text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200"
                 }`;
 
               const borderedStyles = `
-                 text-sm px-3 py-2 mx-1 transition-colors duration-200 grow
+                 text-sm px-4 py-2 mx-1 transition-colors duration-200 grow
 
                 ${isActive
                   ? "border-sky-700 text-sky-700 font-semibold bg-white dark:border-sky-400 dark:text-sky-300"
-                  : "border-default text-gray-500 hover:text-gray-700 hover:border-gray-400 dark:border-zinc-600 dark:text-gray-400 dark:hover:text-gray-200  "
+                  : "border-gray-300 text-gray-500 hover:text-gray-700 hover:border-gray-400 dark:border-zinc-600 dark:text-gray-400 dark:hover:text-gray-200  "
                 }
               `;
 

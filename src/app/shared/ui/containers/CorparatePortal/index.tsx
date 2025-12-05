@@ -110,27 +110,34 @@ export default function CorporatePortal() {
   );
 
   return (
-    <div className="relative hidden lg:grid grid-cols-1 lg:grid-cols-3 w-full gap-4">
-      <div className="relative lg:col-span-2">
+    <div className="relative hidden lg:grid grid-cols-5 gap-4">
+      <div className="relative col-span-5 xl:col-span-3">
         {Controls}
         <Background isMain backgroundImage="/assets/backgrounds/big-card.svg" view={view}>
           <h1
-            className={`font-heading text-white font-semibold  lg:w-7/12 xl:w-5/6 2xl:w-9/12 mx-auto ${view === "expanded" ? "text-[32px] md:text-[44px]" : "text-sm sm:text-base"
+            className={` text-white font-semibold w-full px-8 mx-auto ${view === "expanded" ? "text-[32px] md:text-[38px] xl:text-[40px] 2xl:text-[43px]" : "text-sm sm:text-base"
               }`}
           >
             {t("Hero.title1")}
           </h1>
-        </Background>
-      </div>
 
-      <div className="relative lg:col-span-1">
-        <Background backgroundImage="/assets/backgrounds/card.svg" view={view}>
-          <h2
-            className={`font-body text-white font-semibold lg:w-5/6 xl:w-4/5 2xl:w-4/6 mx-auto ${view === "expanded" ? "text-[16px] md:text-[24px]" : "text-sm sm:text-base"
+          <p
+            className={`block xl:hidden mt-4 text-white font-semibold w-full px-8 mx-auto ${view === "expanded" ? "text-[16px] lg:text-[22px] xl:text-[24px]" : "text-sm sm:text-base"
               }`}
           >
             {t("Hero.title2")}
-          </h2>
+          </p>
+        </Background>
+      </div>
+
+      <div className="relative hidden xl:block xl:col-span-2">
+        <Background backgroundImage="/assets/backgrounds/card.svg" view={view}>
+          <p
+            className={`text-white font-semibold w-full px-4 mx-auto ${view === "expanded" ? "text-[16px] lg:text-[22px] xl:text-[25px]" : "text-sm sm:text-base"
+              }`}
+          >
+            {t("Hero.title2")}
+          </p>
         </Background>
       </div>
 
