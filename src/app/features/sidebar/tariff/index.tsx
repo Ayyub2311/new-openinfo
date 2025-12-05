@@ -168,7 +168,7 @@ const Calculator: React.FC = () => {
 
         <div className="w-full">
           <p className="font-medium mb-4 text-blue-500">{t("CalculatorTabs.Exchanges")}</p>
-          <div className="w-full lg:w-[347px] overflow-x-auto">
+          <div className="w-full overflow-x-auto">
             <Tabs
               items={[
                 { key: "g1", label: "Main (G1)" },
