@@ -11,6 +11,7 @@ import HeaderUserSection from "./HeaderClient";
 import AutocompleteSearch from "./AutocompleteSearch";
 import { Divider } from "antd/lib";
 import Container from "@/app/shared/ui/components/Container";
+import LanguageSelect from "./Languages";
 
 export default function HeaderClient() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -167,6 +168,7 @@ export default function HeaderClient() {
                 </div>
               )}
             </div>
+
 
             <button onClick={() => setIsSearchOpen(v => !v)} className="text-white">
               <Search className="h-5 w-5" />

@@ -12,7 +12,7 @@ import { sidebarItems } from "@/app/features/sidebar/components/Sidebar";
 import { Pagination } from "@/app/shared/ui/components/Pagination";
 import { AutocompleteSelect } from "@/app/shared/ui/components/auto-complete";
 import Select from "@/app/shared/ui/components/Select/Select";
-import Loader from "@/app/shared/ui/components/Loader";
+
 
 import { ClearButton, SearchButton } from "@/app/shared/ui/components/Button/ReusableButton";
 
@@ -192,44 +192,39 @@ const PageOrganizations = () => {
 
           </div>
 
-          {loading ? (
-            <div className="text-center py-10 text-blue-500 font-medium text-lg">
-              <Loader />
-            </div>
-          ) : (
-            <>
-              {organizations.map(organization => (
-                <CompanyCard
-                  key={organization.id}
-                  id={organization.id}
-                  clickable={true}
-                  showFooter={false}
-                  logoSrc={`${organization.detailinfo.logo_file}`}
-                  companyName={organization.full_name_text}
-                  phone={organization.detailinfo.phone_number}
-                  address={organization.address}
-                  email={organization.email}
-                  directorName={organization.detailinfo.director_name}
-                  websiteUrl={organization.web_site}
-                  inn={organization.inn}
-                  cessation_date={organization.detailinfo.created_at}
-                  status_from_stat_uz={organization.status_from_stat_uz}
-                  isListing={organization?.is_listing}
-                  subscription_id={organization.subscription_id}
-                  is_subscribed={organization.is_subscribed}
-                />
-              ))}
+          <>
+            {organizations.map(organization => (
+              <CompanyCard
+                key={organization.id}
+                id={organization.id}
+                clickable={true}
+                showFooter={false}
+                logoSrc={`${organization.detailinfo.logo_file}`}
+                companyName={organization.full_name_text}
+                phone={organization.detailinfo.phone_number}
+                address={organization.address}
+                email={organization.email}
+                directorName={organization.detailinfo.director_name}
+                websiteUrl={organization.web_site}
+                inn={organization.inn}
+                cessation_date={organization.detailinfo.created_at}
+                status_from_stat_uz={organization.status_from_stat_uz}
+                isListing={organization?.is_listing}
+                subscription_id={organization.subscription_id}
+                is_subscribed={organization.is_subscribed}
+              />
+            ))}
 
-              <div className="mt-6">
-                <Pagination
-                  currentPage={page}
-                  totalPages={totalPages}
-                  onPageChange={handlePageChange}
-                  totalItems={count}
-                />
-              </div>
-            </>
-          )}
+            <div className="mt-6">
+              <Pagination
+                currentPage={page}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+                totalItems={count}
+              />
+            </div>
+          </>
+
         </div>
         <aside className="hidden md:block lg:block mt-[42px] col-span-1 xl:col-span-2 shrink-0 grow-0 basis-[clamp(280px,26vw,360px)]">
           <div className="sticky top-10 max-h-[calc(100vh-5rem] overflow-auto">

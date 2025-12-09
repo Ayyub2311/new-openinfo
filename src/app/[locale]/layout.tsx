@@ -10,6 +10,8 @@ import { NotificationWrapper } from "../shared/contexts/NotificationWrapper";
 import { NextIntlClientProvider } from "next-intl";
 import AuthUIMount from "../providers/AuthUIMount";
 import { Mulish, Poppins } from "next/font/google";
+import { TopProgressBar } from "../providers/TopProgressBar";
+
 
 const mulish = Mulish({
   subsets: ["latin"],
@@ -74,6 +76,7 @@ export default async function RootLayout({
       <body className="bg-white dark:bg-slate-900">
         <NextIntlClientProvider messages={messages}>
           <NotificationWrapper>
+            <TopProgressBar />
             <div className="flex min-h-screen flex-col">
               <Header />
               {/* <TestModeBanner /> */}
