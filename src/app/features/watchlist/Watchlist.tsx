@@ -72,7 +72,7 @@ export const WatchlistStar: React.FC<Props> = ({
       setInList(prevIn);
       setId(prevId);
 
-      const msg = e?.response?.status === 401 ? "Сначала выполните вход." : "Не удалось обновить список наблюдения.";
+      const msg = e?.response?.status === 401 ? "Не удалось обновить список наблюдения. Выполните вход и попробуйте снова." : "Не удалось обновить список наблюдения.";
       (notify ?? ((m: string) => alert(m)))(msg);
       if (process.env.NODE_ENV !== "production") console.error("Watchlist toggle error:", e);
     } finally {

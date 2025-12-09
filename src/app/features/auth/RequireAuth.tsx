@@ -2,13 +2,20 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { useEffect } from "react";
 import { useAuthStore } from "@/app/shared/store/useAuthstore";
 import { authModal } from "@/app/shared/store/authModalStore";
 import { useTranslations } from "next-intl";
 
 export default function RequireAuth({ children, fallback }: { children: ReactNode; fallback?: ReactNode }) {
   const t = useTranslations();
-  const { user, loading, initialized } = useAuthStore();
+  const { user, loading, initialized, ensureLoaded } = useAuthStore();
+
+  useEffect(() => {
+    if (!initialized && !loading) {
+      void ensureLoaded();
+    }
+  }, [initialized, loading, ensureLoaded]);
 
   if (!initialized || loading) {
     return <span className="text-sm text-gray-500">{t("Login.loading")}</span>;
@@ -19,7 +26,11 @@ export default function RequireAuth({ children, fallback }: { children: ReactNod
 
     return (
       <div className="rounded-xl border border-dashed p-6 text-center text-sm text-gray-600">
-        <p className="mb-2">{t("Login.login_required_message")}</p>
+
+        <h2 className="mb-2">Войдите, чтобы продолжить </h2>
+
+        <p className="mb-2"> Функция доступна только для зарегистрированных пользователей.
+        </p>
         <button
           type="button"
           onClick={() => authModal.open("required")}

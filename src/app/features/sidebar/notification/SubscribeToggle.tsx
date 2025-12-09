@@ -58,7 +58,9 @@ export const SubscribeToggle = ({
       setSub(prev);
       setId(prevId);
       (notify ?? ((m: string) => alert(m)))(
-        e?.response?.status === 401 ? "Сначала выполните вход." : "Не удалось обновить подписку."
+        e?.response?.status === 401
+          ? "Не удалось обновить подписку. Выполните вход и попробуйте снова."
+          : "Не удалось обновить подписку."
       );
       console.error(e);
     } finally {

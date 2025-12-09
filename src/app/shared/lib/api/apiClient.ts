@@ -4,20 +4,13 @@
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from "axios";
 import https from "https";
 
-// ✅ make sure this path matches your file:
-//    src/app/shared/store/useAuthstoreApi.ts
 import { useAuthStoreApi } from "../../store/useAuthstoreApi";
-import { authModal } from "../../store/authModalStore";
 
 let api: AxiosInstance | null = null;
 
 // refresh queue
 let isRefreshing = false;
 let refreshWaiters: Array<() => void> = [];
-
-// re-auth (modal) queue
-let awaitingReauth = false;
-let reauthWaiters: Array<(err?: unknown) => void> = [];
 
 function getBaseURL() {
   const isServer = typeof window === "undefined";
@@ -87,60 +80,19 @@ export function createApiClient(): AxiosInstance {
         }
       }
 
-      // ---------- 2) Refresh failed → open modal & park ----------
-      if (!awaitingReauth) {
-        awaitingReauth = true;
-
-        // clear client auth state so guards see "logged out"
-        try {
-          const store = useAuthStoreApi.getState();
-          store.setUser(null);
-        } catch {
-          // ignore if store not available
-        }
-
-        // if it's the /me call, you might want "required" instead – not critical if you don't use reason
-        const isMeCall = url.includes("/api/v2/userprofile/users/me/");
-        authModal.open(isMeCall ? "required" : "session_expired");
+      // ---------- 2) Refresh failed → mark as logged out and fail ----------
+      try {
+        const store = useAuthStoreApi.getState();
+        store.setUser(null);
+      } catch {
+        // ignore if store not available
       }
 
-      // park this request until user logs in again
-      if (!orig._throughReauth) {
-        orig._throughReauth = true;
-
-        await new Promise<void>((resolve, reject) => {
-          reauthWaiters.push(err => {
-            if (err) reject(err);
-            else resolve();
-          });
-        });
-
-        return api!(orig);
-      }
-
-      // already retried after modal → give up
+      // Let the original call fail; callers (like useAuthStore.fetchUser) will
+      // treat 401 as \"not logged in\" and update their own state.
       return Promise.reject(error);
     }
   );
-
-  // ---------- modal events ----------
-
-  // login success → resolve queue & retry requests
-  authModal.onLoginSuccess(() => {
-    awaitingReauth = false;
-    const waiters = [...reauthWaiters];
-    reauthWaiters = [];
-    waiters.forEach(fn => fn());
-  });
-
-  // modal closed without login → reject queue (no auto-retry, no second modal)
-  authModal.onLoginCancelled(() => {
-    awaitingReauth = false;
-    const waiters = [...reauthWaiters];
-    reauthWaiters = [];
-    const err = new Error("Reauthentication cancelled");
-    waiters.forEach(fn => fn(err));
-  });
 
   return api;
 }

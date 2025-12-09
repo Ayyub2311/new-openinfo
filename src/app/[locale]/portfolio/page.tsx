@@ -3,13 +3,7 @@ import { PortfolioTicker } from "@/app/features/portfolio/components/PortfolioTa
 
 const Portfolio = () => {
   return (
-    <RequireAuth
-      fallback={
-        <div className="rounded-xl border border-dashed p-5 text-center text-sm text-gray-600">
-          Требуется вход, чтобы увидеть список наблюдения
-        </div>
-      }
-    >
+    <RequireAuth>
       <PortfolioTicker />
     </RequireAuth>
   );
