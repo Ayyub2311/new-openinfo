@@ -72,7 +72,7 @@ const GeneralTable: React.FC<GeneralTableProps> = ({ id, isListing }) => {
     };
 
     if (organization) fetchChartData();
-  }, [selectedPeriod, selectedIsuCd, organization, isListing]);
+  }, [selectedPeriod, selectedIsuCd, organization, isListing, t]);
 
   const calculateDates = (period: string) => {
     const endDate = new Date();
@@ -102,7 +102,9 @@ const GeneralTable: React.FC<GeneralTableProps> = ({ id, isListing }) => {
     };
   };
 
-  const MONTH_TRANSLATIONS: Record<string, string> = {
+  type LocaleKey = "ru" | "uz";
+
+  const MONTH_TRANSLATIONS: Record<LocaleKey, Record<string, string>> = {
     ru: {
       Jan: "Янв",
       Feb: "Фев",

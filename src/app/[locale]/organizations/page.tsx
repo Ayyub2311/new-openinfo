@@ -59,7 +59,7 @@ const PageOrganizations = () => {
   const [page, setPage] = useState(parseInt(searchParams.get("page") || "1", 10));
   const [totalPages, setTotalPages] = useState(1);
   const [count, setCount] = useState(0);
-  const [loading, setLoading] = useState(false);
+
 
   const [selectedOrg, setSelectedOrg] = useState<ResultItem | null>(null);
   const [statusRFB, setStatusRFB] = useState<string>(null);
@@ -89,7 +89,7 @@ const PageOrganizations = () => {
 
   useEffect(() => {
     const fetchOrgs = async () => {
-      setLoading(true);
+
       const params = new URLSearchParams(window.location.search);
       params.delete("_rsc");
 
@@ -104,7 +104,7 @@ const PageOrganizations = () => {
       } catch (error) {
         console.error("Failed to fetch organizations:", error);
       } finally {
-        setLoading(false);
+
       }
     };
 

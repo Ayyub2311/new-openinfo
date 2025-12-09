@@ -136,7 +136,7 @@ export const IncomeTable = ({ organizationId }: { organizationId: number }) => {
     };
 
     fetchData();
-  }, [organizationId, reportType]);
+  }, [organizationId, reportType, t]);
 
   return (
     <Box>
@@ -148,7 +148,7 @@ export const IncomeTable = ({ organizationId }: { organizationId: number }) => {
             { label: t("IncomeTable.Year"), value: "annual" },
             { label: t("IncomeTable.Quarter"), value: "quarter" },
           ]}
-          placeholder="t('IncomeTable.Option')"
+          placeholder={t('IncomeTable.Option')}
           value={reportType}
         />
         <Switch label={t("IncomeTable.Detail")} onChange={c => setHideNested(!c)} checked={!hideNested} />

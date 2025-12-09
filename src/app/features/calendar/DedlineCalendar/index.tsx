@@ -9,7 +9,6 @@ import "dayjs/locale/en";
 import "dayjs/locale/uz";
 import ruRU from "antd/locale/ru_RU";
 import enUS from "antd/locale/en_US";
-import type { Locale } from "antd/es/locale";
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -66,11 +65,9 @@ interface MappedCalendarEvent {
   moderator_name: string;
   full: ApiCalendarEvent;
 }
-interface CalendarViewProps {
-  lang: "en" | "ru" | "uz";
-}
 
-export default function CalendarView({ lang }: CalendarViewProps) {
+
+export default function CalendarView() {
   const locale = useLocale();
   const t = useTranslations();
   const [value, setValue] = useState<Dayjs>(dayjs());
@@ -79,10 +76,8 @@ export default function CalendarView({ lang }: CalendarViewProps) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (lang === "ru") dayjs.locale("ru");
-    else if (lang === "uz") dayjs.locale("uz");
-    else dayjs.locale("en");
-  }, [lang]);
+    dayjs.locale(locale === "ru" ? "ru" : locale === "uz" ? "uz" : "en");
+  }, [locale]);
 
   const fetchCalendarData = async (year: number, month?: number) => {
     setLoading(true);
@@ -217,11 +212,10 @@ export default function CalendarView({ lang }: CalendarViewProps) {
     <ConfigProvider locale={antLocaleMap[locale]}>
       <Spin spinning={loading}>
         <Calendar
-          key={lang}
+          key={locale}
           locale={antLocaleMap[locale]}
           value={value}
           mode={mode}
-
           onPanelChange={handlePanelChange}
           cellRender={(current, info) => {
             if (info.type === "date") {

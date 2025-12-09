@@ -25,23 +25,23 @@ const poppins = Poppins({
   variable: "--font-heading",
 });
 
-const DarkModeScript = () => (
-  <script
-    dangerouslySetInnerHTML={{
-      __html: `
-        try {
-          if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-          } else {
-            document.documentElement.classList.remove('dark');
-          }
-        } catch (e) {
-          console.log(e);
-        }
-      `,
-    }}
-  />
-);
+// const DarkModeScript = () => (
+//   <script
+//     dangerouslySetInnerHTML={{
+//       __html: `
+//         try {
+//           if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+//             document.documentElement.classList.add('dark');
+//           } else {
+//             document.documentElement.classList.remove('dark');
+//           }
+//         } catch (e) {
+//           console.log(e);
+//         }
+//       `,
+//     }}
+//   />
+// );
 
 export const metadata = {
   title: "Openinfo - Открытые данные о компаниях Узбекистана",

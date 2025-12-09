@@ -9,7 +9,7 @@ import { Pagination } from "@/app/shared/ui/components/Pagination";
 import { Text } from "@/app/shared/ui/components/Typography/Text";
 import { ConvertTypes } from "@/app/features/facts/models/base/ConvertTypes";
 import Image from "next/image";
-import { color } from "framer-motion";
+
 
 interface DividendItem {
   id: number;

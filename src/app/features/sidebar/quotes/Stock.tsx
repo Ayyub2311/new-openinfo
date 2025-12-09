@@ -28,7 +28,7 @@ interface ApiResponse {
 }
 
 interface ChartDataPoint {
-  label: string;
+  label: number;
   value: number;
 }
 
@@ -53,15 +53,15 @@ const StockOverviewCombined = () => {
     return match ? match[1] : issuerString;
   };
 
-  const formatdate = (timestamp: number, tab: string) => {
-    const date = new Date(timestamp);
-    return new Intl.DateTimeFormat(locale, {
-      day: "2-digit",
-      month: "short",
-      year: "2-digit",
-      weekday: undefined,
-    }).format(date);
-  }
+  // const formatdate = (timestamp: number, tab: string) => {
+  //   const date = new Date(timestamp);
+  //   return new Intl.DateTimeFormat(locale, {
+  //     day: "2-digit",
+  //     month: "short",
+  //     year: "2-digit",
+  //     weekday: undefined,
+  //   }).format(date);
+  // }
 
   const sortData = useCallback(() => {
     return (data: StockData[]) => {
@@ -98,7 +98,9 @@ const StockOverviewCombined = () => {
     width?: number;
   }>
 
-  const MONTH_TRANSLATIONS: Record<string, string> = {
+  type LocaleKey = "ru" | "uz";
+
+  const MONTH_TRANSLATIONS: Record<LocaleKey, Record<string, string>> = {
     ru: {
       Jan: "Янв",
       Feb: "Фев",
@@ -246,8 +248,14 @@ const StockOverviewCombined = () => {
 
         const formatted: [number, number][] = response.results
           .filter(item => item.close && item.close > 0)
-          .map(item => [new Date(item.date).getTime(), Number(item.close.toFixed(2))])
+          .map<[number, number]>(item => [
+            new Date(item.date).getTime(),
+            Number(item.close.toFixed(2)),
+          ])
           .reverse();
+
+        setChartData(formatted.map(([X, y]): ChartDataPoint => ({ label: X, value: y })));
+
 
         setChartData(formatted.map(([X, y]): ChartDataPoint => ({ label: X, value: y })));
       } catch (err) {

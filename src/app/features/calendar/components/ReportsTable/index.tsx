@@ -179,12 +179,9 @@ export default function ReportsTable() {
         label = type;
         break;
     }
-    return (
-      <span className="w-[130px] truncate block" >
-        {label}
-      </span>
-    )
+    return label;
   };
+
 
   const columns = [
     // {
@@ -222,13 +219,19 @@ export default function ReportsTable() {
       align: "center" as const,
       className: "w-[200px]",
       render: (value: ReportData["properties"], r: ReportData) => (
-        <Link href={`/reports/${r.properties.org_type}/${r.properties.report_type}/${r.object_id}`} className="flex justify-center">
+        <Link
+          href={`/reports/${r.properties.org_type}/${r.properties.report_type}/${r.object_id}`}
+          className="flex justify-center"
+        >
           <Badge variant={getReportTypeBadgeVariant(value?.report_type)}>
-            {getTranslatedReportType(value?.report_type) || "-"}
+            <span className="truncate block">
+              {getTranslatedReportType(value?.report_type)}
+            </span>
           </Badge>
         </Link>
       ),
     },
+
     {
       title: t("TableHeaders.disclosure_date"),
       dataIndex: "pub_date",
@@ -249,7 +252,7 @@ export default function ReportsTable() {
               { value: "", label: t("TableHeaders.all") },
               ...REPORT_TYPES.map(type => ({
                 value: type,
-                label: getTranslatedReportType(type),
+                label: getTranslatedReportType(type), // string now
               })),
             ]}
             value={
@@ -261,6 +264,8 @@ export default function ReportsTable() {
             placeholder={t("filters.select_type")}
             className="w-full"
           />
+
+
           <DatePicker
             selected={startDate}
             onSelect={setStartDate}

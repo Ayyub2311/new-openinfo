@@ -136,7 +136,7 @@ export const BalanceSheetTable = ({ organizationId }: { organizationId: number }
     };
 
     fetchData();
-  }, [organizationId, reportType]);
+  }, [organizationId, reportType, t]);
 
   return (
     <Box>

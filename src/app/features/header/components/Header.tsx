@@ -11,7 +11,7 @@ import HeaderUserSection from "./HeaderClient";
 import AutocompleteSearch from "./AutocompleteSearch";
 import { Divider } from "antd/lib";
 import Container from "@/app/shared/ui/components/Container";
-import LanguageSelect from "./Languages";
+
 
 export default function HeaderClient() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

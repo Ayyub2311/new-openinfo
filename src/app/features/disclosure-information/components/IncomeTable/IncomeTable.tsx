@@ -137,7 +137,7 @@ export const IncomeTable = ({ organizationId }: { organizationId: string }) => {
     };
 
     fetchData();
-  }, [organizationId, reportType]);
+  }, [organizationId, reportType, t]);
 
   return (
     <Box>

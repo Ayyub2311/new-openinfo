@@ -8,7 +8,11 @@ import DividendCalendarTable from "../DevidersTable";
 import AnnouncementCalendarTable from "../../AnnouncementCalendar";
 import DedlineCalendar from "../../DedlineCalendar";
 
+
+
 export const CalendarTabs = () => {
+
+
   const t = useTranslations();
 
   const tabs: Tab[] = [
