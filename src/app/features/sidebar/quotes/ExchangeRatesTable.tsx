@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowUp, ArrowDown } from "lucide-react"; // Using lucide-react for icons
-import Image from "next/image";
+
 
 // Helper function for formatting numbers
 const financial = (value: number): string => {
@@ -45,7 +45,7 @@ const ExchangeRatesTable: React.FC<ExchangeRatesTableProps> = ({ tableData, load
                 <td className="py-3 px-4">
                   <div className="flex gap-3 items-center">
                     {record.logo && (
-                      <Image width={7} height={7} src={record.logo} className="w-7 h-7 rounded-full" alt={record.Ccy} />
+                      <img src={record.logo} className="w-7 h-7 rounded-full" alt={record.Ccy} />
                     )}
 
                     <span className="font-semibold text-blue-900">{record.Ccy}</span>
