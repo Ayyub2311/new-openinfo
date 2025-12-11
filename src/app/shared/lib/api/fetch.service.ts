@@ -10,7 +10,7 @@ export class FetchService {
     if (isServer) {
       // 👇 what the server will use
       // return process.env.SERVER_API_URL || "http://new-api.openinfo.uz";
-      return process.env.SERVER_API_URL || "https://new-api.openinfo.uz";
+      return process.env.SERVER_API_URL || "http://new-api.openinfo.uz";
     }
 
     // 👇 what the browser will use
