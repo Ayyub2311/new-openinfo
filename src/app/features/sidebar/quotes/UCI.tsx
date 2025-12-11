@@ -3,7 +3,6 @@
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import { AreaLineChart } from "./CustomAreaLineChart";
 import { motion } from "framer-motion";
 import { Loader2, AlertCircle } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
