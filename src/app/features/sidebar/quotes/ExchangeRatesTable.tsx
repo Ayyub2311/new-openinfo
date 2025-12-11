@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowUp, ArrowDown } from "lucide-react"; // Using lucide-react for icons
-import Image from "next/image";
+
 
 // Helper function for formatting numbers
 const financial = (value: number): string => {
