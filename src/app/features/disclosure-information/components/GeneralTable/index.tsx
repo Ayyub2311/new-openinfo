@@ -219,7 +219,7 @@ const GeneralTable: React.FC<GeneralTableProps> = ({ id, isListing }) => {
   const shares = isListing
     ? organization?.uzse_info?.shares || []
     : organization?.otc_info?.shares || [];
-  // const total = shares.reduce((sum, s) => sum + Number(s.list_shrs || 0), 0);
+  const total = shares.reduce((sum, s) => sum + Number(s.list_shrs || 0), 0);
 
   const totalShares = shares.reduce(
     (sum, s) => sum + Number(s.list_shrs || 0),
@@ -260,7 +260,7 @@ const GeneralTable: React.FC<GeneralTableProps> = ({ id, isListing }) => {
               </div>
               <div className="w-full overflow-hidden relative h-[320px]">
                 <ApexChart
-                  options={chartOptions as any} series={series} type="area" width="100%" height={300} />
+                  options={chartOptions as any} series={series} width="100%" type="area" height={300} />
               </div>
             </div>
           </div>

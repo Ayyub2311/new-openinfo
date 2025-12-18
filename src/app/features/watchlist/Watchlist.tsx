@@ -29,7 +29,7 @@ export const WatchlistStar: React.FC<Props> = ({
   const [inList, setInList] = useState<boolean>(!!is_in_watchlist);
   const [id, setId] = useState<number | null>(watchlist_id ?? null);
   const [busy, setBusy] = useState(false);
-  const [setVisible] = useState<boolean>(true);
+  const [visible, setVisible] = useState<boolean>(true);
 
   // ✅ keep local state in sync when parent changes selected instrument
   useEffect(() => {
