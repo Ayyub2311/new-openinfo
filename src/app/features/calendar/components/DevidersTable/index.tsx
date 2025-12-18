@@ -56,6 +56,7 @@ export default function DividendCalendarTable() {
     totalItems: 0,
   });
   const t = useTranslations();
+  const NOT_EXIST_DATE = "-";
 
   const typeOptions = useMemo(
     () => [
