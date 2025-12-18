@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Table } from "@/app/shared/ui/components/Table";
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import { ConvertTypes } from "@/app/features/facts/models/base/ConvertTypes";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Pagination } from "@/app/shared/ui/components/Pagination";
 import { Link } from "@/i18n/routing";
 import { Text } from "@/app/shared/ui/components/Typography/Text";
@@ -72,6 +72,7 @@ export default function EssentialFactsTable() {
   const [selectedOrg, setSelectedOrg] = useState<ResultItem | null>(null);
   const [startDate, setStartDate] = useState<Date | undefined>();
   const [endDate, setEndDate] = useState<Date | undefined>();
+  const locale = useLocale();
 
   const [pagination, setPagination] = useState({
     currentPage: 1,
@@ -205,7 +206,7 @@ export default function EssentialFactsTable() {
         const id = getOrganizationId(record);
         return id ? (
           <Link href={`/organizations/${id}`}>
-            <Text variant="accent">{name}</Text>
+            <Text variant="accent" className="text-[14px]">{name}</Text>
           </Link>
         ) : (
           <Text>{name}</Text>
@@ -215,7 +216,7 @@ export default function EssentialFactsTable() {
     {
       title: t("TableHeaders.fact_number"),
       dataIndex: "fact_short_title",
-      align: "left" as const,
+      align: "center" as const,
       render: (_: string, r: FactData) => (
         <Link href={`/facts/${r.fact_number}/${r.object_id}`}>
           <Text variant="accent">
@@ -227,8 +228,8 @@ export default function EssentialFactsTable() {
     {
       title: t("TableHeaders.disclosure_date"),
       dataIndex: "pub_date",
-      align: "center" as const,
-      render: (text: string) => converter.formatDate(text) || NOT_EXIST_DATE,
+      align: "right" as const,
+      render: (text: string) => converter.formatDateFull(text, locale) || NOT_EXIST_DATE,
     },
   ];
 

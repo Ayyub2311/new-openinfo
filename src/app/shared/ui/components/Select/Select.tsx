@@ -18,6 +18,19 @@ interface SelectProps {
 const Select = ({ options, value, onChange, placeholder = "Выберите...", className = "w-48" }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [minWidth, setMinWidth] = useState<number | null>(null);
+  const measureRef = useRef<HTMLUListElement>(null)
+
+  useEffect(() => {
+    if (!measureRef.current) return;
+
+    const widths = Array.from(measureRef.current.children).map(
+      el => (el as HTMLElement).offsetWidth
+    );
+
+    const max = Math.max(...widths);
+    setMinWidth(max);
+  }, [options])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -37,7 +50,10 @@ const Select = ({ options, value, onChange, placeholder = "Выберите...",
   };
 
   return (
-    <div ref={containerRef} className={`relative ${className}`}>
+    <div ref={containerRef}
+      className={`relative ${className}`}
+      style={{ minWidth: minWidth ?? undefined }}
+    >
       <div
         className="flex items-center justify-between px-4 py-2 rounded-full bg-blue-50 text-sm text-gray-700 border border-default cursor-pointer select-none w-full"
         onClick={() => setIsOpen(!isOpen)}
@@ -47,7 +63,9 @@ const Select = ({ options, value, onChange, placeholder = "Выберите...",
       </div>
 
       {isOpen && (
-        <ul className="absolute z-50 mt-1 py-1 bg-white border rounded-xl shadow-lg max-h-64 overflow-auto text-smS">
+        <ul className="absolute z-50 mt-1 py-1 bg-white border rounded-xl shadow-lg max-h-64 overflow-auto text-sm"
+          style={{ minWidth: minWidth ?? "100%" }}
+        >
           {options.map(option => (
             <li
               key={option.value}
@@ -60,6 +78,15 @@ const Select = ({ options, value, onChange, placeholder = "Выберите...",
           ))}
         </ul>
       )}
+
+      <ul
+        ref={measureRef}
+        className="absolute invisible whitespace-nowrap px-4 py-2 text-sm"
+      >
+        {options.map(option => (
+          <li key={option.value}>{option.label}</li>
+        ))}
+      </ul>
     </div>
   );
 };

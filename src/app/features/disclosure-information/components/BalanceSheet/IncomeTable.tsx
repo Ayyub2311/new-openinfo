@@ -14,7 +14,8 @@ import { nestedTitleIds } from "./nestedTitleIds";
 import { allowedTitleIds } from "./allowedTitleIds";
 import DownloadCSV from "../IncomeTable/DownloadCSV";
 import { convertReportsToReportArr } from "../IncomeTable/convertReportsToReportArr";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { Tooltip } from "antd";
 
 type BalanceSheetTableType = Array<{
   id: number;
@@ -39,6 +40,7 @@ type BalanceSheetTableType = Array<{
 
 export const BalanceSheetTable = ({ organizationId }: { organizationId: number }) => {
   const t = useTranslations();
+  const locale = useLocale() || "en-US";
   const [incomeList, setIncomeList] = useState<BalanceSheetTableType>([]);
   const [columns, setColumns] = useState<TableColumn<{ tnum?: string; title: string; title_id: number } & any>[]>([]);
   const [hideNested, setHideNested] = useState(true);
@@ -46,6 +48,36 @@ export const BalanceSheetTable = ({ organizationId }: { organizationId: number }
     label: string;
     value: "annual" | "quarter";
   }>({ label: t("IncomeTable.Year"), value: "annual" });
+
+
+  const formatLargeNumber = (num: number) => {
+    const absNum = Math.abs(num);
+    let value: any;
+    let suffix = "";
+
+    if (absNum >= 1_000_000_000_000) {
+      value = num / 1_000_000_000_000;
+      suffix = t("IncomeTable.trillion");
+    } else if (absNum >= 1_000_000_000) {
+      value = num / 1_000_000_000;
+      suffix = t("IncomeTable.billion");
+    } else if (absNum >= 1_000_000) {
+      value = num / 1_000_000;
+      suffix = t("IncomeTable.million");
+    } else if (absNum >= 1_000) {
+      value = num / 1_000;
+      suffix = t("IncomeTable.thousand");
+    } else {
+      return num.toLocaleString(locale);
+    }
+
+    const formattedValue = value.toLocaleString(locale, {
+      minimumFractionDigits: value % 1 === 0 ? 0 : 1,
+      maximumFractionDigits: 1,
+    });
+
+    return `${formattedValue}${suffix}`;
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,18 +87,38 @@ export const BalanceSheetTable = ({ organizationId }: { organizationId: number }
         );
         let d = convertData(response);
 
-        const other_cols: TableColumn<{ tnum?: string; title: string; title_id: number } & any>[] = response.map(
-          (item, index) => {
-            return {
-              title: item.period,
-              dataIndex: `value_${item.reporting_year}_${index}`,
-              align: "right",
-            };
-          }
+        const allTitleIds = Array.from(
+          new Set(response.flatMap(p => p.accounting_report.map(r => r.title_id)))
         );
-        const key = getKeyFilterReport(d);
+
+        const flatData = allTitleIds.map(title_id => {
+          const row: any = { title_id };
+          response.forEach((period, idx) => {
+            const reportItem = period.accounting_report.find(r => r.title_id === title_id);
+            row[`__period_${idx}`] = reportItem ? reportItem.value : null;
+            if (reportItem && !row.title) row.title = reportItem.title;
+            if (reportItem && !row.tnum) row.tnum = reportItem.tnum;
+          });
+          return row;
+        });
+
+        const other_cols: TableColumn<any>[] = response.map((item, index) => ({
+          title: item.period,
+          dataIndex: `__period_${index}`,
+          align: "right",
+          render: (val: number) =>
+            typeof val === "number" ? (
+              <Tooltip title={val.toLocaleString(locale)}>
+                <span className="whitespace-nowrap">{formatLargeNumber(val)}</span>
+              </Tooltip>
+            ) : (
+              "-"
+            ),
+        }));
+
+        const key = getKeyFilterReport(flatData);
         if (key === "title_id") {
-          d = allowedTitleIds.map(item => d.find(r => r.title_id === item));
+          d = allowedTitleIds.map(item => flatData.find(r => r.title_id === item));
         }
         setColumns([
           {
@@ -125,7 +177,7 @@ export const BalanceSheetTable = ({ organizationId }: { organizationId: number }
         ]);
 
         setIncomeList(
-          d.filter(i => {
+          flatData.filter(i => {
             if (key === "title_id") return allowedTitleIds.includes(i.title_id);
             return allowedReportTitleTnums.includes(i.tnum);
           })
@@ -136,7 +188,7 @@ export const BalanceSheetTable = ({ organizationId }: { organizationId: number }
     };
 
     fetchData();
-  }, [organizationId, reportType, t]);
+  }, [organizationId, reportType, t, locale]);
 
   return (
     <Box>

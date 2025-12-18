@@ -502,6 +502,8 @@
     }
   },
   "Navigation": {
+    "legacy_site": "Вернуться на старую версию портала",
+    "navigation_title": "Карта сайта",
     "main": "Главная",
     "market_filter": "Фильтр рынка",
     "license_certification": "Лицензия & Аттестация",
@@ -671,7 +673,10 @@
     "Quarter": "Квартал",
     "ThousandSum": "все цифры в тыс. сум",
     "Option": "Выберите опцию...",
-    "Detail": "Показать детали"
+    "Detail": "Показать детали",
+    "trillion": "трлн",
+    "million": "млн",
+    "thousand": "тыс."
   },
   "PerformanceTable": {
     "ROE": "ROE",
@@ -1015,6 +1020,7 @@
     "essential_facts": " Существенные факты",
     "dividends": " Дивиденды",
     "market_cap": "Рыночная капитализация",
+    "total": "Общее количество акций",
     "common_stock": "Обычные акции",
     "preferred_stock": "Привилегированные акции",
     "date": "Дата",
@@ -1071,8 +1077,11 @@
   },
   "financial_reports_tab": {
     "report_type": "Вид отчетности",
+    "report_form": "Форма отчетности",
     "report_date": "Дата отчета",
-    "download_report": "Скачать отчет"
+    "download_report": "Скачать отчет",
+    "annual_short": "Годовой",
+    "quarterly_short": "Квартальный"
   },
   "corporate_portal": {
     "side_title": "Важность корпоративного управления в акционерном обществе",

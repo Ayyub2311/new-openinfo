@@ -26,7 +26,7 @@ const CompanyCardFooter: React.FC<CompanyCardFooterProps> = ({ inn, status }) =>
     statusBadgeColor[key as keyof typeof statusBadgeColor] || statusBadgeColor.default;
 
   return (
-    <div className="w-full bg-slate-50 px-4 py-3 rounded-xl border-t border-default">
+    <div className="w-full bg-slate-50 px-6 py-3 rounded-xl border-t border-default">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-gray-700 text-center sm:text-left">
         {/* INN */}
         <div className="flex flex-wrap justify-center sm:justify-start items-center gap-2">

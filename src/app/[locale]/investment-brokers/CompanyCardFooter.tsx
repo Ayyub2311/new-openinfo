@@ -33,7 +33,7 @@ const CompanyCardFooter: React.FC<CompanyCardFooterProps> = ({
   if (!data) return null;
 
   return (
-    <div className="w-full bg-slate-100 px-4 py-3">
+    <div className="w-full bg-slate-100 px-6 py-3">
       <div className="flex flex-col lg:flex-row lg:justify-between gap-4 text-center lg:text-left items-center lg:items-start">
         {/* Left group: Badge + Year Selector */}
         <div className="flex flex-wrap justify-center lg:justify-start items-center gap-3">
@@ -58,7 +58,7 @@ const CompanyCardFooter: React.FC<CompanyCardFooterProps> = ({
         </div>
 
         {/* Right group: Stats */}
-        <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-6 lg:gap-6">
+        <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-6 lg:gap-6 h-[30px]">
           <div className="flex items-center whitespace-nowrap">
             <span className="text-sm font-semibold mr-2">{countLabel}</span>
             <span className="text-sm">{data.transactions_count.toLocaleString()}</span>

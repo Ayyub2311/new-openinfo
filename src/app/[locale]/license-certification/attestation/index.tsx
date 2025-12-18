@@ -75,11 +75,13 @@ const AttestationTable = () => {
     {
       title: t("AttestationTabs.date_issue_certificate"),
       dataIndex: "issuance_date",
+      align: "center",
       render: (value: string) => <span className="text-sm">{value}</span>,
     },
     {
       title: t("AttestationTabs.date_expiration_certificate"),
       dataIndex: "expiration_date",
+      align: "center",
       render: (value: string) => <span className="text-sm">{value}</span>,
     },
   ];

@@ -85,7 +85,7 @@ const StockCard: React.FC<StockCardProps> = ({
   const currentStatus = selectedOption?.is_listing ?? status_rfb ?? false;
 
   return (
-    <div className="flex gap-2 flex-col lg:flex-row md:flex-row   items-start lg:items-center justify-between px-3 bg-white transition duration-300  border  rounded-b rounded-xl border-default space-y-4 lg:space-y-0 wrap">
+    <div className="flex gap-2 flex-col lg:flex-row md:flex-row   items-start lg:items-center justify-between px-3 bg-white transition duration-300  border  rounded-b-none rounded-xl border-default space-y-4 lg:space-y-0 wrap">
       {/* Left: Logo & Company Info */}
       <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 w-full lg:w-auto">
         <div className="flex items-center gap-5">
@@ -130,6 +130,7 @@ const StockCard: React.FC<StockCardProps> = ({
               stockExchangeStatus={currentStatus ? "listing" : "otc"}
               is_in_watchlist={!!selectedOption?.is_in_watchlist}
               watchlist_id={selectedOption?.watchlist_item_id ?? null}
+              hasShare={!!selectedOption}
               size={24}
               key={selectedIsuCd}
               onChange={onWatchlistChangeRefetch}

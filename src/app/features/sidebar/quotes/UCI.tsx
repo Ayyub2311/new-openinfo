@@ -128,9 +128,9 @@ const UCIChart: React.FC = () => {
   if (!data) return null;
 
   return (
-    <div className="bg-white p-6 w-full mx-auto  border-default">
+    <div className="bg-white py-6 w-full mx-auto  border-default">
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-left text-xl font-bold text-gray-900">
           <img src="/assets/general-icons/chart-up.svg" className="w-6 h-6 inline align-text-top mt-1 mr-2" />
           {t("UCIChart.title")}
         </h2>

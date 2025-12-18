@@ -324,7 +324,11 @@ const StockOverviewCombined = () => {
           columns={[
             {
               dataIndex: "ticker",
-              title: t("SecuritiesTableSidebar.ticker"),
+              title: (
+                <span className="font-bold text-[14px]">
+                  {t("SecuritiesTableSidebar.ticker")}
+                </span>
+              ),
               className: "font-semibold text-gray-700",
             },
             {
@@ -334,7 +338,11 @@ const StockOverviewCombined = () => {
                   className="flex items-center cursor-pointer select-none gap-1"
                   onClick={() => handleSort("trade_price")}
                 >
-                  {t("SecuritiesTableSidebar.price")}
+
+                  <span className="font-bold text-[14px]">
+                    {t("SecuritiesTableSidebar.price")}
+                  </span>
+
                   <span className="text-xs text-gray-400">
                     <span
                       className={cn(
@@ -366,7 +374,10 @@ const StockOverviewCombined = () => {
                   className="flex items-center cursor-pointer select-none gap-1"
                   onClick={() => handleSort("change")}
                 >
-                  {t("SecuritiesTableSidebar.change")}
+                  <span className="font-bold text-[14px]">
+                    {t("SecuritiesTableSidebar.change")}
+                  </span>
+
                   <span className="text-xs text-gray-400">
                     <span
                       className={cn(
@@ -400,7 +411,10 @@ const StockOverviewCombined = () => {
                   className="flex items-center cursor-pointer select-none gap-1"
                   onClick={() => handleSort("change_percent")}
                 >
-                  {t("SecuritiesTableSidebar.change_percent")}
+                  <span className="font-bold text-[14px]">
+                    {t("SecuritiesTableSidebar.change_percent")}
+                  </span>
+
                   <span className="text-xs text-gray-400">
                     <span
                       className={cn(

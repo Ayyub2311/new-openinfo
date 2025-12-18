@@ -169,7 +169,7 @@ const PageInvestmentBrokers = () => {
           </div>
         </div>
 
-        <aside className="hidden md:block lg:block shrink-0 grow-0 basis-[clamp(280px,26vw,360px)] col-span-1 xl:col-span-2">
+        <aside className="hidden md:block mt-[30px] lg:block shrink-0 grow-0 basis-[clamp(280px,26vw,360px)] col-span-1 xl:col-span-2">
           <div className="sticky top-10 max-h-[calc(100vh-5rem] overflow-auto">
             <Sidebar items={sidebarItems} />
           </div>

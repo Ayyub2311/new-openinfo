@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { ConvertTypes } from "@/app/features/facts/models/base/ConvertTypes";
 import Select from "@/app/shared/ui/components/Select/Select";
 import { Pagination } from "@/app/shared/ui/components/Pagination";
@@ -42,6 +42,7 @@ export default function SecuritiesTable() {
   const [selectedOrg, setSelectedOrg] = useState<ResultItem | null>(null);
   const [startDate, setStartDate] = useState<Date | undefined>();
   const [endDate, setEndDate] = useState<Date | undefined>();
+  const locale = useLocale();
   const [pendingSearch, setPendingSearch] = useState<boolean>(false);
 
   const [pagination, setPagination] = useState({
@@ -58,7 +59,7 @@ export default function SecuritiesTable() {
   const formatDate = useCallback(
     (dateString: string) => {
       try {
-        return converter.formatDate(dateString) || NOT_EXIST_DATE;
+        return converter.formatDateFull(dateString, locale) || NOT_EXIST_DATE;
       } catch {
         return NOT_EXIST_DATE;
       }
@@ -176,7 +177,7 @@ export default function SecuritiesTable() {
         if (record.organization_id) {
           return (
             <Link href={`/organizations/${record.organization_id}`}>
-              <Text variant="accent">{record.organization_name}</Text>
+              <Text variant="accent" className="text-[14px]">{record.organization_name}</Text>
             </Link>
           );
         }
@@ -186,6 +187,7 @@ export default function SecuritiesTable() {
     {
       title: t("SecuritiesTable.publication_date") || "Publication Date",
       dataIndex: "pub_date",
+      align: "right" as const,
       render: (pub_date: string, record: any) => {
         console.log(record);
         return (
@@ -194,7 +196,6 @@ export default function SecuritiesTable() {
           </Link>
         );
       },
-      align: "center" as const,
     },
   ];
 

@@ -3,12 +3,13 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Table } from "@/app/shared/ui/components/Table";
 import { TableColumn } from "@/app/shared/ui/components/Table/types";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import { Pagination } from "@/app/shared/ui/components/Pagination";
 import { Text } from "@/app/shared/ui/components/Typography/Text";
 import { ConvertTypes } from "@/app/features/facts/models/base/ConvertTypes";
 import Image from "next/image";
+import { Tooltip } from "antd";
 
 
 interface DividendItem {
@@ -47,6 +48,7 @@ export default function DividendCalendarTable() {
   const [data, setData] = useState<DividendItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [type, setType] = useState<DividendType>("simple");
+  const locale = useLocale();
   const [pagination, setPagination] = useState({
     currentPage: 1,
     totalPages: 1,
@@ -100,17 +102,25 @@ export default function DividendCalendarTable() {
     fetchData(page, type);
   };
 
-  const columns = useMemo<TableColumn<DividendItem>[]>(
-    () => [
+  const columns = useMemo<TableColumn<DividendItem>[]>(() => {
+    const formatPercentForDisplay = (val: string | number) => {
+      if (val === null || val === undefined) return "-";
+      const num = typeof val === "string" ? parseFloat(val) : val;
+      return num % 1 === 0
+        ? num.toLocaleString("en-US")
+        : num.toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+    };
+
+    return [
       {
         title:
-          <div className="text-center">
+          <div className="text-left">
             {t("DividendTable.issuer_name")}
           </div>,
         dataIndex: "organization",
         render: (_, record) => (
           <a href={record.link} target="_blank" rel="noopener noreferrer">
-            <Text variant="accent" className="break-words text-base-important xl:text-[14px] 2xl:text-base ">{record.organization}</Text>
+            <Text variant="accent" className="break-words text-[14px]">{record.organization}</Text>
           </a>
         ),
       },
@@ -120,8 +130,8 @@ export default function DividendCalendarTable() {
             {t("DividendTable.decision_date")}
           </div>,
         dataIndex: "decision_date",
-        align: "right",
-        render: (_, record) => converter.formatDate(record.decision_date),
+        align: "center",
+        render: (_, record) => converter.formatDate(record.decision_date, locale) || NOT_EXIST_DATE,
       },
       {
         title:
@@ -129,7 +139,7 @@ export default function DividendCalendarTable() {
             {t("DividendTable.amount")}
           </div>,
         dataIndex: "amount",
-        align: "right",
+        align: "center",
         render: (_, record) => {
           const amount =
             type === "simple"
@@ -146,15 +156,22 @@ export default function DividendCalendarTable() {
             {t("DividendTable.percent")}
           </div>,
         dataIndex: "percent",
-        align: "right",
+        align: "center",
         render: (_, record) => {
-          const percent =
+          const rawPercent =
             type === "simple"
               ? record.common_share_percent
               : type === "privileged"
                 ? record.priviliged_share_percent
                 : record.bond_percent;
-          return percent;
+
+          return (
+            <Tooltip title={rawPercent}>
+              <span className="cursor-help">
+                {formatPercentForDisplay(rawPercent)}
+              </span>
+            </Tooltip>
+          );
         },
       },
       ...(type === "bond"
@@ -165,7 +182,7 @@ export default function DividendCalendarTable() {
                 {t("DividendTable.annual_interest")}
               </div>,
             dataIndex: "annual_interest",
-            align: "right" as const, // ✅ fix
+            align: "center" as const,
           },
         ]
         : []),
@@ -176,7 +193,7 @@ export default function DividendCalendarTable() {
             {t("DividendTable.start_date")}
           </div>,
         dataIndex: "start_date",
-        align: "right",
+        align: "center",
         render: (_, record) => {
           const date =
             type === "simple"
@@ -184,12 +201,12 @@ export default function DividendCalendarTable() {
               : type === "privileged"
                 ? record.priviliged_share_start_date
                 : record.bond_start_date;
-          return converter.formatDate(date) || "-";
+          return converter.formatDate(date, locale) || "-";
         },
       },
       {
         title:
-          <div className="text-center">
+          <div className="text-right">
             {t("DividendTable.end_date")}
           </div>
         ,
@@ -202,12 +219,11 @@ export default function DividendCalendarTable() {
               : type === "privileged"
                 ? record.priviliged_share_end_date
                 : record.bond_end_date;
-          return converter.formatDate(date) || "-";
+          return converter.formatDate(date, locale) || "-";
         },
       },
-    ],
-    [type, t]
-  );
+    ];
+  }, [type, t]);
 
   return (
     <div className="py-4 space-y-4">

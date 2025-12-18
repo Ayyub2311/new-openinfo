@@ -32,7 +32,7 @@ const ExchangeRatesTable: React.FC<ExchangeRatesTableProps> = ({ tableData, load
       ) : (
         <table className="min-w-full bg-white">
           <thead>
-            <tr className="border-b">
+            <tr className="border-b text-[14px]">
               <th className="py-3 px-4 text-left">{t("ExchangeRatesTable.currency")}</th>
               <th className="py-3 px-4 text-right whitespace-nowrap">{t("ExchangeRatesTable.rate")}</th>
               <th className="py-3 px-4 text-right">{t("ExchangeRatesTable.diff")}</th>

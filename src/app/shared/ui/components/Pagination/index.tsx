@@ -35,18 +35,31 @@ export const Pagination: React.FC<PaginationProps> = ({
   const endItem = Math.min(currentPage * pageSize, totalItems);
 
   const getPageNumbers = () => {
-    const pages = [];
-    let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
-    let endPage = startPage + maxVisiblePages - 1;
+    const pages: (number | string)[] = [];
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
 
-    if (endPage > totalPages) {
-      endPage = totalPages;
-      startPage = Math.max(1, endPage - maxVisiblePages + 1);
+    if (isMobile) {
+      pages.push(1);
+      if (currentPage > 2) pages.push("...");
+      if (currentPage !== 1 && currentPage !== totalPages) pages.push(currentPage);
+      if (currentPage < totalPages - 1) pages.push("...");
+      if (totalPages > 1) pages.push(totalPages);
+      return pages;
     }
 
-    for (let i = startPage; i <= endPage; i++) {
-      pages.push(i);
+    if (totalPages <= maxVisiblePages) {
+      for (let i = 1; i <= totalPages; i++) pages.push(i);
+      return pages;
     }
+
+    pages.push(1);
+    let startPage = Math.max(2, currentPage - 1);
+    let endPage = Math.min(totalPages - 1, currentPage + 1);
+
+    if (startPage > 2) pages.push("...");
+    for (let i = startPage; i <= endPage; i++) pages.push(i)
+    if (endPage < totalPages - 1) pages.push("...");
+    pages.push(totalPages);
 
     return pages;
   };
@@ -71,10 +84,10 @@ export const Pagination: React.FC<PaginationProps> = ({
           <ChevronLeft className="w-5 h-5" />
         </button>
 
-        {getPageNumbers().map(page => (
+        {getPageNumbers().map((page, idx) => (
           <button
-            key={page}
-            onClick={() => onPageChange(page)}
+            key={idx}
+            onClick={() => typeof page === "number" && onPageChange(page)}
             className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${currentPage === page ? "bg-blue-700 text-white" : "hover:bg-gray-100"
               }`}
           >

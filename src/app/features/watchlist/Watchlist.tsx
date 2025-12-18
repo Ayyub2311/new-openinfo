@@ -7,6 +7,7 @@ type Props = {
   stockIsin: string;
   is_in_watchlist: boolean;
   watchlist_id?: number | null;
+  hasShare: boolean;
   stockExchangeStatus?: "listing" | "otc" | string;
   size?: number;
   className?: string;
@@ -18,6 +19,7 @@ export const WatchlistStar: React.FC<Props> = ({
   stockIsin,
   is_in_watchlist,
   watchlist_id = null,
+  hasShare,
   stockExchangeStatus = "listing",
   size = 18,
   className,
@@ -27,12 +29,33 @@ export const WatchlistStar: React.FC<Props> = ({
   const [inList, setInList] = useState<boolean>(!!is_in_watchlist);
   const [id, setId] = useState<number | null>(watchlist_id ?? null);
   const [busy, setBusy] = useState(false);
+  const [visible, setVisible] = useState<boolean>(true);
 
   // ✅ keep local state in sync when parent changes selected instrument
   useEffect(() => {
     setInList(!!is_in_watchlist);
     setId(watchlist_id ?? null);
   }, [is_in_watchlist, watchlist_id, stockIsin]);
+
+  useEffect(() => {
+    let mounted = true;
+
+    const checkAvailability = async () => {
+      try {
+        const res = await FetchService.fetch<{ allowed?: boolean }>(
+          `/api/v2/organizations/watchlist/check/?stock_isin=${stockIsin}&market=${stockExchangeStatus}`
+        );
+        if (mounted) setVisible(!!res?.allowed);
+      } catch {
+        if (mounted) setVisible(false);
+      }
+    };
+    checkAvailability();
+
+    return () => {
+      mounted = false;
+    };
+  }, [stockIsin, stockExchangeStatus]);
 
   const box = useMemo(() => ({ width: size + 8, height: size + 8 }), [size]);
 
@@ -79,6 +102,8 @@ export const WatchlistStar: React.FC<Props> = ({
       setBusy(false);
     }
   }, [busy, id, inList, notify, onChange, stockExchangeStatus, stockIsin]);
+
+  if (!hasShare) return null;
 
   return (
     <button

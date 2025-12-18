@@ -19,30 +19,33 @@ interface ReportApiResponse {
   count: number;
   total_pages: number;
   page_size: number;
-  current_page: number;
+  current_page?: number;
+  current?: number;
 }
 
-const reportStandards = [
-  { label: "NSBU", value: "main" },
-  { label: "MSFO", value: "msfo" },
-  { label: "Audition", value: "audition" },
-];
+
 
 export const FinancialReportTable = () => {
   const { id } = useParams();
-
   const t = useTranslations("");
+
+  const reportStandards = [
+    { label: t("filters.all"), value: "" },
+    { label: "NSBU", value: "main" },
+    { label: "MSFO", value: "msfo" },
+    { label: "Audition", value: "audition" },
+  ];
 
   const reportTypes = [
     { label: t("filters.all"), value: "" },
-    { label: "Quarter", value: "quarter" },
-    { label: "Annual", value: "annual" },
+    { label: t("financial_reports_tab.quarterly_short"), value: "quarter" },
+    { label: t("financial_reports_tab.annual_short"), value: "annual" },
   ];
 
   const [data, setData] = useState([]);
   const [pagination, setPagination] = useState({ currentPage: 1, totalPages: 1, pageSize: 10, totalItems: 0 });
   const [filters, setFilters] = useState({
-    reportStandard: { label: "NSBU", value: "main" },
+    reportStandard: { label: t("filters.all"), value: "" },
     reportType: { label: t("filters.select_report_type" as any), value: "" },
     selectedYear: "",
     startDate: undefined,
@@ -54,14 +57,19 @@ export const FinancialReportTable = () => {
   const fetchReports = async (activeFilters = appliedFilters, page = 1) => {
     setLoading(true);
     try {
-      const { selectedYear, startDate, endDate } = activeFilters;
-      const safeStandard = activeFilters?.reportStandard?.value || "main";
+      const { selectedYear, startDate, endDate, reportStandard } = activeFilters;
+      const resolvedStandard = reportStandard?.value || "";
 
       const params = new URLSearchParams({
-        organization_id: Array.isArray(id) ? id[0] : id || "",
         page: page.toString(),
         page_size: "10",
       });
+
+      if (reportStandard.value === "") {
+        params.append("organization", Array.isArray(id) ? id[0] : id || "");
+      } else {
+        params.append("organization_id", Array.isArray(id) ? id[0] : id || "");
+      }
 
       if (activeFilters?.reportType?.value) {
         params.append("report_type", activeFilters.reportType.value);
@@ -79,13 +87,20 @@ export const FinancialReportTable = () => {
         params.append("pub_date__lte", endDate.toISOString().split("T")[0]);
       }
 
+      const endpoint =
+        reportStandard.value === ""
+          ? "/api/v2/reports/unified-financial-reports/"
+          : `/api/v2/reports/${reportStandard.value}/`;
+
       const response = await FetchService.fetch<ReportApiResponse>(
-        `/api/v2/reports/${safeStandard}/?${params.toString()}`
+        `${endpoint}?${params.toString()}`
       );
 
+
       setData(response.results || []);
+
       setPagination({
-        currentPage: response.current_page || 1,
+        currentPage: response.current ?? response.current_page ?? 1,
         totalPages: response.total_pages,
         pageSize: response.page_size,
         totalItems: response.count,
@@ -104,11 +119,17 @@ export const FinancialReportTable = () => {
 
   const handlePageChange = page => {
     setPagination(prev => ({ ...prev, currentPage: page }));
-    fetchReports(page);
+    fetchReports(appliedFilters, page);
   };
 
   const handleFilterChange = (key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }));
+
+    if (key === "reportStandard") {
+      const newFilters = { ...filters, reportStandard: value };
+      setAppliedFilters(newFilters);
+      fetchReports(newFilters, 1);
+    }
   };
 
   const handleSearch = () => {
@@ -118,7 +139,7 @@ export const FinancialReportTable = () => {
 
   const handleClear = () => {
     const resetFilters = {
-      reportStandard: { label: "NSBU", value: "main" },
+      reportStandard: { label: t("filters.all"), value: "" },
       reportType: { label: t("filters.all"), value: "" },
       selectedYear: "",
       startDate: undefined,
@@ -133,7 +154,7 @@ export const FinancialReportTable = () => {
     {
       title: "#",
       dataIndex: "order",
-      width: 20,
+      width: 60,
       render: (_: any, __, index: number) => (
         <span>{(pagination.currentPage - 1) * pagination.pageSize + index + 1}</span>
       ),
@@ -145,35 +166,58 @@ export const FinancialReportTable = () => {
     },
     {
       title: t("financial_reports_tab.report_type"),
-      dataIndex: "report_title",
-      render: (text, record) => {
-        const isMain = appliedFilters.reportStandard.value === "main";
-        const hasValidLinkData = record.properties?.org_type && record.properties?.report_type && record.object_id;
+      render: (_, record) => {
 
-        return isMain && hasValidLinkData ? (
-          <Link
-            href={`/reports/${record.properties.org_type}/${record.properties.report_type}/${record.object_id}`}
+        return record.report_link ? (
+          <Link href={record.report_link}
             target="_blank"
           >
             <Text variant="accent">
-              {record.properties?.report_title || (record.report_type === 1 ? "Annual" : "Quarter")}
+              {record.properties?.report_title || (record.report_type === 1 ? t("financial_reports_tab.annual_short") : t("financial_reports_tab.quarterly_short"))}
             </Text>
           </Link>
         ) : (
-          <span>{record.properties?.report_title || (record.report_type === 1 ? "Annual" : "Quarter")}</span>
+          <span>{record.properties?.report_title || (record.report_type === 1 ? t("financial_reports_tab.annual_short") : t("financial_reports_tab.quarterly_short"))}</span>
         );
       },
     },
     {
+      title: t("financial_reports_tab.report_form"),
+      render: (_, record) => {
+
+        const derivedType =
+          filters.reportStandard.value === "main"
+            ? "NSBU"
+            : filters.reportStandard.value === "msfo"
+              ? "MSFO"
+              : filters.reportStandard.value === "audition"
+                ? "Audition"
+                : record.report_type;
+
+
+        switch (derivedType) {
+          case "NSBU":
+            return <span>NSBU</span>;
+          case "MSFO":
+            return <span>MSFO</span>;
+          case "Audition":
+            return <span>Audition</span>;
+          default:
+            return <span>-</span>
+        }
+      },
+      align: "center",
+    },
+    {
       title: t("financial_reports_tab.download_report"),
-      align: "center" as const, // ✅ Fix 3
+      align: "right",
       render: (_, record) => {
         const isMain = appliedFilters.reportStandard.value === "main";
         const hasValidMain = record.properties?.org_type && record.properties?.report_type && record.object_id;
         const hasPdf = record.pdf_file || record.id;
 
         return (
-          <div className="flex items-center gap-2 justify-center">
+          <div className="flex items-center gap-2 justify-end">
             {hasPdf && (
               <a
                 target="_blank"
@@ -204,14 +248,14 @@ export const FinancialReportTable = () => {
 
   return (
     <div className="p-4">
-      <div className="flex flex-wrap gap-4 mb-4">
-        <Select
+      <div className="flex flex-wrap gap-2 mb-4">
+        {/* <Select
           options={reportStandards}
           value={filters.reportStandard}
           onChange={val => handleFilterChange("reportStandard", val)}
           placeholder="Report Standard"
           className="w-full max-w-full md:w-auto lg:w-auto"
-        />
+        /> */}
         <Select
           options={reportTypes}
           value={filters.reportType}

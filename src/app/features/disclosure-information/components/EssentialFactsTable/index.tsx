@@ -11,9 +11,10 @@ import { SearchButton, ClearButton } from "@/app/shared/ui/components/Button/Reu
 import Link from "next/link";
 import Image from "next/image";
 import { Text } from "@/app/shared/ui/components/Typography/Text";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { ConvertTypes } from "@/app/features/facts/models/base/ConvertTypes";
 import { getOptions } from "@/app/features/calendar/components/EssentialFactsTable/options";
+
 
 const converter = new ConvertTypes();
 
@@ -26,7 +27,7 @@ interface OrganizationDetails {
     logo_file?: string;
     director_name?: string;
   };
-  [key: string]: any; // Optional: allow other properties
+  [key: string]: any;
 }
 
 interface FactData {
@@ -38,7 +39,7 @@ interface FactData {
   object_id?: number;
   organization_name: string;
   organization_short_name?: string;
-  organization: number | OrganizationDetails; // <-- ✅ FIX HERE
+  organization: number | OrganizationDetails;
 }
 
 interface ApiResponse {
@@ -55,6 +56,8 @@ export const EssentialFactsTable = () => {
   const [data, setData] = useState<FactData[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+
+  const locale = useLocale();
 
   const [pagination, setPagination] = useState({
     currentPage: 1,
@@ -95,10 +98,10 @@ export const EssentialFactsTable = () => {
         organization:
           typeof fact.organization === "number"
             ? {
-                id: fact.organization,
-                short_name_text: fact.organization_short_name,
-                full_name_text: fact.organization_name,
-              }
+              id: fact.organization,
+              short_name_text: fact.organization_short_name,
+              full_name_text: fact.organization_name,
+            }
             : fact.organization,
       }));
 
@@ -153,13 +156,13 @@ export const EssentialFactsTable = () => {
   return (
     <div className="p-4">
       {/* Filter UI */}
-      <div className="flex flex-wrap gap-4 mb-4 w-full">
+      <div className="flex flex-wrap gap-2 mb-4 w-full">
         <Select
           options={factOptions}
           value={filters.factType}
           onChange={val => handleFilterChange("factType", val)}
           placeholder={t("filters.fact_type")}
-          className="w-full max-w-full md:w-auto lg:w-auto"
+          className="w-full max-w-full md:w-auto lg:w-"
         />
         <DatePicker
           selected={filters.startDate}
@@ -186,6 +189,7 @@ export const EssentialFactsTable = () => {
           {
             title: "#",
             dataIndex: "order",
+            width: 30,
             render: (_: any, __: any, index: number) => (
               <span>{(pagination.currentPage - 1) * pagination.pageSize + index + 1}</span>
             ),
@@ -202,7 +206,7 @@ export const EssentialFactsTable = () => {
             dataIndex: "approved_date",
             align: "center",
             width: 200,
-            render: (_: any, r: FactData) => <span>{converter.formatDate(r.pub_date)}</span>,
+            render: (_: any, r: FactData) => <span>{converter.formatDate(r.pub_date, locale)}</span>,
           },
           {
             title: t("essential_factsTab.essential_fact_title"),
@@ -220,7 +224,7 @@ export const EssentialFactsTable = () => {
           {
             title: "",
             dataIndex: "action",
-            align: "center",
+            align: "right",
             width: 200,
             render: (_: any, r: any) => {
               const currentFactType = appliedFilters.factType?.value || "facts/";
@@ -230,7 +234,7 @@ export const EssentialFactsTable = () => {
                   : `https://openinfo.uz/ru/facts/to_pdf/${r.id}`;
 
               return (
-                <div className="flex items-center gap-2 justify-center">
+                <div className="flex items-center gap-2 justify-end">
                   <a href={pdfUrl} rel="noopener noreferrer">
                     <Image src="/PDF.png" alt="PDF" width={30} height={20} />
                   </a>

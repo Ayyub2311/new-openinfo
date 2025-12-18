@@ -3,7 +3,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Table } from "@/app/shared/ui/components/Table";
 import { TableColumn } from "@/app/shared/ui/components/Table/types";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import { Pagination } from "@/app/shared/ui/components/Pagination";
 import { Text } from "@/app/shared/ui/components/Typography/Text";
@@ -34,6 +34,7 @@ const converter = new ConvertTypes();
 export default function AnnouncementCalendarTable() {
   const [data, setData] = useState<AnnouncementItem[]>([]);
   const [loading, setLoading] = useState(false);
+  const locale = useLocale();
   const [pagination, setPagination] = useState({
     currentPage: 1,
     totalPages: 1,
@@ -80,13 +81,14 @@ export default function AnnouncementCalendarTable() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Text variant="accent">{record.organization_name}</Text>
+            <Text variant="accent" className="text-[14px]">{record.organization_name}</Text>
           </a>
         ),
       },
       {
         title: t("AnnouncementTable.title"),
-        dataIndex: "right",
+        dataIndex: "#",
+        align: "center",
         render: (_, record) => (
           <a href={`/announce/${record.id}`}>
             <Text variant="accent">{record.title}</Text>
@@ -96,14 +98,14 @@ export default function AnnouncementCalendarTable() {
       {
         title: t("AnnouncementTable.pub_date"),
         dataIndex: "pub_date",
-        align: "right",
-        render: (_, record) => converter.formatDate(record.pub_date),
+        align: "center",
+        render: (_, record) => converter.formatDate(record.pub_date, locale),
       },
       {
         title: t("AnnouncementTable.meeting_date"),
         dataIndex: "meeting_date",
         align: "right",
-        render: (_, record) => (record.meeting_date ? converter.formatDate(record.meeting_date) : "-"),
+        render: (_, record) => (record.meeting_date ? converter.formatDate(record.meeting_date, locale) : "-"),
       },
     ],
     [t]

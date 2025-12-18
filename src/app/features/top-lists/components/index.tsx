@@ -1,11 +1,44 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "@/app/shared/ui/components/Table";
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import { useTranslations } from "next-intl";
 import OrgLogo from "@/app/shared/default-logo";
 import FormatNumbers from "@/app/shared/format-number";
+import Image from "next/image";
+
+type ImageWithFallbackProps = {
+  src?: string;
+  alt: string;
+  width: number;
+  height: number;
+  fallback: React.ReactNode;
+};
+
+const ImageWithFallback = ({
+  src,
+  alt,
+  width,
+  height,
+  fallback,
+}: ImageWithFallbackProps) => {
+  const [imgError, setImgError] = useState(false);
+
+  if (!src || imgError) return <>{fallback}</>;
+
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      className="object-contain rounded-sm shrink-0"
+      onError={() => setImgError(true)}
+      unoptimized
+    />
+  );
+};
 
 const TradeAnalyticsTables = () => {
   const [byDeals, setByDeals] = useState([]);
@@ -27,26 +60,30 @@ const TradeAnalyticsTables = () => {
           `/api/v2/iuzse/trade-analytics/?start_date=${start}&end_date=${end}`
         );
 
-        const createNameCell = (item: any) => (
-          <div className="flex items-center gap-3 w-full max-w-full whitespace-normal">
-            {/* {item.logo && (
-              <Image
-                src={`https://openinfo.uz/media/${item.logo}`}
-                alt={item.ticker}
-                width={24}
-                height={24}
-                className="object-contain rounded-sm shrink-0"
-                unoptimized
-              />
+        const createNameCell = (item: any) => {
+          const logoUrl = item.logo ? `https://openinfo.uz/media/${item.logo}` : "";
 
-            )} */}
-            <OrgLogo id={item.order} shortName={item.issuer_short_name} size={40} />
-            <div className="flex flex-col">
-              <span className="font-medium text-sm leading-snug break-words">{item.issuer_short_name}</span>
-              <span className="text-xs text-600 font-normal">({item.ticker})</span>
+          return (
+            <div className="flex items-center gap-3 w-full max-w-full whitespace-normal">
+              {logoUrl ? (
+                <ImageWithFallback
+                  src={logoUrl}
+                  alt={item.ticker}
+                  width={40}
+                  height={40}
+                  fallback={<OrgLogo id={item.order} shortName={item.issuer_short_name} size={40} />}
+                />
+              ) : (
+                <OrgLogo id={item.order} shortName={item.issuer_short_name} size={40} />
+              )}
+
+              <div className="flex flex-col">
+                <span className="font-medium text-sm leading-snug break-words">{item.issuer_short_name}</span>
+                <span className="text-xs text-600 font-normal">({item.ticker})</span>
+              </div>
             </div>
-          </div>
-        );
+          );
+        };
 
         setByDeals(
           data.top_issuers_by_transaction.slice(0, 5).map((item: any) => ({

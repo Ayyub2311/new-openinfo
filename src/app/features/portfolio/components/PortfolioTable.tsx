@@ -442,6 +442,7 @@ export const PortfolioTicker = () => {
           </div>
         ),
         align: "right" as const,
+        width: 90,
         render: (v: number) => <FormatNumbers value={v} showCurrency={false} colorByValue={false} />,
       },
       {
@@ -492,6 +493,7 @@ export const PortfolioTicker = () => {
         dataIndex: "actions",
         title: "",
         align: "center" as const,
+        width: 120,
         render: (_: any, record: Position) => (
           <div className="flex justify-center gap-1">
             <Button

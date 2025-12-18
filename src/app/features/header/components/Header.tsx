@@ -9,8 +9,11 @@ import { Link } from "@/i18n/routing";
 import HeaderUserSection from "./HeaderClient";
 
 import AutocompleteSearch from "./AutocompleteSearch";
-import { Divider } from "antd/lib";
+import { Divider } from "antd";
 import Container from "@/app/shared/ui/components/Container";
+import { Alert, Button } from "antd";
+import { CloseOutlined } from "@ant-design/icons";
+import { Undo2 } from "lucide-react";
 
 
 export default function HeaderClient() {
@@ -18,6 +21,7 @@ export default function HeaderClient() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const langMenuRef = useRef<HTMLDivElement | null>(null);
+  const [showLegacyBar, setShowLegacyBar] = useState(true);
 
   const params = useParams();
   const currentPath = usePathname();
@@ -95,6 +99,11 @@ export default function HeaderClient() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const UndoIcon = () => (
+    <Undo2 className="w-5 h-5 text-white stroke-[1.75]" />
+  );
+
+
   // const btnRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
   // const handleMagneticMove = (e: React.MouseEvent, index: number) => {
@@ -117,6 +126,55 @@ export default function HeaderClient() {
 
   return (
     <nav className="sticky top-0 left-0 w-full z-50  bg-gradient-to-r from-[#182c3a] to-[#2a3f54] ">
+
+      <div
+        className={`"bg-[#0ea5e9]" bg-[#f59e0b] overflow-hidden transition-all duration-300 ease-in-out ${showLegacyBar ? "max-h-10 opacity-100" : "max-h-0 opacity-0"
+          }`}
+      >
+        <Container>
+          <Alert
+            type="info"
+            banner
+            showIcon={false}
+            className="bg-transparent px-0 py-1"
+            message={
+              <div className="flex items-center justify-center gap-5 w-full">
+                <a
+                  href="https://new.openinfo.uz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-black hover:underline hover:text-white font-medium"
+                >
+                  {t("Navigation.legacy_site")}
+                </a>
+
+                <Button
+                  type="text"
+                  icon={<CloseOutlined className="text-white" />}
+                  onClick={() => setShowLegacyBar(false)}
+                />
+              </div>
+            }
+          />
+        </Container>
+
+      </div>
+
+
+      {!showLegacyBar && (
+        <div className="bg-transparent animate-fade-in">
+          <Container className="flex justify-end pt-1">
+            <Button
+              type="text"
+              icon={<UndoIcon />}
+              className="w-auto transition-transform hover:text-white hover:-translate-x-0.5 text-white"
+              onClick={() => setShowLegacyBar(true)}
+            />
+          </Container>
+
+        </div>
+      )}
+
       <Container>
         {/* Mobile Top Navigation */}
         <div className="lg:hidden relative flex items-center justify-between h-16 border-b border-default dark:border-black mx-auto">

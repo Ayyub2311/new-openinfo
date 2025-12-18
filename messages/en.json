@@ -463,6 +463,8 @@
     }
   },
   "Navigation": {
+    "legacy_site": "Return to the old version of the portal",
+    "navigation_title": "Site Map",
     "main": "Home",
     "market_filter": "Market Filter",
     "license_certification": "License & Certification",
@@ -936,6 +938,7 @@
     "end_date": "End Date",
     "fact_type": "Types of essential facts",
     "pick_year": "Pick a year",
+    "select_report_type": "Select report type",
     "select_type": "Select report type"
   },
   "TestMode": {
@@ -963,6 +966,7 @@
     "essential_facts": "Essential Facts",
     "dividends": "Dividends",
     "market_cap": "Market Cap",
+    "total": "Total number of shares",
     "common_stock": "Common Stock",
     "preferred_stock": "Preferred Stock",
     "date": "Date",
@@ -988,8 +992,11 @@
   },
   "financial_reports_tab": {
     "report_type": "Report Type",
+    "report_form": "Report form",
     "report_date": "Report Date",
-    "download_report": "Download Report"
+    "download_report": "Download Report",
+    "annual_short": "Annual",
+    "quarterly_short": "Quarterly"
   },
   "finindicator_table": {
     "indicator": "Indicator",

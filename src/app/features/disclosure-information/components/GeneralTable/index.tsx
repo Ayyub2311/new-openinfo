@@ -214,9 +214,28 @@ const GeneralTable: React.FC<GeneralTableProps> = ({ id, isListing }) => {
     },
     colors: ["#3B82F6"],
   };
-  const shares = isListing ? (organization?.uzse_info?.shares ?? []) : (organization?.otc_info?.shares ?? []);
+  // const shares = isListing ? (organization?.uzse_info?.shares ?? []) : (organization?.otc_info?.shares ?? []);
+
+  const shares = isListing
+    ? organization?.uzse_info?.shares || []
+    : organization?.otc_info?.shares || [];
+  const total = shares.reduce((sum, s) => sum + Number(s.list_shrs || 0), 0);
+
+  const totalShares = shares.reduce(
+    (sum, s) => sum + Number(s.list_shrs || 0),
+    0
+  );
+
+  const typeAmount = (type: string) =>
+    shares
+      .filter(s => s.type === type)
+      .reduce((sum, s) => sum + Number(s.list_shrs || 0), 0);
+
+  const typePercent = (type: string) =>
+    totalShares ? ((typeAmount(type) / totalShares) * 100).toFixed(2) : "0.00";
 
   const selectedShare = selectedIsuCd ? shares.find(s => s?.isu_cd === selectedIsuCd) || shares[0] : shares[0];
+
 
   return (
     <div className="w-full">
@@ -239,8 +258,9 @@ const GeneralTable: React.FC<GeneralTableProps> = ({ id, isListing }) => {
                   </Button>
                 ))}
               </div>
-              <div className="w-full overflow-x-auto">
-                <ApexChart options={chartOptions as any} series={series} type="area" height={300} />
+              <div className="w-full overflow-hidden relative h-[320px]">
+                <ApexChart
+                  options={chartOptions as any} series={series} type="area" width="100%" height={300} />
               </div>
             </div>
           </div>
@@ -300,30 +320,18 @@ const GeneralTable: React.FC<GeneralTableProps> = ({ id, isListing }) => {
                     }
                   />
                 </div>
-                {(() => {
-                  const shares = isListing
-                    ? organization?.uzse_info?.shares || []
-                    : organization?.otc_info?.shares || [];
-                  const total = shares.reduce((sum, s) => sum + (s.list_shrs || 0), 0);
-
-                  const getPercent = (type: string) => {
-                    const count = shares.filter(s => s.type === type).reduce((s, c) => s + (c.list_shrs || 0), 0);
-                    return total ? ((count / total) * 100).toFixed(2) : "0.00";
-                  };
-
-                  return (
-                    <div className="">
-                      <div className="flex justify-between text-sm mb-2">
-                        <span className="font-semibold text-gray-600">{t("profile_emitents.preferred_stock")}</span>
-                        <span className="font-semibold  text-[#0369A1]">{getPercent("Привилегированные акции")}%</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="font-semibold text-gray-600">{t("profile_emitents.common_stock")}</span>
-                        <span className="font-semibold text-[#0369A1] ">{getPercent("Простые акции")}%</span>
-                      </div>
-                    </div>
-                  );
-                })()}
+                <div className="flex justify-between text-sm mt-2">
+                  <span className="font-semibold text-gray-600">{t("profile_emitents.total")}</span>
+                  <span className="font-semibold text-[#0369A1]">{totalShares}</span>
+                </div>
+                <div className="flex justify-between text-sm mt-2">
+                  <span className="font-semibold text-gray-600">{t("profile_emitents.preferred_stock")}</span>
+                  <span className="font-semibold  text-[#0369A1]">{typeAmount("Привилегированные акции")} / {typePercent("Привилегированные акции")}%</span>
+                </div>
+                <div className="flex justify-between text-sm mt-2">
+                  <span className="font-semibold text-gray-600">{t("profile_emitents.common_stock")}</span>
+                  <span className="font-semibold text-[#0369A1] ">{typeAmount("Простые акции")} / {typePercent("Простые акции")}%</span>
+                </div>
               </div>,
             ]}
           />

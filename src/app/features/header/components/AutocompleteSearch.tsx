@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Search } from "lucide-react";
 import { useRouter } from "@/i18n/routing";
 import { useTranslations } from 'next-intl';
+import { usePathname } from "next/navigation";
 
 const AutocompleteSearch = () => {
   const router = useRouter();
@@ -12,6 +13,15 @@ const AutocompleteSearch = () => {
   const searchRef = useRef(null);
 
   const t = useTranslations('filters');
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowResults(false);
+      setSearchTerm('');
+    }, 150);
+    return () => clearTimeout(timeout);
+  }, [pathname]);
 
   useEffect(() => {
     // Function to handle clicks outside the search component
@@ -98,7 +108,9 @@ const AutocompleteSearch = () => {
         )}
 
         {showResults && results.length > 0 && (
-          <div className="absolute z-10 w-full mt-1 bg-white border border-default rounded-xl shadow-lg max-h-60 overflow-y-auto">
+          <div className={`absolute z-10 w-full mt-1 bg-white border border-default rounded-xl shadow-lg max-h-60 overflow-y-auto transition-transform transition-opacity duration-200 ease-in-out
+          ${showResults ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1 pointer-events-none'}`}
+          >
             {results.map(result => (
               <div
                 key={result.id}

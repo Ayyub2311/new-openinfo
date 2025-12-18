@@ -9,6 +9,7 @@ import Image from "next/image";
 
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import { useTranslations } from "next-intl";
+import { DownloadOutlined } from '@ant-design/icons';
 
 interface MaterialFile {
   id: number;
@@ -51,7 +52,7 @@ const MaterialFiles = () => {
       align: "center",
       render: value => (
         <Link href={value} target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900 flex justify-center">
-          <Image src="/assets/general-icons/download.svg" alt="Download" width={24} height={24} className="w-6 h-6" />
+          <DownloadOutlined className="w-6 h-6" />
         </Link>
       ),
     },

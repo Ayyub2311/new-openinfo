@@ -463,6 +463,8 @@
     }
   },
   "Navigation": {
+    "legacy_site": "Portalning eski versiyasiga qaytish",
+    "navigation_title": "Sayt xaritasi",
     "main": "Asosiy",
     "market_filter": "Bozor filtri",
     "license_certification": "Litsenziya & Attestatsiya",
@@ -963,6 +965,7 @@
     "essential_facts": "Muhim faktlar",
     "dividends": "Dividendlar",
     "market_cap": "Bozor kapitalizatsiyasi",
+    "total": "Aksiyalarning jami soni",
     "common_stock": "Oddiy aksiyalar",
     "preferred_stock": "Imtiyozli aksiyalar",
     "date": "Sana",
@@ -1019,8 +1022,11 @@
   },
   "financial_reports_tab": {
     "report_type": "Hisobot turi",
+    "report_form": "Hisobot shakli",
     "report_date": "Hisobot sanasi",
-    "download_report": "Hisobotni yuklab olish"
+    "download_report": "Hisobotni yuklab olish",
+    "annual_short": "Yillik",
+    "quarterly_short": "Choraklik"
   },
   "corporate_portal": {
     "side_title": "Aksiyadorlik jamiyatida korporativ boshqaruvning ahamiyati",

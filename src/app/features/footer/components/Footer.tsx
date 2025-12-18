@@ -21,7 +21,7 @@ const Footer = () => {
         <Image src={Pattern} alt="Random Pattern" className="absolute -bottom-[50px] md:-bottom-[100px] right-24 w-[120px] h-[120px] md:w-[220px] md:h-[220px] opacity-5" />
         <Image src={Pattern} alt="Random Pattern" className="absolute -bottom-[40px] md:-bottom-[80px] -left-8 w-[140px] h-[140px] md:w-[240px] md:h-[240px] opacity-5" />
         <div className="flex relative z-10 h-full">
-          <div className="w-full mx-auto mt-8 md:mt-12 lg:mt-16 xl:mt-24 2xl:mt-32 mb-8">
+          <div className="w-full mx-auto my-8 md:my-10 lg:my-12 xl:my-14 2xl:my-16">
             <div className="flex flex-col lg:flex-row justify-between gap-8">
               <div className="space-y-6">
                 <h2 className="text-white font-semibold text-sm md:text-base max-w-lg">
@@ -81,13 +81,23 @@ const Footer = () => {
                 </div>
                 <div className="space-y-4">
                   <p className="text-white text-sm max-w-lg">
-                    <a href="https://napp.uz/ru#zero-496">{t("Footer.agency_description")}</a>
+                    <a
+                      href="https://napp.uz/ru#zero-496"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >{t("Footer.agency_description")}</a>
                   </p>
                   <p className="text-white text-sm max-w-lg">
-                    <a href="https://www.kapitalbozori.uz/about/#">{t("Footer.technical_support")}</a>
+                    <a href="https://www.kapitalbozori.uz/about/#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >{t("Footer.technical_support")}</a>
                   </p>
                   <p className="text-white text-sm max-w-lg">
-                    <a href="https://www.kapitalbozori.uz/about/#">
+                    <a href="https://www.kapitalbozori.uz/about/#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <b> {t("Footer.resource_center")} </b>
                     </a>
                   </p>

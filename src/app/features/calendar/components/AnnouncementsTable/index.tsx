@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import { ConvertTypes } from "@/app/features/facts/models/base/ConvertTypes";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Pagination } from "@/app/shared/ui/components/Pagination";
 import { Link } from "@/i18n/routing";
 import { Text } from "@/app/shared/ui/components/Typography/Text";
@@ -72,6 +72,7 @@ export default function AnnouncementsTable() {
   const [selectedOrg, setSelectedOrg] = useState<ResultItem | null>(null);
   const [startDate, setStartDate] = useState<Date | undefined>();
   const [endDate, setEndDate] = useState<Date | undefined>();
+  const locale = useLocale();
   const [pagination, setPagination] = useState({
     currentPage: 1,
     totalPages: 1,
@@ -174,7 +175,7 @@ export default function AnnouncementsTable() {
       render: (_: string, record: AnnouncementData) => {
         return record.organization ? (
           <Link href={`/organizations/${record.organization}`}>
-            <Text variant="accent">{record.organization_short_name_text}</Text>
+            <Text variant="accent" className="text-[14px]">{record.organization_short_name_text}</Text>
           </Link>
         ) : (
           <Text>{record.organization_short_name_text}</Text>
@@ -196,8 +197,8 @@ export default function AnnouncementsTable() {
     {
       title: t("TableHeaders.disclosure_date"),
       dataIndex: "pub_date",
-      align: "center" as const,
-      render: (text: string) => converter.formatDate(text) || NOT_EXIST_DATE,
+      align: "right" as const,
+      render: (text: string) => converter.formatDateFull(text, locale) || NOT_EXIST_DATE,
     },
   ];
 

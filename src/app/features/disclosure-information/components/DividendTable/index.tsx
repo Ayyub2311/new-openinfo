@@ -6,7 +6,7 @@ import { Text } from "@/app/shared/ui/components/Typography/Text/Text";
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import { ConvertTypes } from "@/app/features/facts/models/base/ConvertTypes";
 import { Pagination } from "@/app/shared/ui/components/Pagination";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 interface DividendData {
   id: number;
@@ -30,6 +30,7 @@ export const DividendTable = ({ stockType, id }: DividendTableProps) => {
   const [error, setError] = useState<string | null>(null);
 
   const t = useTranslations();
+  const locale = useLocale();
   const [pagination, setPagination] = useState({
     currentPage: 1,
     totalPages: 1,
@@ -89,7 +90,7 @@ export const DividendTable = ({ stockType, id }: DividendTableProps) => {
         title: t("profile_emitents.date"),
         dataIndex: "pub_date",
         key: "id",
-        render: (v: string) => <Text weight="bold">{converter.formatDate(v) || NOT_EXIST_DATE}</Text>,
+        render: (v: string) => <Text>{converter.formatDate(v, locale) || NOT_EXIST_DATE}</Text>,
       },
     ];
 
@@ -101,6 +102,7 @@ export const DividendTable = ({ stockType, id }: DividendTableProps) => {
           title: t("profile_emitents.amount"),
           dataIndex: "common_share_amount",
           key: "common_share_amount",
+          align: "center",
           render: (value: number | undefined) => (value ? `${value} uzs` : "-"),
         },
         {
@@ -117,6 +119,7 @@ export const DividendTable = ({ stockType, id }: DividendTableProps) => {
           title: t("profile_emitents.amount"),
           dataIndex: "priviliged_share_amount",
           key: "priviliged_share_amount",
+          align: "center",
           render: (value: number | undefined) => (value ? `${value} uzs` : "-"),
         },
         {
