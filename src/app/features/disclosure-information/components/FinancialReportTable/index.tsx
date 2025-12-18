@@ -29,7 +29,7 @@ export const FinancialReportTable = () => {
   const { id } = useParams();
   const t = useTranslations("");
 
-  const reportStandards = [
+  const _reportStandards = [
     { label: t("filters.all"), value: "" },
     { label: "NSBU", value: "main" },
     { label: "MSFO", value: "msfo" },
@@ -58,7 +58,7 @@ export const FinancialReportTable = () => {
     setLoading(true);
     try {
       const { selectedYear, startDate, endDate, reportStandard } = activeFilters;
-      const resolvedStandard = reportStandard?.value || "";
+      const _resolvedStandard = reportStandard?.value || "";
 
       const params = new URLSearchParams({
         page: page.toString(),

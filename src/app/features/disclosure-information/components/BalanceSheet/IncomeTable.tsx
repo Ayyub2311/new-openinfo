@@ -1,7 +1,6 @@
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import { TableColumn } from "@/app/shared/ui/components/Table/types";
-import { useEffect, useState } from "react";
-import { convertData } from "../IncomeTable/convertData";
+import { useEffect, useState, useMemo } from "react";
 import { nestedTnums } from "./nestedTnums";
 import { allowedReportTitleTnums } from "./allowedReportTitleTnums";
 import { Table } from "@/app/shared/ui/components/Table";
@@ -17,31 +16,17 @@ import { convertReportsToReportArr } from "../IncomeTable/convertReportsToReport
 import { useTranslations, useLocale } from "next-intl";
 import { Tooltip } from "antd";
 
-type BalanceSheetTableType = Array<{
-  id: number;
-  reporting_year: number;
-  accounting_report: Array<{
-    id: number;
-    main_report: number;
-    title_id: number;
-    title: string;
-    tnum?: string;
-    value1: number;
-    value2: number;
-    value3: number;
-    value4: number;
-    is_title: boolean;
-    is_highlight: boolean;
-    is_automated: boolean;
-    value: number;
-  }>;
-  period: string;
-}>;
+type FlatRow = {
+  title_id: number;
+  title: string;
+  tnum?: string;
+  [key: string]: any;
+}
 
 export const BalanceSheetTable = ({ organizationId }: { organizationId: number }) => {
   const t = useTranslations();
   const locale = useLocale() || "en-US";
-  const [incomeList, setIncomeList] = useState<BalanceSheetTableType>([]);
+  const [incomeList, setIncomeList] = useState<FlatRow[]>([]);
   const [columns, setColumns] = useState<TableColumn<{ tnum?: string; title: string; title_id: number } & any>[]>([]);
   const [hideNested, setHideNested] = useState(true);
   const [reportType, setReportType] = useState<{
@@ -82,25 +67,26 @@ export const BalanceSheetTable = ({ organizationId }: { organizationId: number }
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await FetchService.fetch<BalanceSheetTableType>(
+        const response: any[] = await FetchService.fetch(
           `/api/v2/reports/accounting-report/${organizationId}/?accounting_type=form1&report_type=${reportType.value}`
         );
-        let d = convertData(response);
 
         const allTitleIds = Array.from(
           new Set(response.flatMap(p => p.accounting_report.map(r => r.title_id)))
         );
 
-        const flatData = allTitleIds.map(title_id => {
-          const row: any = { title_id };
+        const flatData: FlatRow[] = allTitleIds.map(title_id => {
+          const row: FlatRow = { title_id, title: "" };
           response.forEach((period, idx) => {
             const reportItem = period.accounting_report.find(r => r.title_id === title_id);
-            row[`__period_${idx}`] = reportItem ? reportItem.value : null;
+            row[`__period_${idx}`] = reportItem?.value ?? null;
             if (reportItem && !row.title) row.title = reportItem.title;
             if (reportItem && !row.tnum) row.tnum = reportItem.tnum;
           });
           return row;
         });
+
+        const key = getKeyFilterReport(flatData);
 
         const other_cols: TableColumn<any>[] = response.map((item, index) => ({
           title: item.period,
@@ -116,71 +102,44 @@ export const BalanceSheetTable = ({ organizationId }: { organizationId: number }
             ),
         }));
 
-        const key = getKeyFilterReport(flatData);
-        if (key === "title_id") {
-          d = allowedTitleIds.map(item => flatData.find(r => r.title_id === item));
-        }
         setColumns([
           {
             title: t("IncomeTable.PageCode"),
             dataIndex: key,
-            render: (_, r: any) => {
-              if (key === "title_id") {
-                if (nestedTitleIds.includes(r.title_id)) {
-                  return (
-                    <div className="flex items-center">
-                      <div className="w-4"></div>
-                      <span>{r.title_id}</span>
-                    </div>
-                  );
-                }
-                return r.title_id;
-              }
-              if (nestedTnums.includes(r.tnum)) {
-                return (
-                  <div className="flex items-center">
-                    <div className="w-4"></div>
-                    <span>{r.tnum}</span>
-                  </div>
-                );
-              }
-              return r.tnum;
+            render: (_, r: FlatRow) => {
+              const isNested =
+                key === "title_id" ? nestedTitleIds.includes(r.title_id) : nestedTnums.includes(r.tnum);
+              return (
+                <div className="flex items-center">
+                  {isNested && <div className="w-4" />}
+                  <span>{key === "title_id" ? r.title_id : r.tnum}</span>
+                </div>
+              );
             },
           },
           {
             title: t("IncomeTable.IndicatorName"),
             dataIndex: "title",
-            render: (_, r: any) => {
-              if (key === "title_id") {
-                if (nestedTitleIds.includes(r.title_id)) {
-                  return (
-                    <div className="flex items-center">
-                      <div className="w-4"></div>
-                      <span>{r.title}</span>
-                    </div>
-                  );
-                }
-                return r.title;
-              }
-              if (nestedTnums.includes(r.tnum)) {
-                return (
-                  <div className="flex items-center">
-                    <div className="w-4"></div>
-                    <span>{r.title}</span>
-                  </div>
-                );
-              }
-              return r.title;
+            render: (_, r: FlatRow) => {
+              const isNested =
+                key === "title_id" ? nestedTitleIds.includes(r.title_id) : nestedTnums.includes(r.tnum);
+              return (
+                <div className="flex items-center">
+                  {isNested && <div className="w-4" />}
+                  <span>{r.title}</span>
+                </div>
+              );
             },
           },
           ...other_cols,
         ]);
 
         setIncomeList(
-          flatData.filter(i => {
-            if (key === "title_id") return allowedTitleIds.includes(i.title_id);
-            return allowedReportTitleTnums.includes(i.tnum);
-          })
+          flatData.filter(i =>
+            key === "title_id"
+              ? allowedTitleIds.includes(i.title_id)
+              : i.tnum && allowedReportTitleTnums.includes(i.tnum)
+          )
         );
       } catch (err) {
         console.error("Error fetching financial data:", err);
