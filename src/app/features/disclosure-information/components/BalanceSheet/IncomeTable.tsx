@@ -1,6 +1,6 @@
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import { TableColumn } from "@/app/shared/ui/components/Table/types";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { nestedTnums } from "./nestedTnums";
 import { allowedReportTitleTnums } from "./allowedReportTitleTnums";
 import { Table } from "@/app/shared/ui/components/Table";
