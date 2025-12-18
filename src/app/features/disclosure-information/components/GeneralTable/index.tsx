@@ -219,7 +219,7 @@ const GeneralTable: React.FC<GeneralTableProps> = ({ id, isListing }) => {
   const shares = isListing
     ? organization?.uzse_info?.shares || []
     : organization?.otc_info?.shares || [];
-  const total = shares.reduce((sum, s) => sum + Number(s.list_shrs || 0), 0);
+  // const total = shares.reduce((sum, s) => sum + Number(s.list_shrs || 0), 0);
 
   const totalShares = shares.reduce(
     (sum, s) => sum + Number(s.list_shrs || 0),

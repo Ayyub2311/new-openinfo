@@ -29,12 +29,12 @@ export const FinancialReportTable = () => {
   const { id } = useParams();
   const t = useTranslations("");
 
-  const reportStandards = [
-    { label: t("filters.all"), value: "" },
-    { label: "NSBU", value: "main" },
-    { label: "MSFO", value: "msfo" },
-    { label: "Audition", value: "audition" },
-  ];
+  // const reportStandards = [
+  //   { label: t("filters.all"), value: "" },
+  //   { label: "NSBU", value: "main" },
+  //   { label: "MSFO", value: "msfo" },
+  //   { label: "Audition", value: "audition" },
+  // ];
 
   const reportTypes = [
     { label: t("filters.all"), value: "" },
@@ -58,7 +58,7 @@ export const FinancialReportTable = () => {
     setLoading(true);
     try {
       const { selectedYear, startDate, endDate, reportStandard } = activeFilters;
-      const resolvedStandard = reportStandard?.value || "";
+      // const resolvedStandard = reportStandard?.value || "";
 
       const params = new URLSearchParams({
         page: page.toString(),

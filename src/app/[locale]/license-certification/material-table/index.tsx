@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { Table } from "@/app/shared/ui/components/Table";
 import type { TableColumn } from "@/app/shared/ui/components/Table/types";
 import Link from "next/link";
-import Image from "next/image";
 
 import { FetchService } from "@/app/shared/lib/api/fetch.service";
 import { useTranslations } from "next-intl";

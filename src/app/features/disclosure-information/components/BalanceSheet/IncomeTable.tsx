@@ -85,7 +85,7 @@ export const BalanceSheetTable = ({ organizationId }: { organizationId: number }
         const response = await FetchService.fetch<BalanceSheetTableType>(
           `/api/v2/reports/accounting-report/${organizationId}/?accounting_type=form1&report_type=${reportType.value}`
         );
-        let d = convertData(response);
+        // let d = convertData(response);
 
         const allTitleIds = Array.from(
           new Set(response.flatMap(p => p.accounting_report.map(r => r.title_id)))
