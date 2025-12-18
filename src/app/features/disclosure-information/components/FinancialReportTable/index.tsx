@@ -206,11 +206,11 @@ export const FinancialReportTable = () => {
             return <span>-</span>
         }
       },
-      align: "center",
+      align: "center" as const,
     },
     {
       title: t("financial_reports_tab.download_report"),
-      align: "right",
+      align: "right" as const,
       render: (_, record) => {
         const isMain = appliedFilters.reportStandard.value === "main";
         const hasValidMain = record.properties?.org_type && record.properties?.report_type && record.object_id;
